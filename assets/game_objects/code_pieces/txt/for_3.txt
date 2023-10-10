@@ -1,0 +1,12 @@
+id|for_3
+english_name|For++
+italian_name|For++
+price|300
+rarity|3
+english_description|This piece calls a method four times consecutively.
+italian_description|Questo pezzo ripete un metodo quattro volte consecutivamente.
+category|for
+piece_texts|[for (i=0; i<4; i++)]
+num_connections|1
+types|[]
+num_iterations|4

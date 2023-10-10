@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://rsbxs4xtgy3h"]
+
+[ext_resource type="Texture2D" uid="uid://b7wd02gwif01t" path="res://assets/sprites/enemies/enemy_placeholder.png" id="1_iw6h3"]
+[ext_resource type="PackedScene" uid="uid://cidhe1nfix23k" path="res://components/ColliderComponent.tscn" id="2_5kgje"]
+[ext_resource type="PackedScene" uid="uid://dq3vwbgt3waci" path="res://components/HealthComponent.tscn" id="3_yb1ce"]
+[ext_resource type="PackedScene" uid="uid://dhsthvtch5tjm" path="res://components/StatsComponent.tscn" id="4_ucgoc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wbtrj"]
+size = Vector3(0.571086, 0.827808, 0.0390553)
+
+[node name="FireSlime" type="Node3D" groups=["enemy"]]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, 0, 0.420109, 0)
+texture = ExtResource("1_iw6h3")
+
+[node name="ColliderComponent" parent="." instance=ExtResource("2_5kgje")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ColliderComponent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.418247, 0)
+shape = SubResource("BoxShape3D_wbtrj")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_yb1ce")]
+initialization_mode = "init_by_stats_component"
+
+[node name="StatsComponent" parent="." instance=ExtResource("4_ucgoc")]
+element_id = "fire_slime"

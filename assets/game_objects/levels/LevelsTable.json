@@ -1,0 +1,38 @@
+{
+  "test": {
+    "english_name": "The Test",
+    "italian_name": "La Prova",
+    "english_description": "Test Level",
+    "italian_description": "Livello per il testing",
+    "enemies": [
+      "fire_slime",
+      "water_slime",
+      "grass_slime"
+    ],
+    "min_enemies_level": 1,
+    "max_enemies_level": 5,
+    "map_skin_name": "TestMap",
+    "arenas": [
+      "CityArena"
+    ],
+    "boss_arenas": [
+      "test_arena"
+    ],
+    "treasures": [],
+    "unknown_events": [
+      "drunk_negative",
+      "drunk_positive",
+      "fire_if_quiz",
+      "old_woman",
+      "old_woman_thief",
+      "man_and_zombies",
+      "two_doors_left"
+    ],
+    "packages": [
+      "all"
+    ],
+    "code_pieces": [
+      "all"
+    ]
+  }
+}

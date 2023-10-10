@@ -1,0 +1,12 @@
+id|else_if_water_grass
+english_name|Else If (Water/Grass)
+italian_name|Else If (Acqua/Erba)
+price|200
+rarity|2
+english_description|This piece selects a method based on whether the enemy is of the Water, Grass, or other type.
+italian_description|Questo pezzo seleziona un metodo in base a se il nemico sia di tipo Acqua, Erba o altro.
+category|else_if
+piece_texts|[if (enemy.type == water),else if (enemy.type == grass),else]
+num_connections|3
+types|[water,grass]
+num_iterations|0

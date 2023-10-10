@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dsmebw5m4bnwu"]
+
+[ext_resource type="Script" path="res://scripts/PuzzleSlot.gd" id="1_1jg6w"]
+[ext_resource type="Texture2D" uid="uid://dh302of1x1gxh" path="res://assets/ui/lunas_pc2_menu/pc2_puzzle_pieces_sprites/hook_piece.png" id="2_cbhj7"]
+[ext_resource type="PackedScene" uid="uid://c7mc780bflyqd" path="res://components/DragAndDropTargetComponent.tscn" id="3_mkrae"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vemfi"]
+size = Vector3(3.8, 3.8, 0.2)
+
+[sub_resource type="Animation" id="Animation_40cin"]
+resource_name = "glow"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PuzzlePieceBGSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.172549), Color(1, 1, 1, 0.886275), Color(1, 1, 1, 0.172549)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vif3x"]
+_data = {
+"glow": SubResource("Animation_40cin")
+}
+
+[node name="PuzzleSlot" type="Area3D" groups=["pc2_puzzle_slot"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.99214, 0)
+script = ExtResource("1_1jg6w")
+
+[node name="PuzzlePieceBGSprite" type="Sprite3D" parent="."]
+sorting_offset = 4.0
+modulate = Color(1, 1, 1, 0.172549)
+texture = ExtResource("2_cbhj7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.544998, 0)
+shape = SubResource("BoxShape3D_vemfi")
+disabled = true
+
+[node name="DragAndDropTargetComponent" parent="." instance=ExtResource("3_mkrae")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vif3x")
+}

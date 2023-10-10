@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1qefdv30w4gp"]
+
+[ext_resource type="PackedScene" uid="uid://366vgb3axuvs" path="res://assets/game_objects/battle_moves/BattleMove.tscn" id="1_rlpm4"]
+[ext_resource type="PackedScene" uid="uid://de7xlya8vh3gw" path="res://components/BattleEffectsActivatorComponent.tscn" id="2_tck0r"]
+[ext_resource type="PackedScene" uid="uid://d4mph4qtuqrtn" path="res://components/BattleEffect.tscn" id="3_hx7qi"]
+
+[node name="BandAidMove" instance=ExtResource("1_rlpm4")]
+class_id = "band_aid"
+
+[node name="BattleEffectsActivatorComponent" parent="." index="0" instance=ExtResource("2_tck0r")]
+
+[node name="BattleEffect" parent="BattleEffectsActivatorComponent" index="0" instance=ExtResource("3_hx7qi")]
+effect_type = "healing"
+target = "self"
+is_healing_percentage = false
+heal_hp = 20

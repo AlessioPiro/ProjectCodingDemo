@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1nodgsps0i0o"]
+
+[ext_resource type="Script" path="res://scripts/CodePieceComponent.gd" id="1_vnnik"]
+
+[node name="CodePiece" type="Node2D"]
+script = ExtResource("1_vnnik")

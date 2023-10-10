@@ -1,0 +1,9 @@
+id;espresso
+english_name;Espresso
+italian_name;Caffè Espresso
+english_description;The true taste of coffee! It slightly increases your attack power.
+italian_description;Una bella tazzina di caffè! Aumenta di poco il tuo potere di Attacco.
+time;10
+english_method;sip
+italian_method;sorseggia
+type;support

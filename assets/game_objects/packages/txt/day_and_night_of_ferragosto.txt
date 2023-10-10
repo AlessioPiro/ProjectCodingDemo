@@ -1,0 +1,11 @@
+id;day_and_night_of_ferragosto
+english_name;Day and Night of Ferragosto
+italian_name;Giorno e Notte a Ferragosto
+price;130
+rarity;2
+english_locked_description;During the day, you have fun at the beach, during the night, you gaze at the sky. This is Ferragosto!
+italian_locked_description;Durante il giorno ti diverti in spiaggia, durante la notte guardi il cielo. Questo è Ferragosto!
+english_unlocked_description;During the day, you splash friends with Water Balloons in the face, during the night, you admire the Fireworks. This is Ferragosto!
+italian_unlocked_description;Durante il giorno deflagri Gavettoni in faccia agli amici, durante la notte ammiri i Fuochi d'artificio. Questo è Ferragosto!
+classes;[water_balloon,firework]
+is_locked;true

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6y7enddjvekm"]
+
+[ext_resource type="Script" path="res://scripts/InputComponent.gd" id="1_tk300"]
+
+[node name="InputComponent" type="Node2D"]
+script = ExtResource("1_tk300")
+
+[connection signal="swipe" from="." to="." method="_on_swipe"]
+[connection signal="tap" from="." to="." method="_on_tap"]

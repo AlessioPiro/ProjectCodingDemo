@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqoblmoqleovr"]
+
+[ext_resource type="PackedScene" uid="uid://bvc7lpg2i0dv7" path="res://assets/models/outline_vending_machine_2/outline_vending_machine_2.glb" id="1_ngim8"]
+[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="2_w4qug"]
+[ext_resource type="Texture2D" uid="uid://cedfb0eyc46vn" path="res://assets/models/outline_vending_machine_2/outline_vending_machine_2_outline2_texture.png" id="3_pjrxj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eosko"]
+render_priority = 0
+shader = ExtResource("2_w4qug")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = false
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_pjrxj")
+
+[node name="outline_vending_machine_2" instance=ExtResource("1_ngim8")]
+
+[node name="Outline Vending Machine 2" parent="." index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_eosko")

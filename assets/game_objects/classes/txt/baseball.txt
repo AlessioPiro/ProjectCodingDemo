@@ -1,0 +1,9 @@
+id;baseball
+english_name;Baseball
+italian_name;Palla da Baseball
+english_description;This little ball deals low Normal damage to the enemy.
+italian_description;Questa pallina infligge pochi danni di tipo Normale al nemico.
+time;5
+english_method;throw
+italian_method;lancia
+type;normal

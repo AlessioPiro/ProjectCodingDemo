@@ -1,0 +1,449 @@
+[gd_scene load_steps=25 format=3 uid="uid://duis3a0o28app"]
+
+[ext_resource type="Script" path="res://scripts/TreasureScene.gd" id="1_5oykq"]
+[ext_resource type="Shader" path="res://addons/scrolling_texture_2d/scrolling_texture_2d.gdshader" id="1_c66r8"]
+[ext_resource type="Texture2D" uid="uid://ca5fq0wj2cgao" path="res://assets/visual_effects/vignette.png" id="1_mriua"]
+[ext_resource type="Texture2D" uid="uid://c80ijmo6ciljc" path="res://assets/ui/general_menu_ui_elements/treasure_chest.png" id="2_t5ofs"]
+[ext_resource type="Texture2D" uid="uid://b6elcq3tsxavd" path="res://assets/ui/default_alert_box/halftones_texture.png" id="2_vv2c8"]
+[ext_resource type="Texture2D" uid="uid://dej2sy2ot607r" path="res://assets/ui/general_menu_ui_elements/treasure_chest_glow.png" id="3_8r3mb"]
+[ext_resource type="Texture2D" uid="uid://b05pejvb48tjs" path="res://assets/ui/general_menu_ui_elements/flap.png" id="4_s4bgc"]
+[ext_resource type="FontFile" uid="uid://by6qmns3oh83k" path="res://assets/fonts/fonts_files/Rubik-Bold.ttf" id="5_6dxl1"]
+[ext_resource type="Texture2D" uid="uid://8exuxxpdv8e4" path="res://assets/visual_effects/glow.png" id="6_5ja3j"]
+[ext_resource type="Texture2D" uid="uid://cmijwby41yphh" path="res://assets/ui/general_menu_ui_elements/pop_balloon_comic.png" id="6_c0ssd"]
+[ext_resource type="Texture2D" uid="uid://bh8thnjyjmgka" path="res://assets/icons/treasure_icons/money_bag.png" id="7_3co0u"]
+[ext_resource type="Texture2D" uid="uid://dwitwh2mc7oe7" path="res://assets/ui/general_menu_ui_elements/y_b_button.png" id="8_8esdk"]
+[ext_resource type="Texture2D" uid="uid://cgfs71cwr5ljk" path="res://assets/ui/general_menu_ui_elements/y_b_button_pressed.png" id="9_8kv2m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nbq7j"]
+shader = ExtResource("1_c66r8")
+shader_parameter/direction = Vector2(1, 0.5)
+shader_parameter/speed_scale = 0.08
+
+[sub_resource type="LabelSettings" id="LabelSettings_ubc7u"]
+line_spacing = -40.0
+font = ExtResource("5_6dxl1")
+font_size = 130
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stdsh"]
+atlas = ExtResource("8_8esdk")
+region = Rect2(0, 128, 496, 248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s07bb"]
+atlas = ExtResource("9_8kv2m")
+region = Rect2(0, 128, 496, 248)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rp4po"]
+font = ExtResource("5_6dxl1")
+font_size = 75
+
+[sub_resource type="Animation" id="Animation_ixgkj"]
+resource_name = "chest_glow"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.388235, 0.388235, 0.388235, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer/Chest:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.2, 0.2, 0.2, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterContainer2/Glow:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.376471), Color(1, 1, 1, 0.203922), Color(1, 1, 1, 0.741176)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bevdn"]
+_data = {
+"chest_glow": SubResource("Animation_ixgkj")
+}
+
+[sub_resource type="Animation" id="Animation_v124t"]
+resource_name = "transition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TransitionRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TransitionRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6, 1),
+"transitions": PackedFloat32Array(-2, 1, -2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"give_reward"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BeforeOpeningContainer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BlackBalloon:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.7, 0.8, 1),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Vector2(0.15, 0.15), Vector2(1.6, 1.6), Vector2(1.1, 1.1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Balloon:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.7, 0.8, 1),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(1.5, 1.5), Vector2(1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RewardTexture:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.7, 0.8, 1),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(1.5, 1.5), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5dddr"]
+_data = {
+"transition": SubResource("Animation_v124t")
+}
+
+[sub_resource type="Animation" id="Animation_123bw"]
+resource_name = "balloon_idle"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Balloon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlackBalloon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RewardTexture:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.1, 10),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [-0.349066, 0.261799, -0.349066]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ags5l"]
+_data = {
+"balloon_idle": SubResource("Animation_123bw")
+}
+
+[node name="TreasureScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5oykq")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0, 1)
+
+[node name="Dots" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_nbq7j")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vv2c8")
+stretch_mode = 1
+
+[node name="HighFlap" type="TextureRect" parent="."]
+modulate = Color(0.835938, 0.839844, 0, 1)
+layout_mode = 0
+offset_right = 908.0
+offset_bottom = 908.0
+texture = ExtResource("4_s4bgc")
+
+[node name="HighText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.99998
+offset_top = 425.0
+offset_right = 992.0
+offset_bottom = 697.0
+rotation = -0.785398
+text = "YOU GOT"
+label_settings = SubResource("LabelSettings_ubc7u")
+
+[node name="BottomFlap" type="TextureRect" parent="."]
+modulate = Color(0.835938, 0.839844, 0, 1)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -908.0
+offset_top = -908.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_s4bgc")
+flip_h = true
+flip_v = true
+
+[node name="BottomText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -685.0
+offset_top = 36.0
+offset_right = 298.0
+offset_bottom = 352.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -0.785398
+text = "150
+COINS"
+label_settings = SubResource("LabelSettings_ubc7u")
+horizontal_alignment = 1
+
+[node name="BlackBalloon" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.678431)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -385.0
+offset_top = -647.0
+offset_right = 516.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(450, 450)
+texture = ExtResource("6_c0ssd")
+
+[node name="Balloon" type="TextureRect" parent="."]
+modulate = Color(0.832031, 0.835938, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.5
+offset_top = -583.0
+offset_right = 450.5
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(450, 450)
+texture = ExtResource("6_c0ssd")
+
+[node name="RewardTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -447.0
+offset_right = 300.0
+offset_bottom = 153.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.349066
+pivot_offset = Vector2(300, 300)
+texture = ExtResource("7_3co0u")
+
+[node name="MapButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = 345.0
+offset_right = 248.0
+offset_bottom = 593.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_stdsh")
+texture_pressed = SubResource("AtlasTexture_s07bb")
+
+[node name="Label3" type="Label" parent="MapButton"]
+layout_mode = 2
+offset_left = 197.0
+offset_top = 60.5
+offset_right = 300.0
+offset_bottom = 153.5
+text = "OK"
+label_settings = SubResource("LabelSettings_rp4po")
+
+[node name="BeforeOpeningContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 3
+
+[node name="Background" type="ColorRect" parent="BeforeOpeningContainer"]
+layout_mode = 2
+color = Color(1, 1, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="BeforeOpeningContainer"]
+layout_mode = 2
+
+[node name="Chest" type="TextureRect" parent="BeforeOpeningContainer/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("2_t5ofs")
+
+[node name="VignetteEffect" type="TextureRect" parent="BeforeOpeningContainer"]
+layout_mode = 2
+texture = ExtResource("1_mriua")
+
+[node name="CenterContainer2" type="CenterContainer" parent="BeforeOpeningContainer"]
+layout_mode = 2
+
+[node name="Glow" type="TextureRect" parent="BeforeOpeningContainer/CenterContainer2"]
+modulate = Color(1, 1, 1, 0.376471)
+layout_mode = 2
+texture = ExtResource("6_5ja3j")
+
+[node name="LockButton" type="TextureButton" parent="BeforeOpeningContainer/CenterContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("3_8r3mb")
+
+[node name="TreasurePresentationAnimation" type="AnimationPlayer" parent="BeforeOpeningContainer"]
+autoplay = "chest_glow"
+libraries = {
+"": SubResource("AnimationLibrary_bevdn")
+}
+
+[node name="TransitionAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5dddr")
+}
+
+[node name="BalloonAnimation" type="AnimationPlayer" parent="."]
+autoplay = "balloon_idle"
+libraries = {
+"": SubResource("AnimationLibrary_ags5l")
+}
+
+[node name="TransitionRect" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="MapButton" to="." method="_on_map_button_pressed"]
+[connection signal="pressed" from="BeforeOpeningContainer/CenterContainer2/LockButton" to="." method="_on_lock_button_pressed"]

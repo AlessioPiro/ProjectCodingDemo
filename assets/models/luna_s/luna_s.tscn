@@ -1,0 +1,181 @@
+[gd_scene load_steps=17 format=3 uid="uid://psu14l3gq81o"]
+
+[ext_resource type="PackedScene" uid="uid://cqnxolp8yfrjh" path="res://assets/models/luna_s/Luna_s.glb" id="1_fteqg"]
+[ext_resource type="Texture2D" uid="uid://ihb6d7jgqjdf" path="res://assets/models/luna_s/Luna_s_luna_s_texture.png" id="2_5fyxa"]
+[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="3_lmhkp"]
+[ext_resource type="Texture2D" uid="uid://gpxe3jol0283" path="res://assets/models/luna_s/Luna_s_natura_texture.png" id="4_nv1ni"]
+[ext_resource type="Texture2D" uid="uid://btmpnfcewyng3" path="res://assets/models/luna_s/Luna_s_gioia_texture.png" id="5_huluv"]
+[ext_resource type="Texture2D" uid="uid://dbmauyqy4mx5v" path="res://assets/models/luna_s/Luna_s_wall_texture.png" id="6_b5tju"]
+[ext_resource type="Texture2D" uid="uid://sl4yl4drollq" path="res://assets/models/luna_s/Luna_s_marble_floor_texture.png" id="6_msdhi"]
+[ext_resource type="Texture2D" uid="uid://ddyv8adwu7j06" path="res://assets/models/luna_s/Luna_s_floor_texture.png" id="7_iexc8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vris4"]
+render_priority = 1
+shader = ExtResource("3_lmhkp")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = false
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("2_5fyxa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tbf8"]
+next_pass = SubResource("ShaderMaterial_vris4")
+cull_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_5fyxa")
+metallic_specular = 0.0
+roughness = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wq20k"]
+render_priority = 0
+shader = ExtResource("3_lmhkp")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("4_nv1ni")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m6ldb"]
+render_priority = 0
+shader = ExtResource("3_lmhkp")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = false
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("5_huluv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u1x8m"]
+render_priority = 0
+shader = ExtResource("3_lmhkp")
+shader_parameter/albedo = Color(0.792157, 0.356863, 0.333333, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = false
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tvp0u"]
+render_priority = 0
+shader = ExtResource("3_lmhkp")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = false
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("6_b5tju")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h0u1s"]
+render_priority = 0
+shader = ExtResource("3_lmhkp")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = false
+shader_parameter/specular_strength = 0.002
+shader_parameter/specular_shininess = 32.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("6_msdhi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qef7x"]
+render_priority = 0
+shader = ExtResource("3_lmhkp")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = false
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("7_iexc8")
+
+[node name="Luna_s" instance=ExtResource("1_fteqg")]
+
+[node name="Luna\'s" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4tbf8")
+
+[node name="Natura" parent="." index="1"]
+surface_material_override/0 = SubResource("ShaderMaterial_wq20k")
+
+[node name="Gioia" parent="." index="2"]
+material_override = SubResource("ShaderMaterial_m6ldb")
+
+[node name="Galleria Superiore" parent="." index="3"]
+surface_material_override/0 = SubResource("ShaderMaterial_u1x8m")
+
+[node name="Muro interno" parent="." index="4"]
+surface_material_override/0 = SubResource("ShaderMaterial_tvp0u")
+
+[node name="Pavimento Esterno" parent="." index="5"]
+surface_material_override/0 = SubResource("ShaderMaterial_h0u1s")
+
+[node name="Pavimento Luna\'s" parent="." index="6"]
+surface_material_override/0 = SubResource("ShaderMaterial_qef7x")

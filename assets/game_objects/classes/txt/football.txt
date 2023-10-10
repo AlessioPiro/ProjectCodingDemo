@@ -1,0 +1,9 @@
+id;football
+english_name;Football
+italian_name;Palla da Calcio
+english_description;It deals moderate Normal damage to the enemy.
+italian_description;Infligge danni moderati di tipo Normale al nemico.
+time;10
+english_method;kick
+italian_method;calcia
+type;normal

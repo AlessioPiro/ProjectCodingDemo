@@ -1,0 +1,12 @@
+id|for_2
+english_name|For+
+italian_name|For+
+price|200
+rarity|2
+english_description|This piece calls a method three times consecutively.
+italian_description|Questo pezzo ripete un metodo tre volte consecutivamente.
+category|for
+piece_texts|[for (i=0; i<3; i++)]
+num_connections|1
+types|[]
+num_iterations|3

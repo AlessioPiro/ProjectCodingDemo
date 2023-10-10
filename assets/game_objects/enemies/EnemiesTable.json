@@ -1,0 +1,35 @@
+{
+  "fire_slime": {
+    "english_name": "Fire Slime",
+    "italian_name": "Slime di Fuoco",
+    "english_description": "Gross...",
+    "italian_description": "Ripugnante...",
+    "type": "fire",
+    "hp": 50,
+    "atk": 55,
+    "def": 50,
+    "luk": 30
+  },
+  "water_slime": {
+    "english_name": "Water Slime",
+    "italian_name": "Slime d'Acqua",
+    "english_description": "Water...",
+    "italian_description": "Acqua...",
+    "type": "water",
+    "hp": 50,
+    "atk": 60,
+    "def": 45,
+    "luk": 40
+  },
+  "grass_slime": {
+    "english_name": "Grass Slime",
+    "italian_name": "Slime d'Erba",
+    "english_description": "Cool leaf, bro!",
+    "italian_description": "Coso, bella foglia!",
+    "type": "grass",
+    "hp": 70,
+    "atk": 35,
+    "def": 60,
+    "luk": 40
+  }
+}

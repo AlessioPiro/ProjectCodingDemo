@@ -1,0 +1,9 @@
+id;seed
+english_name;Seed
+italian_name;Seme
+english_description;It deals low Grass damage to the enemy.
+italian_description;Infligge pochi danni di tipo Erba al nemico.
+time;5
+english_method;toss
+italian_method;lancia
+type;grass

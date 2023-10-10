@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://bilrbxukhlphg"]
+
+[ext_resource type="Script" path="res://scripts/GlowComponent.gd" id="1_nskyr"]
+[ext_resource type="Texture2D" uid="uid://8exuxxpdv8e4" path="res://assets/visual_effects/glow.png" id="2_ysms3"]
+
+[sub_resource type="Animation" id="Animation_tpsom"]
+resource_name = "glow"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Glow:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 0.839216, 0.231373), Color(1, 1, 0.839216, 0.231373), Color(1, 1, 0.839216, 0.231373)]
+}
+
+[sub_resource type="Animation" id="Animation_hxskl"]
+resource_name = "start_glow"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Glow:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 0.839216, 0), Color(1, 1, 0.839216, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5s68i"]
+resource_name = "stop_glow"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Glow:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 0.839216, 0), Color(1, 1, 0.839216, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2stom"]
+_data = {
+"glow": SubResource("Animation_tpsom"),
+"start_glow": SubResource("Animation_hxskl"),
+"stop_glow": SubResource("Animation_5s68i")
+}
+
+[node name="GlowComponent" type="Node3D"]
+transform = Transform3D(1, -2.98023e-08, 7.72118e-10, 1.49012e-08, 1, 4.41422e-09, -3.28241e-09, -2.84794e-09, 1, 0.0124664, 1.14387, -0.196152)
+script = ExtResource("1_nskyr")
+glow_texture = ExtResource("2_ysms3")
+modulate = Color(1, 1, 0.839216, 1)
+min_intensity = 0.3
+max_intensity = 0.8
+glow_speed = 1.0
+
+[node name="Glow" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, -3.72529e-08, 6.59995e-09, 8.19564e-08, 0.5, 1.11415e-09, 3.04414e-09, 1.27682e-08, 0.5, 0, 0, 0)
+modulate = Color(1, 1, 0.839216, 0.231373)
+texture = ExtResource("2_ysms3")
+
+[node name="GlowAnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "glow"
+libraries = {
+"": SubResource("AnimationLibrary_2stom")
+}

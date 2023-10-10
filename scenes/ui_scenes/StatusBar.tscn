@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://casltfd6o3f3u"]
+
+[ext_resource type="Script" path="res://scripts/StatusBar.gd" id="1_sygq6"]
+[ext_resource type="Texture2D" uid="uid://b6ipeqya8wrl2" path="res://assets/icons/small_icons/heart.png" id="2_0mhuw"]
+[ext_resource type="FontFile" uid="uid://by6qmns3oh83k" path="res://assets/fonts/fonts_files/Rubik-Bold.ttf" id="3_v71p5"]
+[ext_resource type="Texture2D" uid="uid://briiqrvl2esbt" path="res://assets/icons/small_icons/money.png" id="4_aspu7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_08thx"]
+font = ExtResource("3_v71p5")
+font_size = 50
+
+[node name="StatusBar" type="CanvasLayer"]
+layer = 0
+script = ExtResource("1_sygq6")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -960.0
+offset_top = -136.0
+offset_right = 960.0
+offset_bottom = 94.0
+grow_horizontal = 2
+rotation = 0.0349066
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="ColorRect2" type="ColorRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(3000, 200)
+layout_mode = 2
+color = Color(1, 1, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(3000, 150)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HealthIcon" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_0mhuw")
+
+[node name="HealthText" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "100/100"
+label_settings = SubResource("LabelSettings_08thx")
+
+[node name="Panel" type="Panel" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="MoneyIcon" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_aspu7")
+
+[node name="MoneyText" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "240"
+label_settings = SubResource("LabelSettings_08thx")
+
+[node name="Panel2" type="Panel" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2

@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwxvvel5b1t6l"]
+
+[ext_resource type="PackedScene" uid="uid://dois58whutroe" path="res://scenes/assets_map/MapNode.tscn" id="1_3tugo"]
+[ext_resource type="Script" path="res://scripts/MapScene.gd" id="1_rsfwt"]
+[ext_resource type="PackedScene" uid="uid://1r6pu6q3qsmk" path="res://scenes/assets_map/MapPath.tscn" id="3_3rduc"]
+[ext_resource type="PackedScene" uid="uid://b6y7enddjvekm" path="res://components/InputComponent.tscn" id="4_qemxq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cg6h"]
+albedo_color = Color(0.176471, 0.654902, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_s0yhf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hiu1q"]
+
+[node name="MapScene" type="Node3D"]
+script = ExtResource("1_rsfwt")
+
+[node name="Floor" type="Area3D" parent="."]
+transform = Transform3D(-0.586274, 0, 0, 0, 1, 0, 0, 0, 1.08155, 0, -0.25, 39)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(30.222, 0, 0, 0, 0.25, 0, 0, 0, 74.05, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_7cg6h")
+mesh = SubResource("BoxMesh_s0yhf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(30.222, 0, 0, 0, 0.25, 0, 0, 0, 74.05, 0, 0, 0)
+shape = SubResource("BoxShape3D_hiu1q")
+
+[node name="TestingMapNode" parent="." instance=ExtResource("1_3tugo")]
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.999998, -0.00214372, 0.000113917, -0.00196472, 0.9353, 0.35385, -0.000865103, 0.353849, -0.935302, 0, 7.88, -10.283)
+current = true
+fov = 80.5
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.686758, 0.726886, 0, -0.726886, -0.686758, 0, 8.43529, -5.13472)
+
+[node name="TestingMapPath" parent="." instance=ExtResource("3_3rduc")]
+transform = Transform3D(0.2, 0, 0, 0, 0.05, 0, 0, 0, 1, 0, -0.08, 0)
+visible = false
+
+[node name="InputComponent" parent="." instance=ExtResource("4_qemxq")]
+
+[connection signal="swipe" from="InputComponent" to="." method="_on_input_component_swipe"]

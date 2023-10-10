@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://0g0snq1nucjr"]
+
+[ext_resource type="PackedScene" uid="uid://brc62pcc7cne" path="res://assets/models/emergency_exit_signal/emergency_exit_signal.glb" id="1_b3glt"]
+[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="2_jimy3"]
+[ext_resource type="Texture2D" uid="uid://b7swk21bdnoyg" path="res://assets/models/emergency_exit_signal/emergency_exit_signal_-color.png" id="3_3s3e6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3m3jg"]
+render_priority = 0
+shader = ExtResource("2_jimy3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = false
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_3s3e6")
+
+[node name="emergency_exit_signal" instance=ExtResource("1_b3glt")]
+
+[node name="Segnale_EXIT001" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -3.83122, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_3m3jg")

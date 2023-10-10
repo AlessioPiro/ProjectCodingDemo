@@ -1,0 +1,11 @@
+id;italian_sunday
+english_name;Italian Sunday
+italian_name;Domenica Italiana
+price;130
+rarity;2
+english_locked_description;Oh, is it already 3?! Soon Napoli - Juventus starts!
+italian_locked_description;Ah ma sono già le 3?! Tra poco inizia Napoli - Juventus!
+english_unlocked_description;Ah, yes, Sunday afternoon at 3 PM. The moment when the entire Italian population is glued to the screen to watch the Football match with a refreshing cold Coke in hand.
+italian_unlocked_description;Ah sì, le 3 del pomeriggio di domenica. Il momento in cui l'intera popolazione italiana si incolla allo schermo per guardare la partita di Calcio con una bella Coca ghiacciata in mano.
+classes;[football,coke]
+is_locked;true

@@ -1,0 +1,803 @@
+[gd_scene load_steps=46 format=3 uid="uid://bwbi5yrc2crcp"]
+
+[ext_resource type="Script" path="res://scripts/BattleScene.gd" id="1_ra4np"]
+[ext_resource type="Texture2D" uid="uid://2rvue2av5kyr" path="res://assets/ui/battle_ui/battle_move_button_background.png" id="6_dlxb2"]
+[ext_resource type="Texture2D" uid="uid://x6kx3tkolhif" path="res://assets/ui/battle_ui/button_progress_bar_1.png" id="7_7645s"]
+[ext_resource type="Texture2D" uid="uid://bowmkcp05fd3k" path="res://assets/ui/battle_ui/player_hp_bar.png" id="7_b18cd"]
+[ext_resource type="Script" path="res://scripts/BattleMoveButton.gd" id="7_b55ua"]
+[ext_resource type="Script" path="res://scripts/BattleButtonsProgressBar.gd" id="7_iueap"]
+[ext_resource type="Texture2D" uid="uid://clv36tbxdr88l" path="res://assets/ui/battle_ui/button_progress_bar_2.png" id="8_gf246"]
+[ext_resource type="Texture2D" uid="uid://cnvflwei5kpok" path="res://assets/ui/battle_ui/player_hp_bar_over.png" id="8_x6cn7"]
+[ext_resource type="Texture2D" uid="uid://yl0w0e5exsb4" path="res://assets/ui/battle_ui/button_progress_bar_3.png" id="9_hujsb"]
+[ext_resource type="Texture2D" uid="uid://dts5p3jc8xa5a" path="res://assets/ui/battle_ui/move_1_button_text.png" id="11_lf5g1"]
+[ext_resource type="Texture2D" uid="uid://cpj7l8wdu7dn4" path="res://assets/ui/battle_ui/button_progress_bar_1_flipped.png" id="11_pax3p"]
+[ext_resource type="Texture2D" uid="uid://b8h3bupafx08y" path="res://assets/ui/battle_ui/button_progress_bar_2_flipped.png" id="12_hecu0"]
+[ext_resource type="Texture2D" uid="uid://btro244ijh0jv" path="res://assets/ui/battle_ui/button_progress_bar_3_flipped.png" id="13_1lrfm"]
+[ext_resource type="PackedScene" uid="uid://cahq0qgen07ip" path="res://components/ButtonComponent2D.tscn" id="13_8fa5s"]
+[ext_resource type="Texture2D" uid="uid://dt7dami78miul" path="res://assets/ui/battle_ui/move_2_button_text.png" id="15_tdxdn"]
+[ext_resource type="FontFile" uid="uid://c2s0knweyp6g" path="res://assets/fonts/fonts_files/FugazOne-Regular.ttf" id="16_tle81"]
+[ext_resource type="Shader" path="res://addons/scrolling_texture_2d/scrolling_texture_2d.gdshader" id="18_d36rl"]
+[ext_resource type="Script" path="res://scripts/PlayerHPBar.gd" id="19_hsboc"]
+[ext_resource type="Texture2D" uid="uid://b6elcq3tsxavd" path="res://assets/ui/default_alert_box/halftones_texture.png" id="19_oal2j"]
+[ext_resource type="Texture2D" uid="uid://b05pejvb48tjs" path="res://assets/ui/general_menu_ui_elements/flap.png" id="20_b6ykh"]
+[ext_resource type="FontFile" uid="uid://by6qmns3oh83k" path="res://assets/fonts/fonts_files/Rubik-Bold.ttf" id="21_lf72t"]
+[ext_resource type="Texture2D" uid="uid://cmijwby41yphh" path="res://assets/ui/general_menu_ui_elements/pop_balloon_comic.png" id="22_f73wf"]
+[ext_resource type="Texture2D" uid="uid://bh8thnjyjmgka" path="res://assets/icons/treasure_icons/money_bag.png" id="23_1jr7b"]
+[ext_resource type="Texture2D" uid="uid://dwitwh2mc7oe7" path="res://assets/ui/general_menu_ui_elements/y_b_button.png" id="24_81klf"]
+[ext_resource type="Texture2D" uid="uid://cgfs71cwr5ljk" path="res://assets/ui/general_menu_ui_elements/y_b_button_pressed.png" id="25_likcg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_55jdb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vnlmk"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wo0lk"]
+size = Vector3(4.0765, 0.0378449, 4.69958)
+
+[sub_resource type="FontVariation" id="FontVariation_tsuca"]
+base_font = ExtResource("16_tle81")
+
+[sub_resource type="Animation" id="Animation_yobd8"]
+resource_name = "on_damage"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_set_damage_text"
+}, {
+"args": [],
+"method": &"_set_idle_text"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerHPBarRetro:value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [50.0, 50.0]
+}
+
+[sub_resource type="Animation" id="Animation_b3be8"]
+resource_name = "on_healing"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerHPBarRetro:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [50.0, 50.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_set_healing_text"
+}, {
+"args": [],
+"method": &"_set_idle_text"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerHPBar:value")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [50.0, 50.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a3bjg"]
+_data = {
+"on_damage": SubResource("Animation_yobd8"),
+"on_healing": SubResource("Animation_b3be8")
+}
+
+[sub_resource type="Animation" id="Animation_p5720"]
+resource_name = "introduction"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_35kjb"]
+_data = {
+"introduction": SubResource("Animation_p5720")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v1t2x"]
+shader = ExtResource("18_d36rl")
+shader_parameter/direction = Vector2(1, 0.5)
+shader_parameter/speed_scale = 0.08
+
+[sub_resource type="LabelSettings" id="LabelSettings_hxcha"]
+line_spacing = -40.0
+font = ExtResource("21_lf72t")
+font_size = 130
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr32w"]
+atlas = ExtResource("24_81klf")
+region = Rect2(0, 128, 496, 248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k876l"]
+atlas = ExtResource("25_likcg")
+region = Rect2(0, 128, 496, 248)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fhd3i"]
+font = ExtResource("21_lf72t")
+font_size = 75
+
+[sub_resource type="Animation" id="Animation_123bw"]
+resource_name = "balloon_idle"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Balloon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlackBalloon:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RewardTexture:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.1, 10),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [-0.349066, 0.261799, -0.349066]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ags5l"]
+_data = {
+"balloon_idle": SubResource("Animation_123bw")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_o43gv"]
+font = ExtResource("21_lf72t")
+font_size = 135
+outline_size = 50
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_itonl"]
+resource_name = "victory_transition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TransitionLayer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../TransitionLayer/TransitionRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_give_reward"
+}, {
+"args": [],
+"method": &"_stop_battle"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_emmen"]
+resource_name = "end_transition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../TransitionLayer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TransitionLayer/TransitionRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_give_reward"
+}, {
+"args": [],
+"method": &"_stop_battle"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../EndScreen:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uv1ri"]
+_data = {
+"end_transition": SubResource("Animation_emmen"),
+"victory_transition": SubResource("Animation_itonl")
+}
+
+[node name="BattleScene" type="Node3D"]
+script = ExtResource("1_ra4np")
+
+[node name="Markers" type="Node3D" parent="."]
+
+[node name="EnemyPosition" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -3.218)
+
+[node name="PlayerPosition" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 3.159)
+
+[node name="Grid" type="Node3D" parent="."]
+
+[node name="Grid - Floor" type="GridMap" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.02, 0.5)
+cell_size = Vector3(1, 1, 1)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Grid - Character" type="GridMap" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.5, 0, 3.512)
+cell_size = Vector3(1, 1, 1)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Grid - Enemy" type="GridMap" parent="Grid"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.5, 0, -3.56377)
+cell_size = Vector3(1, 1, 1)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Floor" type="Area3D" parent="."]
+transform = Transform3D(1.71886, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0.0672364, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(4.06442, 0, 0, 0, 0.0379599, 0, 0, 0, 4.68717, 0, 0, 0)
+mesh = SubResource("BoxMesh_55jdb")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_vnlmk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_wo0lk")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.967113, 0.254349, 0, -0.254349, 0.967113, 0, 2.26895, 6.4981)
+current = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="PlayerUI" type="CenterContainer" parent="UI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -210.0
+offset_right = 105.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Buttons" type="Node2D" parent="UI/PlayerUI"]
+position = Vector2(149, 113)
+scale = Vector2(1.5, 1.5)
+
+[node name="Move1Button" type="Area2D" parent="UI/PlayerUI/Buttons" groups=["move_1_button"]]
+position = Vector2(-160, 0)
+script = ExtResource("7_b55ua")
+
+[node name="Background" type="Sprite2D" parent="UI/PlayerUI/Buttons/Move1Button"]
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_dlxb2")
+
+[node name="Text" type="Sprite2D" parent="UI/PlayerUI/Buttons/Move1Button"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_lf5g1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UI/PlayerUI/Buttons/Move1Button"]
+visible = false
+position = Vector2(-213, -1106)
+polygon = PackedVector2Array(95, 1057, 80, 1212, 359, 1210, 293, 1150)
+
+[node name="ProgressBar" type="Node2D" parent="UI/PlayerUI/Buttons/Move1Button"]
+position = Vector2(-170, -174)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("7_iueap")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/PlayerUI/Buttons/Move1Button/ProgressBar"]
+offset_right = 700.0
+offset_bottom = 700.0
+max_value = 38.0
+fill_mode = 1
+texture_under = ExtResource("7_7645s")
+texture_progress = ExtResource("7_7645s")
+tint_progress = Color(1, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="UI/PlayerUI/Buttons/Move1Button/ProgressBar"]
+offset_right = 700.0
+offset_bottom = 700.0
+min_value = 18.0
+max_value = 72.0
+value = 18.0
+fill_mode = 2
+texture_under = ExtResource("8_gf246")
+texture_progress = ExtResource("8_gf246")
+tint_progress = Color(1, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar3" type="TextureProgressBar" parent="UI/PlayerUI/Buttons/Move1Button/ProgressBar"]
+offset_right = 700.0
+offset_bottom = 700.0
+min_value = 62.0
+value = 62.0
+texture_under = ExtResource("9_hujsb")
+texture_progress = ExtResource("9_hujsb")
+tint_progress = Color(1, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonComponent2D" parent="UI/PlayerUI/Buttons/Move1Button" instance=ExtResource("13_8fa5s")]
+action = "battle_player_launch_move"
+press_animation = "darken"
+
+[node name="Timer" type="Timer" parent="UI/PlayerUI/Buttons/Move1Button"]
+one_shot = true
+
+[node name="Move2Button" type="Area2D" parent="UI/PlayerUI/Buttons" groups=["move_2_button"]]
+position = Vector2(160, 0)
+script = ExtResource("7_b55ua")
+
+[node name="Background" type="Sprite2D" parent="UI/PlayerUI/Buttons/Move2Button"]
+modulate = Color(0, 0, 0, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_dlxb2")
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="UI/PlayerUI/Buttons/Move2Button"]
+visible = false
+position = Vector2(-213, -1106)
+polygon = PackedVector2Array(135, 1150, 67, 1210, 348, 1211, 331, 1057)
+
+[node name="ProgressBar" type="Node2D" parent="UI/PlayerUI/Buttons/Move2Button"]
+position = Vector2(-177, -174)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("7_iueap")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/PlayerUI/Buttons/Move2Button/ProgressBar"]
+offset_right = 40.0
+offset_bottom = 40.0
+max_value = 38.0
+texture_under = ExtResource("11_pax3p")
+texture_progress = ExtResource("11_pax3p")
+tint_progress = Color(1, 1, 0, 1)
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="UI/PlayerUI/Buttons/Move2Button/ProgressBar"]
+offset_right = 40.0
+offset_bottom = 40.0
+min_value = 18.0
+max_value = 72.0
+value = 18.0
+fill_mode = 2
+texture_under = ExtResource("12_hecu0")
+texture_progress = ExtResource("12_hecu0")
+tint_progress = Color(1, 1, 0, 1)
+
+[node name="TextureProgressBar3" type="TextureProgressBar" parent="UI/PlayerUI/Buttons/Move2Button/ProgressBar"]
+offset_right = 40.0
+offset_bottom = 40.0
+min_value = 62.0
+value = 62.0
+fill_mode = 1
+texture_under = ExtResource("13_1lrfm")
+texture_progress = ExtResource("13_1lrfm")
+tint_progress = Color(1, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Text" type="Sprite2D" parent="UI/PlayerUI/Buttons/Move2Button"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_tdxdn")
+
+[node name="ButtonComponent2D" parent="UI/PlayerUI/Buttons/Move2Button" instance=ExtResource("13_8fa5s")]
+action = "battle_player_launch_move"
+press_animation = "darken"
+
+[node name="Timer" type="Timer" parent="UI/PlayerUI/Buttons/Move2Button"]
+one_shot = true
+
+[node name="PlayerHPBarContainer" type="MarginContainer" parent="UI/PlayerUI"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 80
+script = ExtResource("19_hsboc")
+
+[node name="PlayerHPBarRetro" type="TextureProgressBar" parent="UI/PlayerUI/PlayerHPBarContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+value = 50.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("7_b18cd")
+texture_over = ExtResource("8_x6cn7")
+texture_progress = ExtResource("7_b18cd")
+tint_under = Color(0.0588235, 0.0588235, 0.0588235, 1)
+tint_over = Color(0, 0, 0, 1)
+tint_progress = Color(0.4, 0.4, 0, 1)
+
+[node name="PlayerHPBar" type="TextureProgressBar" parent="UI/PlayerUI/PlayerHPBarContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+value = 50.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("7_b18cd")
+texture_over = ExtResource("8_x6cn7")
+texture_progress = ExtResource("7_b18cd")
+tint_under = Color(0.0588235, 0.0588235, 0.0588235, 0)
+tint_over = Color(0, 0, 0, 1)
+tint_progress = Color(1, 1, 0, 1)
+
+[node name="PlayerHPBarLabel" type="RichTextLabel" parent="UI/PlayerUI/PlayerHPBarContainer/PlayerHPBar"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -66.5
+offset_right = 58.0
+offset_bottom = 66.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = SubResource("FontVariation_tsuca")
+theme_override_font_sizes/normal_font_size = 90
+bbcode_enabled = true
+text = "[wave][center]50"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="HPBarAnimation" type="AnimationPlayer" parent="UI/PlayerUI/PlayerHPBarContainer"]
+libraries = {
+"": SubResource("AnimationLibrary_a3bjg")
+}
+
+[node name="BattleSceneAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_35kjb")
+}
+
+[node name="VictoryScreen" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="VictoryScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="VictoryScreen"]
+material = SubResource("ShaderMaterial_v1t2x")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_oal2j")
+stretch_mode = 1
+
+[node name="HighFlap" type="TextureRect" parent="VictoryScreen"]
+modulate = Color(0.835938, 0.839844, 0, 1)
+offset_right = 908.0
+offset_bottom = 908.0
+texture = ExtResource("20_b6ykh")
+
+[node name="HighText" type="Label" parent="VictoryScreen"]
+offset_left = 8.99998
+offset_top = 425.0
+offset_right = 992.0
+offset_bottom = 697.0
+rotation = -0.785398
+text = "YOU WIN!"
+label_settings = SubResource("LabelSettings_hxcha")
+
+[node name="BottomFlap" type="TextureRect" parent="VictoryScreen"]
+modulate = Color(0.835938, 0.839844, 0, 1)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -908.0
+offset_top = -908.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("20_b6ykh")
+flip_h = true
+flip_v = true
+
+[node name="BottomText" type="Label" parent="VictoryScreen"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -685.0
+offset_top = 36.0
+offset_right = 298.0
+offset_bottom = 352.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -0.785398
+text = "150
+COINS"
+label_settings = SubResource("LabelSettings_hxcha")
+horizontal_alignment = 1
+
+[node name="BlackBalloon" type="TextureRect" parent="VictoryScreen"]
+modulate = Color(0, 0, 0, 0.678431)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -385.0
+offset_top = -647.0
+offset_right = 516.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(450, 450)
+texture = ExtResource("22_f73wf")
+
+[node name="Balloon" type="TextureRect" parent="VictoryScreen"]
+modulate = Color(0.832031, 0.835938, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.5
+offset_top = -583.0
+offset_right = 450.5
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(450, 450)
+texture = ExtResource("22_f73wf")
+
+[node name="RewardTexture" type="TextureRect" parent="VictoryScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -447.0
+offset_right = 300.0
+offset_bottom = 153.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.349066
+pivot_offset = Vector2(300, 300)
+texture = ExtResource("23_1jr7b")
+
+[node name="MapButton" type="TextureButton" parent="VictoryScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = 345.0
+offset_right = 248.0
+offset_bottom = 593.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_yr32w")
+texture_pressed = SubResource("AtlasTexture_k876l")
+
+[node name="Label3" type="Label" parent="VictoryScreen/MapButton"]
+layout_mode = 2
+offset_left = 197.0
+offset_top = 60.5
+offset_right = 300.0
+offset_bottom = 153.5
+text = "OK"
+label_settings = SubResource("LabelSettings_fhd3i")
+
+[node name="TransitionRect" type="ColorRect" parent="VictoryScreen"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BalloonAnimation" type="AnimationPlayer" parent="VictoryScreen"]
+autoplay = "balloon_idle"
+libraries = {
+"": SubResource("AnimationLibrary_ags5l")
+}
+
+[node name="EndScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="EndScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="EndScreen"]
+material = SubResource("ShaderMaterial_v1t2x")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_oal2j")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="EndScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -343.5
+offset_top = -122.0
+offset_right = 343.5
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "THANKS 
+FOR PLAYING!"
+label_settings = SubResource("LabelSettings_o43gv")
+horizontal_alignment = 1
+
+[node name="TransitionLayer" type="CanvasLayer" parent="."]
+layer = 3
+visible = false
+
+[node name="TransitionRect" type="ColorRect" parent="TransitionLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TransitionAnimation" type="AnimationPlayer" parent="TransitionLayer"]
+root_node = NodePath("../../VictoryScreen")
+libraries = {
+"": SubResource("AnimationLibrary_uv1ri")
+}
+
+[connection signal="battle_player_launch_move" from="UI/PlayerUI/Buttons/Move1Button/ButtonComponent2D" to="." method="battle_player_launch_move"]
+[connection signal="timeout" from="UI/PlayerUI/Buttons/Move1Button/Timer" to="UI/PlayerUI/Buttons/Move1Button" method="_on_timer_timeout"]
+[connection signal="battle_player_launch_move" from="UI/PlayerUI/Buttons/Move2Button/ButtonComponent2D" to="." method="battle_player_launch_move"]
+[connection signal="timeout" from="UI/PlayerUI/Buttons/Move2Button/Timer" to="UI/PlayerUI/Buttons/Move2Button" method="_on_timer_timeout"]
+[connection signal="animation_finished" from="BattleSceneAnimator" to="." method="_on_battle_scene_animator_animation_finished"]
+[connection signal="pressed" from="VictoryScreen/MapButton" to="." method="_on_map_button_pressed"]

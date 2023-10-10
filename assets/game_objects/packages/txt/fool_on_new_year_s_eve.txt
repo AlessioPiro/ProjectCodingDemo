@@ -1,0 +1,11 @@
+id;fool_on_new_year_s_eve
+english_name;A Fool On New Year's Eve
+italian_name;Un imbecille a Capodanno
+price;250
+rarity;3
+english_locked_description;Such a powerful explosive to celebrate New Year's Eve? Are you crazy?!
+italian_locked_description;Un esplosivo così potente per festeggiare Capodanno? Ma sei scemo?!
+english_unlocked_description;Do you want to use the Champion's Ball? If that thing explodes, a Bandage won't be enough to heal your wounds...
+italian_unlocked_description;Vuoi usare la Palla da Campioni? Se quella cosa esplode non ti basterà una Garza per rimarginare le ferite...
+classes;[champion_s_ball,gauze]
+is_locked;true

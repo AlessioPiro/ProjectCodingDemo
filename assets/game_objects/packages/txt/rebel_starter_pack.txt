@@ -1,0 +1,11 @@
+id;rebel_starter_pack
+english_name;Rebel Starter Pack
+italian_name;Ribelle Starter Pack
+price;220
+rarity;3
+english_locked_description;So you just turned 12, huh?
+italian_locked_description;Quindi hai appena compiuto 12 anni, eh?
+english_unlocked_description;You know that adults don't drink 3 Red Lions a day and don't throw Firecrackers around, right?
+italian_unlocked_description;Sai che gli adulti non bevono 3 Red Lion al giorno e non lanciano Petardi in giro, giusto?
+classes;[red_lion,firecracker]
+is_locked;true

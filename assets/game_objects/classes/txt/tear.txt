@@ -1,0 +1,9 @@
+id;tear
+english_name;Tear
+italian_name;Lacrima
+english_description;It deals low Water damage to the enemy.
+italian_description;Infligge pochi danni di tipo Acqua al nemico.
+time;5
+english_method;cry
+italian_method;piangi
+type;water

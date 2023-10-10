@@ -1,0 +1,9 @@
+id;band_aid
+english_name;Band-Aid
+italian_name;Cerotto
+english_description;It restores a small amount of your HP.
+italian_description;Rigenera una piccola quantità di HP.
+time;20
+english_method;apply
+italian_method;applica
+type;healing

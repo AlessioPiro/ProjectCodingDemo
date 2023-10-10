@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=3 uid="uid://ddpkm4nxb2mgb"]
+
+[ext_resource type="Shader" path="res://addons/scrolling_texture_2d/scrolling_texture_2d.gdshader" id="1_5e7wi"]
+[ext_resource type="Script" path="res://scripts/MainMenuScene.gd" id="1_5tibl"]
+[ext_resource type="Texture2D" uid="uid://dwitwh2mc7oe7" path="res://assets/ui/general_menu_ui_elements/y_b_button.png" id="1_qnlas"]
+[ext_resource type="Texture2D" uid="uid://cgfs71cwr5ljk" path="res://assets/ui/general_menu_ui_elements/y_b_button_pressed.png" id="2_nge1c"]
+[ext_resource type="Texture2D" uid="uid://b6elcq3tsxavd" path="res://assets/ui/default_alert_box/halftones_texture.png" id="2_vde7l"]
+[ext_resource type="FontFile" uid="uid://c2s0knweyp6g" path="res://assets/fonts/fonts_files/FugazOne-Regular.ttf" id="3_5y304"]
+[ext_resource type="Texture2D" uid="uid://dd0i2dieyj28i" path="res://assets/ui/general_menu_ui_elements/logo.png" id="4_6p84b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o4bxh"]
+shader = ExtResource("1_5e7wi")
+shader_parameter/direction = Vector2(1, 0.5)
+shader_parameter/speed_scale = 0.08
+
+[sub_resource type="FontVariation" id="FontVariation_n7wdn"]
+base_font = ExtResource("3_5y304")
+
+[sub_resource type="LabelSettings" id="LabelSettings_bg4hj"]
+font_size = 45
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenuScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5tibl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_o4bxh")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vde7l")
+stretch_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("4_6p84b")
+
+[node name="Panel" type="Panel" parent="CenterContainer/VBoxContainer2"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="CenterContainer/VBoxContainer2/VBoxContainer/CenterContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_qnlas")
+texture_pressed = ExtResource("2_nge1c")
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer2/VBoxContainer/CenterContainer/TextureButton"]
+layout_mode = 2
+offset_left = 109.0
+offset_top = 192.0
+offset_right = 394.0
+offset_bottom = 262.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.123295
+theme_override_fonts/font = SubResource("FontVariation_n7wdn")
+text = "Start Demo"
+label_settings = SubResource("LabelSettings_bg4hj")
+uppercase = true
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/VBoxContainer/CenterContainer/TextureButton" to="." method="_on_texture_button_pressed"]

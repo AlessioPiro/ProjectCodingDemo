@@ -1,0 +1,9 @@
+id;champion_s_ball
+english_name;Champion's Ball
+italian_name;Il Pallone del Campione
+english_description;Be careful! This is an extremely dangerous firecracker! It deals massive Fire damage to the enemy, but also inflicts damage to the user.
+italian_description;Attento! Questo è un petardo estremamente pericoloso! Infligge enormi danni di tipo Fuoco al nemico, ma infligge danni anche all'utilizzatore.
+time;25
+english_method;explode
+italian_method;fai_esplodere
+type;fire

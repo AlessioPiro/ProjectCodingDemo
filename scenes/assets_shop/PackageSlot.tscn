@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjsh2myyf2npw"]
+
+[ext_resource type="Texture2D" uid="uid://b2h6iesol2s3u" path="res://assets/ui/lunas_pc1_menu/package_slot_sprite.png" id="1_7b3jw"]
+[ext_resource type="PackedScene" uid="uid://c7mc780bflyqd" path="res://components/DragAndDropTargetComponent.tscn" id="2_fuybn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cvhqu"]
+size = Vector3(0.347999, 0.344285, 0.0116246)
+
+[node name="PC1PackageSlot" type="Area3D" groups=["pc1_package_slot"]]
+
+[node name="SlotSprite" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+sorting_offset = 3.0
+texture = ExtResource("1_7b3jw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00638485, 0.0109454, 0)
+shape = SubResource("BoxShape3D_cvhqu")
+
+[node name="DragAndDropTargetComponent" parent="." instance=ExtResource("2_fuybn")]

@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8ibovm3lret0"]
+
+[ext_resource type="Texture2D" uid="uid://b5yr08jh6rbp7" path="res://assets/icons/class_icons/class_icon.png" id="1_0yq1h"]
+[ext_resource type="Script" path="res://scripts/PackageInformationBoxClassInformationBox.gd" id="1_mgayx"]
+[ext_resource type="Texture2D" uid="uid://pqelspeplrkb" path="res://assets/icons/class_icons/band_aid_icon.png" id="2_viusp"]
+[ext_resource type="Texture2D" uid="uid://crebkl2bmr3rx" path="res://assets/icons/type_icons/fire_icon.png" id="3_fm5w3"]
+[ext_resource type="FontFile" uid="uid://1o3ao46od32h" path="res://assets/fonts/fonts_files/VCR_OSD_MONO_1.001.ttf" id="4_u3iln"]
+[ext_resource type="Texture2D" uid="uid://ymaiiedjhe22" path="res://assets/ui/lunas_pc1_information_box/ClassWindow.png" id="5_jmf4k"]
+
+[node name="ClassWindow" type="Node3D"]
+script = ExtResource("1_mgayx")
+
+[node name="ClassSprite" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.837132, 0)
+
+[node name="GenericClassSprite" type="Sprite3D" parent="ClassSprite"]
+sorting_offset = 7.0
+modulate = Color(0.835294, 0.301961, 0.458824, 1)
+render_priority = 4
+texture = ExtResource("1_0yq1h")
+
+[node name="ClassSprite" type="Sprite3D" parent="ClassSprite"]
+sorting_offset = 7.0
+modulate = Color(0.835294, 0.301961, 0.458824, 1)
+render_priority = 4
+texture = ExtResource("2_viusp")
+
+[node name="TypeSprite" type="Sprite3D" parent="ClassSprite"]
+transform = Transform3D(0.080196, 0.089267, 0, -0.089267, 0.080196, 0, 0, 0, 0.12, 1.01288, 0.945222, 0)
+sorting_offset = 6.0
+modulate = Color(0.835294, 0.301961, 0.458824, 1)
+render_priority = 4
+texture = ExtResource("3_fm5w3")
+region_enabled = true
+region_rect = Rect2(0, 0, 512.3, 456)
+
+[node name="ClassName" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.542131, 0)
+sorting_offset = 7.0
+render_priority = 5
+outline_render_priority = 4
+text = "Nome"
+font = ExtResource("4_u3iln")
+font_size = 70
+outline_size = 15
+autowrap_mode = 3
+width = 550.0
+
+[node name="ClassDescription" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.995647, 0)
+sorting_offset = 7.0
+render_priority = 5
+outline_render_priority = 4
+modulate = Color(0, 0, 0, 1)
+text = "It restores a small amount of your HP."
+font = ExtResource("4_u3iln")
+font_size = 50
+outline_size = 0
+vertical_alignment = 0
+autowrap_mode = 3
+width = 520.0
+
+[node name="Background" type="Sprite3D" parent="."]
+sorting_offset = 5.0
+render_priority = 4
+texture = ExtResource("5_jmf4k")

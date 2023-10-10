@@ -1,0 +1,619 @@
+[gd_scene load_steps=37 format=3 uid="uid://dytkpdfs4lybj"]
+
+[ext_resource type="PackedScene" uid="uid://bsaebp8uiufeh" path="res://assets/models/pc1_city/pc_scene.blend" id="1_5ue2w"]
+[ext_resource type="Texture2D" uid="uid://cq8ikwmotg8b8" path="res://assets/models/pc1_city/bubble.png" id="1_gtj5p"]
+[ext_resource type="PackedScene" uid="uid://bilrbxukhlphg" path="res://components/GlowComponent.tscn" id="2_qa7xg"]
+[ext_resource type="Texture2D" uid="uid://c1iy7pf0kme28" path="res://assets/models/pc1_city/sky.jpg" id="2_sr28n"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vlfkp"]
+panorama = ExtResource("2_sr28n")
+
+[sub_resource type="Sky" id="Sky_x1lrt"]
+sky_material = SubResource("PanoramaSkyMaterial_vlfkp")
+
+[sub_resource type="Environment" id="Environment_mxkwr"]
+background_mode = 2
+sky = SubResource("Sky_x1lrt")
+ambient_light_source = 2
+ambient_light_color = Color(0.701961, 0.776471, 1, 1)
+reflected_light_source = 2
+glow_normalized = true
+glow_intensity = 0.63
+glow_strength = 0.64
+glow_blend_mode = 0
+volumetric_fog_density = 0.0542
+volumetric_fog_albedo = Color(0.592157, 0.823529, 1, 1)
+
+[sub_resource type="Animation" id="Animation_crye4"]
+resource_name = "idle"
+length = 15.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-13.7066, 9.913, -7.36429), Vector3(-13.7066, 9.913, -1.33145)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.5, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n5my8"]
+_data = {
+"idle": SubResource("Animation_crye4")
+}
+
+[sub_resource type="Animation" id="Animation_l545d"]
+resource_name = "idle"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.498039), Color(1, 1, 1, 0.996078)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [Vector3(0.242604, 4.66251, -7.36429), Vector3(0.242604, 6.67895, -7.36429), Vector3(0.242604, 4.66251, -7.36429)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_in0bv"]
+_data = {
+"idle": SubResource("Animation_l545d")
+}
+
+[sub_resource type="Animation" id="Animation_p541a"]
+resource_name = "idle"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-52.299, 14.761, 22.248), Vector3(-52.299, 20, 22.248)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5, 8.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vvc4b"]
+_data = {
+"idle": SubResource("Animation_p541a")
+}
+
+[sub_resource type="Animation" id="Animation_s6tkv"]
+resource_name = "new_animation"
+length = 8.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(-54.5593, 11.3365, 8.36545), Vector3(-54.5593, 17.1211, 8.36545)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.117647), Color(1, 1, 1, 0.796078), Color(1, 1, 1, 0.796078)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pe0y4"]
+_data = {
+"new_animation": SubResource("Animation_s6tkv")
+}
+
+[sub_resource type="Animation" id="Animation_omk5u"]
+resource_name = "new_animation"
+length = 7.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(-22.0055, 8.30066, -3.6694), Vector3(-26.3553, 8.30066, -9.63037)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 1.4, 6.2, 7),
+"transitions": PackedFloat32Array(1, 2, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uqfvw"]
+_data = {
+"new_animation": SubResource("Animation_omk5u")
+}
+
+[sub_resource type="Animation" id="Animation_mwdc5"]
+resource_name = "new_animation"
+length = 12.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 11.9),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(-56.9484, 22.579, -24.5371), Vector3(-56.9484, 22.579, -12.5571)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_knxvr"]
+_data = {
+"new_animation": SubResource("Animation_mwdc5")
+}
+
+[sub_resource type="Animation" id="Animation_l2qh4"]
+resource_name = "new_animation"
+length = 6.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(-38.6952, 5.69859, -1.69517), Vector3(-38.6952, 7.41175, -1.69517)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.772549), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nn382"]
+_data = {
+"new_animation": SubResource("Animation_l2qh4")
+}
+
+[sub_resource type="Animation" id="Animation_ahl0y"]
+resource_name = "new_animation"
+length = 7.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 7),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(-63.5434, 24.6728, 12.7761), Vector3(-63.5434, 30.7937, 12.7761)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uutkg"]
+_data = {
+"new_animation": SubResource("Animation_ahl0y")
+}
+
+[sub_resource type="Animation" id="Animation_yevr0"]
+resource_name = "new_animation"
+length = 15.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(-63.3577, 11.6802, -14.728), Vector3(-63.3577, 15.7603, -14.728)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jrsbl"]
+_data = {
+"new_animation": SubResource("Animation_yevr0")
+}
+
+[sub_resource type="Animation" id="Animation_u7alu"]
+resource_name = "new_animation"
+length = 4.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(-63.3577, 26.2342, -33.7819), Vector3(-63.3577, 37.0509, -33.7819)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ov3k6"]
+_data = {
+"new_animation": SubResource("Animation_u7alu")
+}
+
+[sub_resource type="Animation" id="Animation_73urn"]
+resource_name = "new_animation"
+length = 8.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(-71.7352, 37.2047, 22.2546), Vector3(-71.7352, 37.2047, 16.0389)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ah15"]
+_data = {
+"new_animation": SubResource("Animation_73urn")
+}
+
+[sub_resource type="Curve3D" id="Curve3D_g1b4q"]
+bake_interval = 66.69
+_data = {
+"points": PackedVector3Array(-0.153384, 0.138596, 2.94796, 0.153384, -0.138596, -2.94796, 10.7564, 1.68103, 0.850957, 0.038785, 0.11124, 4.08252, -0.038785, -0.11124, -4.08252, 10.8095, 0.444336, -7.37022),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_8m1mg"]
+resource_name = "move_camera_from_pc1_menu_to_pc2_menu"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [0.0, 8.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PathFollow3D/Node3D/Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(0.0732346, 1.23758, 0.194523), Vector3(-0.00666633, 1.59015, 0.207169)]
+}
+
+[sub_resource type="Animation" id="Animation_5av8w"]
+resource_name = "move_camera_from_pc2_menu_to_pc1_menu"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow3D:progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [8.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PathFollow3D/Node3D/Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(-0.00666633, 1.59015, 0.207169), Vector3(0.0732346, 1.23758, 0.194523)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sungq"]
+_data = {
+"move_camera_from_pc1_menu_to_pc2_menu": SubResource("Animation_8m1mg"),
+"move_camera_from_pc2_menu_to_pc1_menu": SubResource("Animation_5av8w")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38dv4"]
+albedo_color = Color(0.176471, 0.654902, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4c48f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_41ab1"]
+
+[node name="TestMap" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.04145, -0.126636, 9)
+
+[node name="BubbleSun" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, -73.7344, 6.54385, -6.9616)
+double_sided = false
+texture_filter = 1
+texture = ExtResource("1_gtj5p")
+
+[node name="GlowComponent" parent="Node3D/BubbleSun" instance=ExtResource("2_qa7xg")]
+transform = Transform3D(3, -4.47036e-08, 9.84723e-09, 4.47036e-08, 3, 8.54382e-09, -9.84723e-09, -8.54382e-09, 3, 0.0124664, 0.0958476, -0.196152)
+glow_texture = ExtResource("1_gtj5p")
+modulate = Color(1, 1, 1, 1)
+min_intensity = 0.1
+max_intensity = 0.5
+glow_speed = 0.6
+visible_on_start = true
+
+[node name="pc_scene" parent="Node3D" instance=ExtResource("1_5ue2w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.76033, 0, -6.34659)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D"]
+transform = Transform3D(-0.75394, -0.393967, -0.525704, -0.0425309, -0.769277, 0.637498, -0.655565, 0.502994, 0.563233, -5.54366, 19.9193, 1.72652)
+light_energy = 3.069
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D"]
+environment = SubResource("Environment_mxkwr")
+
+[node name="Bubble1" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, -13.7066, 9.913, -6.54853)
+modulate = Color(1, 1, 1, 0)
+billboard = 1
+texture = ExtResource("1_gtj5p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Bubble1"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_n5my8")
+}
+
+[node name="Bubble2" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 0.242604, 5.98208, -7.36429)
+modulate = Color(1, 1, 1, 0.938706)
+billboard = 1
+texture = ExtResource("1_gtj5p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Bubble2"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_in0bv")
+}
+
+[node name="Bubble3" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -52.2993, 14.7609, 12.9418)
+modulate = Color(1, 1, 1, 0)
+billboard = 1
+texture = ExtResource("1_gtj5p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Bubble3"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_vvc4b")
+}
+
+[node name="Bubble4" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -54.5593, 11.6365, 8.36545)
+modulate = Color(1, 1, 1, 0.336148)
+billboard = 1
+texture = ExtResource("1_gtj5p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Bubble4"]
+autoplay = "new_animation"
+libraries = {
+"": SubResource("AnimationLibrary_pe0y4")
+}
+
+[node name="Bubble5" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-0.8, 0, -1.20797e-07, 0, 0.8, 0, 1.20797e-07, 0, -0.8, -22.0759, 8.30066, -3.76576)
+modulate = Color(1, 1, 1, 0.407192)
+billboard = 1
+texture = ExtResource("1_gtj5p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Bubble5"]
+autoplay = "new_animation"
+libraries = {
+"": SubResource("AnimationLibrary_uqfvw")
+}
+
+[node name="Bubble7" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-1.4, 0, -2.11394e-07, 0, 1.4, 0, 2.11394e-07, 0, -1.4, -56.9484, 22.579, -16.4413)
+modulate = Color(1, 1, 1, 0.815686)
+billboard = 1
+texture = ExtResource("1_gtj5p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Bubble7"]
+autoplay = "new_animation"
+libraries = {
+"": SubResource("AnimationLibrary_knxvr")
+}
+
+[node name="Bubble6" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-0.6, 0, -9.05975e-08, 0, 0.6, 0, 9.05975e-08, 0, -0.6, -38.6952, 6.24825, -1.69517)
+modulate = Color(1, 1, 1, 0.86365)
+billboard = 1
+texture = ExtResource("1_gtj5p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Bubble6"]
+autoplay = "new_animation"
+libraries = {
+"": SubResource("AnimationLibrary_nn382")
+}
+
+[node name="Bubble8" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-1.3, 0, -1.96295e-07, 0, 1.3, 0, 1.96295e-07, 0, -1.3, -63.5434, 30.7937, 12.7761)
+modulate = Color(1, 1, 1, 0)
+billboard = 1
+texture = ExtResource("1_gtj5p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Bubble8"]
+autoplay = "new_animation"
+libraries = {
+"": SubResource("AnimationLibrary_uutkg")
+}
+
+[node name="Bubble9" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-1.96, 0, -1.71349e-07, 0, 1.96, 0, 1.71349e-07, 0, -1.96, -63.3577, 11.6802, -14.728)
+modulate = Color(1, 1, 1, 0.611765)
+billboard = 1
+texture = ExtResource("1_gtj5p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Bubble9"]
+autoplay = "new_animation"
+libraries = {
+"": SubResource("AnimationLibrary_jrsbl")
+}
+
+[node name="Bubble10" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, -63.3577, 26.2342, -33.7819)
+modulate = Color(1, 1, 1, 0.611765)
+billboard = 1
+texture = ExtResource("1_gtj5p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Bubble10"]
+autoplay = "new_animation"
+libraries = {
+"": SubResource("AnimationLibrary_ov3k6")
+}
+
+[node name="Bubble11" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, -71.7352, 37.2047, 16.3809)
+modulate = Color(1, 1, 1, 0.611765)
+billboard = 1
+texture = ExtResource("1_gtj5p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/Bubble11"]
+autoplay = "new_animation"
+libraries = {
+"": SubResource("AnimationLibrary_8ah15")
+}
+
+[node name="OldPath3D" type="Path3D" parent="Node3D"]
+visible = false
+curve = SubResource("Curve3D_g1b4q")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Node3D/OldPath3D"]
+transform = Transform3D(0.998575, 0.00243669, -0.0518982, 0, 0.998817, 0.0468946, 0.0519565, -0.0468318, 0.997455, 10.7564, 1.68103, 0.850957)
+
+[node name="Node3D" type="Node3D" parent="Node3D/OldPath3D/PathFollow3D"]
+transform = Transform3D(1, -2.32831e-10, 0, 0, 1, 0, 0, 3.72529e-09, 1, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Node3D/OldPath3D/PathFollow3D/Node3D"]
+transform = Transform3D(0.285918, 0.0153213, 0.958209, 0.23661, 0.967869, -0.0860774, -0.928683, 0.251318, 0.273089, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D/OldPath3D"]
+libraries = {
+"": SubResource("AnimationLibrary_sungq")
+}
+
+[node name="Floor" type="Area3D" parent="."]
+transform = Transform3D(-0.586274, 0, 0, 0, 1, 0, 0, 0, 1.08155, 0, -0.25, 39)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(30.222, 0, 0, 0, 0.25, 0, 0, 0, 74.05, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_38dv4")
+mesh = SubResource("BoxMesh_4c48f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(30.222, 0, 0, 0, 0.25, 0, 0, 0, 74.05, 0, 0, 0)
+shape = SubResource("BoxShape3D_41ab1")

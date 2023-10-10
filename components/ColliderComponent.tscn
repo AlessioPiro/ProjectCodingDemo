@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cidhe1nfix23k"]
+
+[ext_resource type="Script" path="res://scripts/ColliderComponent.gd" id="1_20dx7"]
+
+[node name="ColliderComponent" type="Area3D"]
+script = ExtResource("1_20dx7")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,12 @@
+id|if_water
+english_name|If (Water)
+italian_name|If (Acqua)
+price|70
+rarity|1
+english_description|This piece selects a method based on whether the enemy is of the Water type or not.
+italian_description|Questo pezzo seleziona un metodo in base a se il nemico sia di tipo Acqua o meno.
+category|if
+piece_texts|[if (enemy.type == water),else]
+num_connections|2
+types|[water]
+num_iterations|0

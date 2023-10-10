@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2kgk46nl1lqi"]
+
+[ext_resource type="PackedScene" uid="uid://duv6jts4pru3h" path="res://assets/models/footstool/footstool_v2.glb" id="1_c5v3h"]
+[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="2_h0ixl"]
+[ext_resource type="Texture2D" uid="uid://6x8l034kocv6" path="res://assets/models/footstool/footstool_v2_footstool_texture.png" id="3_6k5nn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qesdy"]
+render_priority = 0
+shader = ExtResource("2_h0ixl")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 0.034
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(0.0196078, 0.0196078, 0.0196078, 0.164706)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_6k5nn")
+
+[node name="footstool" instance=ExtResource("1_c5v3h")]
+
+[node name="footstool" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_qesdy")

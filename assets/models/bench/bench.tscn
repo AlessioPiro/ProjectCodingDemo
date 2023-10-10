@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://cndax0xciqdrx"]
+
+[ext_resource type="PackedScene" uid="uid://dbmaymsd66m6a" path="res://assets/models/bench/bench.glb" id="1_7efkh"]
+[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="2_cua4j"]
+[ext_resource type="Texture2D" uid="uid://drjl4sreh5gub" path="res://assets/models/bench/bench_Ferro.png" id="3_cbc4x"]
+[ext_resource type="Texture2D" uid="uid://djy4l6sa1b428" path="res://assets/models/bench/bench_Asse 1.png" id="4_5v0bb"]
+[ext_resource type="Texture2D" uid="uid://cope66x8urxhx" path="res://assets/models/bench/bench_Asse2.png" id="5_0e603"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qgwvx"]
+render_priority = 0
+shader = ExtResource("2_cua4j")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 28.944
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_cbc4x")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_50cme"]
+render_priority = 0
+shader = ExtResource("2_cua4j")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("4_5v0bb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_btl3t"]
+render_priority = 0
+shader = ExtResource("2_cua4j")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("5_0e603")
+
+[node name="bench" instance=ExtResource("1_7efkh")]
+
+[node name="Ferro" parent="." index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.120367, -0.203066, -1.52413)
+surface_material_override/0 = SubResource("ShaderMaterial_qgwvx")
+
+[node name="Asse 1" parent="." index="1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0995557, 2.52539, -1.56369)
+surface_material_override/0 = SubResource("ShaderMaterial_50cme")
+
+[node name="Asse 2" parent="." index="2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0980107, 2.52539, -1.18795)
+surface_material_override/0 = SubResource("ShaderMaterial_btl3t")
+
+[node name="Asse 3" parent="." index="3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0980107, 2.52539, -0.827939)
+surface_material_override/0 = SubResource("ShaderMaterial_btl3t")
+
+[node name="Asse 4" parent="." index="4"]
+transform = Transform3D(-6.24336e-09, -4.32675e-08, 1, -0.991638, 0.129051, -6.07458e-10, -0.129051, -0.991638, -4.37114e-08, -0.111672, 0.275221, -1.38018)
+surface_material_override/0 = SubResource("ShaderMaterial_50cme")
+
+[node name="Asse 5" parent="." index="5"]
+transform = Transform3D(0.054692, -0.00873985, 0.998465, -0.985956, 0.157556, 0.0553859, -0.157798, -0.987471, -4.36443e-08, -0.0827554, 0.790018, -1.39387)
+surface_material_override/0 = SubResource("ShaderMaterial_50cme")

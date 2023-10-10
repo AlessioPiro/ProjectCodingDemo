@@ -1,0 +1,12 @@
+id|for_1
+english_name|For
+italian_name|For
+price|100
+rarity|1
+english_description|This piece calls a method twice consecutively.
+italian_description|Questo pezzo ripete un metodo due volte consecutivamente.
+category|for
+piece_texts|[for (i=0; i<2; i++)]
+num_connections|1
+types|[]
+num_iterations|2

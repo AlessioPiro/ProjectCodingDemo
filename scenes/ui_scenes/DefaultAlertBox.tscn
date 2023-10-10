@@ -1,0 +1,504 @@
+[gd_scene load_steps=24 format=3 uid="uid://c0kyevrx2ho68"]
+
+[ext_resource type="Texture2D" uid="uid://5cl0ukjjwta1" path="res://assets/ui/default_alert_box/default_alert_box.png" id="1_eff22"]
+[ext_resource type="Script" path="res://scripts/DefaultAlertBox.gd" id="1_gfjj3"]
+[ext_resource type="FontFile" uid="uid://bibg0yw1eohxv" path="res://assets/fonts/fonts_files/Rubik-Medium.ttf" id="1_w2tuk"]
+[ext_resource type="FontFile" uid="uid://c2s0knweyp6g" path="res://assets/fonts/fonts_files/FugazOne-Regular.ttf" id="3_11ppu"]
+[ext_resource type="Shader" path="res://addons/scrolling_texture_shader/scrolling_texture_shader.gdshader" id="4_4e6gb"]
+[ext_resource type="Texture2D" uid="uid://drglonnug3854" path="res://assets/ui/default_alert_box/single_button.png" id="4_5w781"]
+[ext_resource type="FontFile" uid="uid://by6qmns3oh83k" path="res://assets/fonts/fonts_files/Rubik-Bold.ttf" id="5_0u6py"]
+[ext_resource type="Texture2D" uid="uid://b6elcq3tsxavd" path="res://assets/ui/default_alert_box/halftones_texture.png" id="5_wpyc4"]
+[ext_resource type="Texture2D" uid="uid://dr4ccpaq0nto3" path="res://assets/ui/default_alert_box/button_1.png" id="6_1g3my"]
+[ext_resource type="Texture2D" uid="uid://slr6rewsgjur" path="res://assets/ui/default_alert_box/button_2.png" id="7_g32bf"]
+[ext_resource type="PackedScene" uid="uid://cygdgfg1hlxrj" path="res://components/ButtonComponent.tscn" id="7_vpsjp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p0bnq"]
+size = Vector3(1.18442, 0.320197, 0.0728458)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a5gbo"]
+size = Vector3(0.702013, 0.398512, 0.0187133)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7y501"]
+size = Vector3(0.668176, 0.431585, 0.0195287)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jmuob"]
+render_priority = 2
+shader = ExtResource("4_4e6gb")
+shader_parameter/speed_and_direction = Vector2(0.2, 0.2)
+shader_parameter/scale = Vector2(5, 5)
+shader_parameter/flip = false
+shader_parameter/alpha_multiplier = 1.0
+shader_parameter/albedo = ExtResource("5_wpyc4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3eggv"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 0.835294)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_teu06"]
+render_priority = 3
+next_pass = SubResource("StandardMaterial3D_3eggv")
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 0.498039)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_immrr"]
+size = Vector2(10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vnbxq"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c2cid"]
+size = Vector3(9.86131, 9.60454, 0.0943812)
+
+[sub_resource type="Animation" id="Animation_o1ert"]
+resource_name = "pop_in"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AlertBox/TextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AlertBox/BoxSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AlertBox/TitleLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AlertBox/SingleButton/Sprite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AlertBox/SingleButton/Label3D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AlertBox/DoubleButton1/Sprite:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AlertBox/DoubleButton1/Label3D:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AlertBox/DoubleButton2/Sprite:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AlertBox/DoubleButton2/Label3D:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AlertBox/TitleLabel:outline_modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 0, 0), Color(1, 1, 0, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AlertBox:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.9, 0.9, 0.9), Vector3(1.1, 1.1, 1.1), Vector3(1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".:background_alpha")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_em0hh"]
+resource_name = "pop_out"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AlertBox/TextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AlertBox/BoxSprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AlertBox/TitleLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AlertBox/SingleButton/Sprite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AlertBox/SingleButton/Label3D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AlertBox/DoubleButton1/Sprite:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AlertBox/DoubleButton1/Label3D:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AlertBox/DoubleButton2/Sprite:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AlertBox/DoubleButton2/Label3D:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AlertBox/TitleLabel:outline_modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 0, 1), Color(1, 1, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AlertBox:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.1, 1.1, 1.1), Vector3(0.9, 0.9, 0.9)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".:background_alpha")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath(".")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"set_end_position"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jexfu"]
+_data = {
+"pop_in": SubResource("Animation_o1ert"),
+"pop_out": SubResource("Animation_em0hh")
+}
+
+[node name="DefaultAlertBox" type="Node3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+script = ExtResource("1_gfjj3")
+
+[node name="AlertBox" type="Node3D" parent="."]
+
+[node name="TextLabel" type="Label3D" parent="AlertBox"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0774318, 0.460024, 0)
+sorting_offset = 17.0
+texture_filter = 1
+render_priority = 10
+outline_render_priority = 9
+text = "Sei sicuro di voler lasciare il Luna's?"
+font = ExtResource("1_w2tuk")
+font_size = 100
+outline_size = 0
+autowrap_mode = 3
+width = 860.0
+
+[node name="BoxSprite" type="Sprite3D" parent="AlertBox"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.617823, 0)
+sorting_offset = 16.0
+render_priority = 3
+texture = ExtResource("1_eff22")
+
+[node name="TitleLabel" type="Label3D" parent="AlertBox"]
+transform = Transform3D(0.499923, 0.0087262, 0, -0.0087262, 0.499923, 0, 0, 0, 0.5, 0.10716, 1.42201, -0.0394928)
+sorting_offset = 17.0
+render_priority = 3
+outline_render_priority = 2
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(1, 1, 0, 1)
+text = "ATTENTION"
+font = ExtResource("3_11ppu")
+font_size = 160
+outline_size = 20
+uppercase = true
+
+[node name="SingleButton" type="Area3D" parent="AlertBox" groups=["single_button"]]
+
+[node name="Sprite" type="Sprite3D" parent="AlertBox/SingleButton" groups=["single_button"]]
+process_priority = 10
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0227346, 0.645143, 0.00849223)
+sorting_offset = 17.0
+render_priority = 5
+texture = ExtResource("4_5w781")
+
+[node name="Label3D" type="Label3D" parent="AlertBox/SingleButton" groups=["single_button"]]
+process_priority = 10
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.542095, 0.0239047)
+sorting_offset = 18.0
+render_priority = 6
+outline_render_priority = 5
+outline_modulate = Color(0, 0, 0, 0)
+text = "OK"
+font = ExtResource("5_0u6py")
+font_size = 35
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AlertBox/SingleButton" groups=["single_button"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.610005, 0)
+shape = SubResource("BoxShape3D_p0bnq")
+
+[node name="ButtonComponent" parent="AlertBox/SingleButton" instance=ExtResource("7_vpsjp")]
+
+[node name="DoubleButton1" type="Area3D" parent="AlertBox" groups=["double_button"]]
+
+[node name="Sprite" type="Sprite3D" parent="AlertBox/DoubleButton1" groups=["double_button"]]
+process_priority = 10
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0227346, 0.645143, 0.00849223)
+sorting_offset = 17.0
+render_priority = 5
+texture = ExtResource("6_1g3my")
+
+[node name="Label3D" type="Label3D" parent="AlertBox/DoubleButton1" groups=["double_button"]]
+process_priority = 10
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.642701, -0.528958, 0.0239047)
+sorting_offset = 18.0
+render_priority = 6
+outline_render_priority = 5
+outline_modulate = Color(0, 0, 0, 0)
+text = "OK"
+font = ExtResource("5_0u6py")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AlertBox/DoubleButton1" groups=["double_button"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.689999, -0.514794, 0.00959007)
+shape = SubResource("BoxShape3D_a5gbo")
+
+[node name="ButtonComponent" parent="AlertBox/DoubleButton1" instance=ExtResource("7_vpsjp")]
+
+[node name="DoubleButton2" type="Area3D" parent="AlertBox" groups=["double_button"]]
+
+[node name="Sprite" type="Sprite3D" parent="AlertBox/DoubleButton2" groups=["double_button"]]
+process_priority = 10
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.0227346, 0.645143, 0.00849223)
+sorting_offset = 17.0
+render_priority = 5
+texture = ExtResource("7_g32bf")
+
+[node name="Label3D" type="Label3D" parent="AlertBox/DoubleButton2" groups=["double_button"]]
+process_priority = 10
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.631469, -0.557701, 0.0239047)
+sorting_offset = 18.0
+render_priority = 6
+outline_render_priority = 5
+outline_modulate = Color(0, 0, 0, 0)
+text = "OK"
+font = ExtResource("5_0u6py")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AlertBox/DoubleButton2" groups=["double_button"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.705327, -0.514794, 0.022727)
+shape = SubResource("BoxShape3D_7y501")
+
+[node name="ButtonComponent" parent="AlertBox/DoubleButton2" instance=ExtResource("7_vpsjp")]
+
+[node name="Background" type="Area3D" parent="." groups=["background"]]
+process_priority = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Background" groups=["background"]]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.216847, -0.0700607)
+sorting_offset = 15.0
+material_override = SubResource("ShaderMaterial_jmuob")
+material_overlay = SubResource("StandardMaterial3D_teu06")
+mesh = SubResource("PlaneMesh_immrr")
+surface_material_override/0 = SubResource("StandardMaterial3D_vnbxq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background" groups=["background"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.204755, -0.129125)
+shape = SubResource("BoxShape3D_c2cid")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jexfu")
+}

@@ -1,0 +1,12 @@
+id|else_if_grass_normal
+english_name|Else If (Grass/Normal)
+italian_name|Else If (Erba/Normale)
+price|200
+rarity|2
+english_description|This piece selects a method based on whether the enemy is of the Grass, Normal, or other type.
+italian_description|Questo pezzo seleziona un metodo in base a se il nemico sia di tipo Erba, Normale o altro.
+category|else_if
+piece_texts|[if (enemy.type == grass),else if (enemy.type == normal),else]
+num_connections|3
+types|[grass,normal]
+num_iterations|0

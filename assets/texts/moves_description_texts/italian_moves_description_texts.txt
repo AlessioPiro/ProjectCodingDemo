@@ -1,0 +1,7 @@
+first_phrase|invocando questo metodo
+if_phrase|se il nemico è di tipo {type}
+else_phrase|altrimenti
+then_phrase|usi "{class_title}" {times}
+then_nothing_phrase|non succede nulla
+singular_time|volta
+multiple_times|volte

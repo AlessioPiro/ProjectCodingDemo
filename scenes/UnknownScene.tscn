@@ -1,0 +1,298 @@
+[gd_scene load_steps=19 format=3 uid="uid://cjrh11qgmwchu"]
+
+[ext_resource type="Shader" path="res://addons/scrolling_texture_2d/scrolling_texture_2d.gdshader" id="1_ds725"]
+[ext_resource type="Script" path="res://scripts/UnknownScene.gd" id="1_x7vpn"]
+[ext_resource type="Texture2D" uid="uid://b6elcq3tsxavd" path="res://assets/ui/default_alert_box/halftones_texture.png" id="2_sa3uv"]
+[ext_resource type="Texture2D" uid="uid://chw2fhr61aj2a" path="res://assets/ui/general_menu_ui_elements/text_box.png" id="3_eyoj4"]
+[ext_resource type="Texture2D" uid="uid://cx2hhcmhxc14h" path="res://assets/icons/map_unknown_icon.png" id="3_r6uq2"]
+[ext_resource type="Texture2D" uid="uid://dwitwh2mc7oe7" path="res://assets/ui/general_menu_ui_elements/y_b_button.png" id="4_5xmfw"]
+[ext_resource type="Texture2D" uid="uid://c47y1ht4rgocf" path="res://assets/ui/general_menu_ui_elements/double_button_1.png" id="4_7quqb"]
+[ext_resource type="FontFile" uid="uid://by6qmns3oh83k" path="res://assets/fonts/fonts_files/Rubik-Bold.ttf" id="4_hk0ax"]
+[ext_resource type="Texture2D" uid="uid://de8my0kafq0lf" path="res://assets/ui/general_menu_ui_elements/double_button_2.png" id="5_y02fu"]
+[ext_resource type="Texture2D" uid="uid://brura8lq3agdx" path="res://assets/ui/general_menu_ui_elements/double_button_1_pressed.png" id="8_5c8v3"]
+[ext_resource type="Texture2D" uid="uid://c1nwq68yxemfx" path="res://assets/ui/general_menu_ui_elements/double_button_2_pressed.png" id="10_7sb6d"]
+[ext_resource type="PackedScene" uid="uid://casltfd6o3f3u" path="res://scenes/ui_scenes/StatusBar.tscn" id="12_olln5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lknyi"]
+shader = ExtResource("1_ds725")
+shader_parameter/direction = Vector2(1, 0.5)
+shader_parameter/speed_scale = 0.08
+
+[sub_resource type="LabelSettings" id="LabelSettings_fqt7x"]
+font = ExtResource("4_hk0ax")
+font_size = 50
+
+[sub_resource type="FontVariation" id="FontVariation_lsduv"]
+base_font = ExtResource("4_hk0ax")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s36h5"]
+atlas = ExtResource("4_5xmfw")
+region = Rect2(0, 0, 520, 432)
+
+[sub_resource type="Animation" id="Animation_ew78g"]
+resource_name = "on_positive_response"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CenterContainer/VBoxContainer/DoubleButtonsContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CenterContainer/VBoxContainer/SingleButtonContainer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"update_text_box_on_answer"
+}, {
+"args": [],
+"method": &"activate_effects"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6kyfe"]
+_data = {
+"on_positive_response": SubResource("Animation_ew78g")
+}
+
+[node name="UnknownScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x7vpn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_lknyi")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sa3uv")
+stretch_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = ExtResource("3_eyoj4")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="MainText" type="Label" parent="CenterContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+text = "Domanda: Testo Principale"
+label_settings = SubResource("LabelSettings_fqt7x")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="SpacePanel1" type="Panel" parent="CenterContainer/VBoxContainer2"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+
+[node name="RewardText" type="RichTextLabel" parent="CenterContainer/VBoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+theme_override_fonts/normal_font = SubResource("FontVariation_lsduv")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Reward"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="SpacePanel2" type="Panel" parent="CenterContainer/VBoxContainer2"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(50, 100)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_r6uq2")
+stretch_mode = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="DoubleButtonsContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Answer1Button" type="TextureButton" parent="CenterContainer/VBoxContainer/DoubleButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_7quqb")
+texture_pressed = ExtResource("8_5c8v3")
+
+[node name="Answer1" type="Label" parent="CenterContainer/VBoxContainer/DoubleButtonsContainer/Answer1Button"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -378.0
+offset_top = -233.0
+offset_right = 322.0
+offset_bottom = 267.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Risposta 1"
+label_settings = SubResource("LabelSettings_fqt7x")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Answer2Button" type="TextureButton" parent="CenterContainer/VBoxContainer/DoubleButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_y02fu")
+texture_pressed = ExtResource("10_7sb6d")
+
+[node name="Answer2" type="Label" parent="CenterContainer/VBoxContainer/DoubleButtonsContainer/Answer2Button"]
+custom_minimum_size = Vector2(700, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -333.0
+offset_top = -233.0
+offset_right = 367.0
+offset_bottom = 267.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Risposta 2"
+label_settings = SubResource("LabelSettings_fqt7x")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="SingleButtonContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="QuitButton" type="TextureButton" parent="CenterContainer/VBoxContainer/SingleButtonContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_s36h5")
+
+[node name="Answer" type="Label" parent="CenterContainer/VBoxContainer/SingleButtonContainer/QuitButton"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -378.0
+offset_top = -233.0
+offset_right = 322.0
+offset_bottom = 267.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ok"
+label_settings = SubResource("LabelSettings_fqt7x")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TransitionColorRect" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../TransitionColorRect")
+libraries = {
+"": SubResource("AnimationLibrary_6kyfe")
+}
+
+[node name="StatusBar" parent="." instance=ExtResource("12_olln5")]
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/DoubleButtonsContainer/Answer1Button" to="." method="_on_answer_1_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/DoubleButtonsContainer/Answer2Button" to="." method="_on_answer_2_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/SingleButtonContainer/QuitButton" to="." method="_on_quit_button_pressed"]

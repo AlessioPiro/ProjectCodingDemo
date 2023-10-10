@@ -1,0 +1,12 @@
+id|if_fire
+english_name|If (Fire)
+italian_name|If (Fuoco)
+price|70
+rarity|1
+english_description|This piece selects a method based on whether the enemy is of the Fire type or not.
+italian_description|Questo pezzo seleziona un metodo in base a se il nemico sia di tipo Fuoco o meno.
+category|if
+piece_texts|[if (enemy.type == fire),else]
+num_connections|2
+types|[fire]
+num_iterations|0

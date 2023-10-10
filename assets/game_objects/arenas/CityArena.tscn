@@ -1,0 +1,416 @@
+[gd_scene load_steps=24 format=3 uid="uid://b6v5l2cb21fdy"]
+
+[ext_resource type="PackedScene" uid="uid://co6nh7n4c801x" path="res://assets/models/arena_city/playground_arena.blend" id="1_4b8oq"]
+[ext_resource type="Texture2D" uid="uid://cq8ikwmotg8b8" path="res://assets/models/pc1_city/bubble.png" id="2_fh0x2"]
+[ext_resource type="PackedScene" uid="uid://bilrbxukhlphg" path="res://components/GlowComponent.tscn" id="3_r21qx"]
+[ext_resource type="Texture2D" uid="uid://c1iy7pf0kme28" path="res://assets/models/pc1_city/sky.jpg" id="4_yfrv2"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_dhjuv"]
+panorama = ExtResource("4_yfrv2")
+
+[sub_resource type="Sky" id="Sky_o8mx1"]
+sky_material = SubResource("PanoramaSkyMaterial_dhjuv")
+
+[sub_resource type="Environment" id="Environment_3m5xs"]
+background_mode = 2
+sky = SubResource("Sky_o8mx1")
+ambient_light_source = 2
+ambient_light_color = Color(0.701961, 0.776471, 1, 1)
+reflected_light_source = 2
+ssao_radius = 0.01
+sdfgi_bounce_feedback = 0.0
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 2.59
+glow_strength = 0.79
+glow_blend_mode = 0
+glow_map_strength = 1.0
+fog_light_color = Color(1, 1, 1, 1)
+volumetric_fog_density = 0.0155
+volumetric_fog_emission = Color(1, 1, 1, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_kco0f"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6.04673, 11.0999, -7.27869, 0, 0, 0, 0, 0, 0, -10.305, 14.2226, -7.27869),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_vtsnw"]
+resource_name = "new_animation"
+length = 12.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path3D/PathFollow3D/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4.5, 9),
+"transitions": PackedFloat32Array(1, 1.23114, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nwstg"]
+_data = {
+"new_animation": SubResource("Animation_vtsnw")
+}
+
+[sub_resource type="Curve3D" id="Curve3D_1faeq"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.04447, 32.1111, 40.589, 0, 0, 0, 0, 0, 0, -6.46291, 41.6615, 58.4283),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_1ak8f"]
+resource_name = "new_animation"
+length = 5.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path3D/PathFollow3D/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.498039)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2t0xc"]
+_data = {
+"new_animation": SubResource("Animation_1ak8f")
+}
+
+[sub_resource type="Curve3D" id="Curve3D_845ss"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 8.67909, 6.52952, 12.0816, 0, 0, 0, 0, 0, 0, -1.96252, 16.4202, 10.1202),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_moylo"]
+resource_name = "new_animation"
+length = 13.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path3D/PathFollow3D/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 7.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5bfq4"]
+_data = {
+"new_animation": SubResource("Animation_moylo")
+}
+
+[sub_resource type="Curve3D" id="Curve3D_asm68"]
+_data = {
+"points": PackedVector3Array(-0.000120163, 0.425797, -1.1515, 0, 0, 0, 7.938, 47.8755, 129.449, 0, 0, 0, 0, 0, 0, -48.4648, 62.5985, 124.586),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_32jj5"]
+resource_name = "new_animation"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path3D/PathFollow3D/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10, 20),
+"transitions": PackedFloat32Array(-2, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.6), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7chde"]
+_data = {
+"new_animation": SubResource("Animation_32jj5")
+}
+
+[sub_resource type="Curve3D" id="Curve3D_n15pu"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 8.34827, 3.16483, 25.1464, 0, 0, 0, 0, 0, 0, -13.8393, 4.48981, 22.3456),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_pgql2"]
+resource_name = "new_animation"
+length = 13.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 13),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path3D/PathFollow3D/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 6.1, 13),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.721569), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_47tgl"]
+_data = {
+"new_animation": SubResource("Animation_pgql2")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_svesf"]
+size = Vector3(14.597, 5.62034, 0.109713)
+
+[node name="CityArena" type="Node3D"]
+
+[node name="playground_arena" parent="." instance=ExtResource("1_4b8oq")]
+transform = Transform3D(-0.301, 0, -4.54497e-08, 0, 0.301, 0, 4.54497e-08, 0, -0.301, 0.0066933, 1.19209e-07, -2.19089)
+
+[node name="BubbleSun" type="Sprite3D" parent="playground_arena"]
+transform = Transform3D(-16.6113, 0, 2.50824e-06, 0, 16.6113, 0, -2.50824e-06, 0, -16.6113, 1.83174, 50.5993, 158.279)
+double_sided = false
+texture_filter = 1
+texture = ExtResource("2_fh0x2")
+
+[node name="GlowComponent" parent="playground_arena/BubbleSun" instance=ExtResource("3_r21qx")]
+transform = Transform3D(3, -4.47036e-08, 9.84723e-09, 4.47036e-08, 3, 8.54382e-09, -9.84723e-09, -8.54382e-09, 3, 0.0124664, 0.0958476, -0.196152)
+glow_texture = ExtResource("2_fh0x2")
+modulate = Color(1, 1, 1, 1)
+min_intensity = 0.0
+glow_speed = 0.6
+visible_on_start = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="playground_arena"]
+transform = Transform3D(1.6543, 2.81952, -0.592471, 1.88605, -0.543353, 2.68048, 2.17796, -1.67108, -1.87121, 18.4397, 155.394, -20.2186)
+light_energy = 0.216
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="playground_arena"]
+environment = SubResource("Environment_3m5xs")
+
+[node name="Bubbles" type="Node3D" parent="playground_arena"]
+
+[node name="Bubble" type="Node3D" parent="playground_arena/Bubbles"]
+
+[node name="Path3D" type="Path3D" parent="playground_arena/Bubbles/Bubble"]
+curve = SubResource("Curve3D_kco0f")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="playground_arena/Bubbles/Bubble/Path3D"]
+transform = Transform3D(2.73099e-08, -0.187562, 0.982227, -8.58627e-08, -0.982152, -0.187577, 0.999904, -7.92155e-08, -4.29345e-08, -4.52103, 13.118, -7.27869)
+progress = 10.7586
+
+[node name="Sprite" type="Sprite3D" parent="playground_arena/Bubbles/Bubble/Path3D/PathFollow3D"]
+modulate = Color(1, 1, 1, 0.896141)
+billboard = 1
+texture = ExtResource("2_fh0x2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="playground_arena/Bubbles/Bubble"]
+autoplay = "new_animation"
+libraries = {
+"": SubResource("AnimationLibrary_nwstg")
+}
+
+[node name="Bubble2" type="Node3D" parent="playground_arena/Bubbles"]
+
+[node name="Path3D" type="Path3D" parent="playground_arena/Bubbles/Bubble2"]
+curve = SubResource("Curve3D_1faeq")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="playground_arena/Bubbles/Bubble2/Path3D"]
+transform = Transform3D(0.861645, 0.212581, 0.46084, 0.42235, -0.803845, -0.418868, 0.281402, 0.555555, -0.782409, 3.61201, 32.5042, 41.3232)
+progress = 0.939126
+
+[node name="Sprite" type="Sprite3D" parent="playground_arena/Bubbles/Bubble2/Path3D/PathFollow3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+modulate = Color(1, 1, 1, 0.927965)
+billboard = 1
+texture = ExtResource("2_fh0x2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="playground_arena/Bubbles/Bubble2"]
+autoplay = "new_animation"
+libraries = {
+"": SubResource("AnimationLibrary_2t0xc")
+}
+
+[node name="Bubble3" type="Node3D" parent="playground_arena/Bubbles"]
+
+[node name="Path3D" type="Path3D" parent="playground_arena/Bubbles/Bubble3"]
+curve = SubResource("Curve3D_845ss")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="playground_arena/Bubbles/Bubble3/Path3D"]
+transform = Transform3D(-0.0557169, 0.685471, 0.725885, -0.251548, 0.693851, -0.674663, -0.966178, -0.220176, 0.133791, 5.84021, 9.16808, 11.5584)
+progress = 3.91109
+
+[node name="Sprite" type="Sprite3D" parent="playground_arena/Bubbles/Bubble3/Path3D/PathFollow3D"]
+modulate = Color(1, 1, 1, 0)
+billboard = 1
+texture = ExtResource("2_fh0x2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="playground_arena/Bubbles/Bubble3"]
+autoplay = "new_animation"
+libraries = {
+"": SubResource("AnimationLibrary_5bfq4")
+}
+
+[node name="Bubble4" type="Node3D" parent="playground_arena/Bubbles"]
+
+[node name="Path3D" type="Path3D" parent="playground_arena/Bubbles/Bubble4"]
+curve = SubResource("Curve3D_asm68")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="playground_arena/Bubbles/Bubble4/Path3D"]
+transform = Transform3D(-0.0907215, -0.249033, 0.964076, -0.0186887, -0.967523, -0.251656, 0.995638, -0.0408526, 0.0831218, -42.3822, 61.0107, 125.11)
+progress = 52.1869
+
+[node name="Sprite" type="Sprite3D" parent="playground_arena/Bubbles/Bubble4/Path3D/PathFollow3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+modulate = Color(1, 1, 1, 0.278654)
+billboard = 1
+texture = ExtResource("2_fh0x2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="playground_arena/Bubbles/Bubble4"]
+autoplay = "new_animation"
+libraries = {
+"": SubResource("AnimationLibrary_7chde")
+}
+
+[node name="Bubble5" type="Node3D" parent="playground_arena/Bubbles"]
+
+[node name="Path3D" type="Path3D" parent="playground_arena/Bubbles/Bubble5"]
+curve = SubResource("Curve3D_n15pu")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="playground_arena/Bubbles/Bubble5/Path3D"]
+transform = Transform3D(0.12424, 0.0606073, 0.990331, -0.0155876, 0.9978, -0.0591398, -0.991583, -0.00809155, 0.125012, -13.7465, 4.48427, 22.3573)
+progress = 22.3022
+
+[node name="Sprite" type="Sprite3D" parent="playground_arena/Bubbles/Bubble5/Path3D/PathFollow3D"]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
+modulate = Color(1, 1, 1, 0.0728864)
+billboard = 1
+texture = ExtResource("2_fh0x2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="playground_arena/Bubbles/Bubble5"]
+autoplay = "new_animation"
+libraries = {
+"": SubResource("AnimationLibrary_47tgl")
+}
+
+[node name="Lights" type="Node3D" parent="playground_arena"]
+transform = Transform3D(-16.6113, 0, 2.50824e-06, 0, 16.6113, 0, -2.50824e-06, 0, -16.6113, 1.83174, 57.6791, 158.279)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="playground_arena/Lights"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, -0.198134, -2.71525, 10.5323)
+light_color = Color(0.929412, 0.960784, 1, 1)
+light_energy = 1.219
+spot_attenuation = 0.0426888
+spot_angle = 42.74
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="playground_arena/Lights"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 0.352004, -2.71525, 10.5323)
+light_color = Color(0.929412, 0.960784, 1, 1)
+light_energy = 1.219
+spot_attenuation = 0.0426888
+spot_angle = 42.74
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="playground_arena/Lights"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, -0.198134, -2.71525, 9.47515)
+light_color = Color(0.929412, 0.960784, 1, 1)
+light_energy = 1.219
+spot_attenuation = 0.0426888
+spot_angle = 42.74
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="playground_arena/Lights"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 0.352004, -2.71525, 9.47515)
+light_color = Color(0.929412, 0.960784, 1, 1)
+light_energy = 1.219
+spot_attenuation = 0.0426888
+spot_angle = 42.74
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="Wall" type="Area3D" parent="Walls" groups=["invisible_wall"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.93627, -8.84836)
+shape = SubResource("BoxShape3D_svesf")
+
+[node name="Wall2" type="Area3D" parent="Walls" groups=["invisible_wall"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.5473)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.93627, -8.84836)
+shape = SubResource("BoxShape3D_svesf")

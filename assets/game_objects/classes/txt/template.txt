@@ -1,0 +1,9 @@
+id;
+english_name;
+italian_name;
+english_description;
+italian_description;
+time;
+english_method;
+italian_method;
+type;

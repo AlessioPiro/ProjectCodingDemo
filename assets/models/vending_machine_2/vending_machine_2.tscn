@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://g1cthuuccwhk"]
+
+[ext_resource type="PackedScene" uid="uid://cukyq80xuo1u1" path="res://assets/models/vending_machine_2/vending_machine_2.glb" id="1_vi4v0"]
+[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="2_fja0m"]
+[ext_resource type="Texture2D" uid="uid://dhpqpos4m710m" path="res://assets/models/vending_machine_2/vending_machine_2_vending_machine_2_texture.png" id="3_c1vut"]
+[ext_resource type="Texture2D" uid="uid://bnlhmoum0y1uu" path="res://assets/models/vending_machine_2/vending_machine_2_glass_texture.png" id="4_fejh8"]
+[ext_resource type="Texture2D" uid="uid://hqikfg3ah0od" path="res://assets/models/vending_machine_2/vending_machine_2_inside_texture.png" id="5_0crtb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_10woo"]
+render_priority = 0
+shader = ExtResource("2_fja0m")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = false
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_c1vut")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3b4kr"]
+transparency = 1
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(1, 1, 1, 0.423529)
+albedo_texture = ExtResource("4_fejh8")
+metallic = 0.29
+metallic_specular = 0.51
+roughness = 0.41
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_al8un"]
+render_priority = 0
+shader = ExtResource("2_fja0m")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = false
+shader_parameter/use_specular = false
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("5_0crtb")
+
+[node name="vending_machine_2" instance=ExtResource("1_vi4v0")]
+
+[node name="Vending Machine" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_10woo")
+
+[node name="Glass" parent="Vending Machine" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_3b4kr")
+
+[node name="Inside" parent="Vending Machine" index="1"]
+surface_material_override/0 = SubResource("ShaderMaterial_al8un")
+
+[node name="Empty" parent="." index="1"]
+transform = Transform3D(0, 1, -2.98023e-08, 2.98023e-08, 0, -1, -1, -2.98023e-08, 0, 0.0714402, 2.2749, 0)
+visible = false

@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://cp2d5unk26b7x"]
+
+[ext_resource type="Script" path="res://scripts/PC2StoredClass.gd" id="1_dqh2q"]
+[ext_resource type="Texture2D" uid="uid://b5yr08jh6rbp7" path="res://assets/icons/class_icons/class_icon.png" id="2_qvauo"]
+[ext_resource type="Texture2D" uid="uid://pqelspeplrkb" path="res://assets/icons/class_icons/band_aid_icon.png" id="3_pknu1"]
+[ext_resource type="Texture2D" uid="uid://ddutyemcb85jr" path="res://assets/icons/class_icons/class_background.png" id="4_251cl"]
+[ext_resource type="PackedScene" uid="uid://bilrbxukhlphg" path="res://components/GlowComponent.tscn" id="4_h6bg6"]
+[ext_resource type="PackedScene" uid="uid://b23b1cjdoltf2" path="res://components/DragAndDropObjectComponent.tscn" id="5_68fik"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oae3b"]
+size = Vector3(2.3146, 2.31988, 0.164681)
+
+[node name="PC2ClassPiece" type="Area3D" groups=["pc2_stored_class"]]
+script = ExtResource("1_dqh2q")
+
+[node name="ClassFront" type="Sprite3D" parent="."]
+sorting_offset = 10.0
+modulate = Color(0.839216, 0.305882, 0.462745, 1)
+texture = ExtResource("2_qvauo")
+
+[node name="ClassIcon" type="Sprite3D" parent="."]
+sorting_offset = 9.0
+texture = ExtResource("3_pknu1")
+
+[node name="ClassBackground" type="Sprite3D" parent="."]
+sorting_offset = 8.0
+modulate = Color(0.913725, 0.478431, 0.635294, 1)
+texture = ExtResource("4_251cl")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00360344, 0.000582207, 0)
+shape = SubResource("BoxShape3D_oae3b")
+
+[node name="GlowComponent" parent="." instance=ExtResource("4_h6bg6")]
+transform = Transform3D(1, -2.98023e-08, 7.72118e-10, 1.49012e-08, 1, 4.41422e-09, -3.28241e-09, -2.84794e-09, 1, 0, -0.713946, 0)
+modulate = Color(1, 1, 1, 1)
+
+[node name="DragAndDropObjectComponent" parent="." instance=ExtResource("5_68fik")]
+press_animation = "darken"
+drag_animation = "enlarge_and_glow"
+blocked_axis = "x"

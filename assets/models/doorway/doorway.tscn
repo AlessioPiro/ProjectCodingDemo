@@ -1,0 +1,92 @@
+[gd_scene load_steps=11 format=3 uid="uid://yg0iti1dbwa1"]
+
+[ext_resource type="PackedScene" uid="uid://dqq7jh3ubxrqo" path="res://assets/models/doorway/doorway.glb" id="1_5g3uh"]
+[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="2_uk0ln"]
+[ext_resource type="Texture2D" uid="uid://ctavw1emlv54t" path="res://assets/models/doorway/doorway_door_texture.png" id="3_1f0nv"]
+[ext_resource type="Texture2D" uid="uid://0ag37qfc1h8a" path="res://assets/models/doorway/doorway_padlock_texture.png" id="4_cacoc"]
+[ext_resource type="Texture2D" uid="uid://cew1s0y65q6bi" path="res://assets/models/doorway/doorway_handle.png" id="5_ud6f3"]
+[ext_resource type="Texture2D" uid="uid://b0gh8qejtk8ed" path="res://assets/models/doorway/doorway_glass_texture.png" id="6_ah33s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wjdsa"]
+render_priority = 0
+shader = ExtResource("2_uk0ln")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_1f0nv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4bck8"]
+render_priority = 0
+shader = ExtResource("2_uk0ln")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("4_cacoc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pfemt"]
+render_priority = 0
+shader = ExtResource("2_uk0ln")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("5_ud6f3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y6x83"]
+transparency = 1
+blend_mode = 1
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(1, 0.960784, 1, 0.192157)
+albedo_texture = ExtResource("6_ah33s")
+metallic_specular = 0.0
+roughness = 0.0
+
+[node name="doorway" instance=ExtResource("1_5g3uh")]
+
+[node name="Portone" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_wjdsa")
+
+[node name="Lucchetto" parent="Portone" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_4bck8")
+
+[node name="Maniglia" parent="Portone" index="2"]
+surface_material_override/0 = SubResource("ShaderMaterial_pfemt")
+
+[node name="Vetro Portone" parent="Portone" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_y6x83")

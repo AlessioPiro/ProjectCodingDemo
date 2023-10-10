@@ -1,0 +1,12 @@
+id|switch
+english_name|Switch
+italian_name|Switch
+price|300
+rarity|3
+english_description|This piece selects a method based on the enemy's type.
+italian_description|Questo pezzo seleziona un metodo in base al tipo del nemico.
+category|switch
+piece_texts|[switch (enemy.type){, break; case fire:, break; case water:, break; case grass:, break; default:, }]
+num_connections|4
+types|[fire,water,grass]
+num_iterations|0

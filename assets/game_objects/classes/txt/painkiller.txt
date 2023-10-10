@@ -1,0 +1,9 @@
+id;painkiller
+english_name;Painkiller
+italian_name;Antidolorifico
+english_description;It restores a high amount of your HP.
+italian_description;Rigenera una grande quantità di HP.
+time;40
+english_method;take
+italian_method;assumi
+type;healing

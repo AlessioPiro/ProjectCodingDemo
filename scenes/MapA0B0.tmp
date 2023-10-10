@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwxvvel5b1t6l"]
+
+[ext_resource type="PackedScene" uid="uid://dois58whutroe" path="res://scenes/assets_map/MapNode.tscn" id="1_3tugo"]
+[ext_resource type="Script" path="res://scripts/MapScene.gd" id="1_rsfwt"]
+[ext_resource type="PackedScene" uid="uid://1r6pu6q3qsmk" path="res://scenes/assets_map/MapPath.tscn" id="3_3rduc"]
+[ext_resource type="PackedScene" uid="uid://b6y7enddjvekm" path="res://components/InputComponent.tscn" id="4_qemxq"]
+
+[node name="MapScene" type="Node3D"]
+script = ExtResource("1_rsfwt")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.999998, -0.00214372, 0.000113917, -0.00196472, 0.9353, 0.35385, -0.000865103, 0.353849, -0.935302, 0, 7.88, -10.283)
+current = true
+fov = 80.5
+
+[node name="TestingMapNode" parent="." instance=ExtResource("1_3tugo")]
+visible = false
+
+[node name="TestingMapPath" parent="." instance=ExtResource("3_3rduc")]
+transform = Transform3D(0.2, 0, 0, 0, 0.05, 0, 0, 0, 1, 0, -0.08, 0)
+visible = false
+
+[node name="InputComponent" parent="." instance=ExtResource("4_qemxq")]
+
+[connection signal="swipe" from="InputComponent" to="." method="_on_input_component_swipe"]

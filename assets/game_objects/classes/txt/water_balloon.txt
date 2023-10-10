@@ -1,0 +1,9 @@
+id;water_balloon
+english_name;Water Balloon
+italian_name;Gavettone
+english_description;It deals moderate Water damage to the enemy.
+italian_description;Infligge danni moderati di tipo Acqua al nemico.
+time;10
+english_method;throw
+italian_method;lancia
+type;water

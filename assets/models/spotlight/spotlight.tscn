@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bc8aqcahm45hv"]
+
+[ext_resource type="PackedScene" uid="uid://cdb2vtus8dq6a" path="res://assets/models/spotlight/spotlight.glb" id="1_6rvkj"]
+[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="2_bfflm"]
+[ext_resource type="Texture2D" uid="uid://bhtk8ciw13bra" path="res://assets/models/spotlight/spotlight_spotlight_texture.png" id="3_xww6m"]
+[ext_resource type="Texture2D" uid="uid://cqdnqn3nxnggl" path="res://assets/models/spotlight/light_texture.png" id="4_1sl6c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xttla"]
+render_priority = 0
+shader = ExtResource("2_bfflm")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = false
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = true
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_xww6m")
+
+[node name="spotlight" instance=ExtResource("1_6rvkj")]
+
+[node name="Spotlight" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_xttla")
+
+[node name="Sprite3D" type="Sprite3D" parent="." index="1"]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, -0.136283, 0)
+billboard = 1
+double_sided = false
+texture = ExtResource("4_1sl6c")

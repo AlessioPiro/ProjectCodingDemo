@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cio6eajyeco1k"]
+
+[ext_resource type="Script" path="res://scripts/LifeCicleManagerComponent.gd" id="1_ey1gq"]
+
+[node name="LifeCicleManagerComponent" type="Node2D"]
+script = ExtResource("1_ey1gq")

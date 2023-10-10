@@ -1,0 +1,9 @@
+id;gauze
+english_name;Gauze
+italian_name;Garza
+english_description;It restores a moderate amount of your HP.
+italian_description;Rigenera una moderata quantità di HP.
+time;25
+english_method;
+italian_method;
+type;healing

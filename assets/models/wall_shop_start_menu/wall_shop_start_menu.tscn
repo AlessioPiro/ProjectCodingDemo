@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://cui3wt2vn625g"]
+
+[ext_resource type="PackedScene" path="res://assets/models/wall_shop_start_menu/wall_shop_start_menu.glb" id="1_rn7vo"]
+[ext_resource type="Texture2D" uid="uid://dky5cua5lq7hs" path="res://assets/models/wall_shop_start_menu/wall_shop_start_menu_luna_s_texture.png" id="2_rn3dn"]
+[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="3_pd5jr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qgnrd"]
+render_priority = 10
+shader = ExtResource("3_pd5jr")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = false
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("2_rn3dn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ipv0"]
+next_pass = SubResource("ShaderMaterial_qgnrd")
+cull_mode = 1
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+albedo_texture = ExtResource("2_rn3dn")
+metallic_specular = 0.0
+roughness = 0.0
+
+[node name="wall_shop_start_menu" instance=ExtResource("1_rn7vo")]
+
+[node name="Replica Muro" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2789, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_6ipv0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.845785, 1.84674, 0)

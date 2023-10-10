@@ -1,0 +1,9 @@
+id;bowling_ball
+english_name;Bowling Ball
+italian_name;Palla da Bowling
+english_description;Strike the enemy! This heavy ball deals high Normal damage to the enemy.
+italian_description;Fai strike in faccia al nemico! Questa pesantissima palla infligge grandi danni di tipo Normale al nemico.
+time;20
+english_method;throw
+italian_method;lancia
+type;normal

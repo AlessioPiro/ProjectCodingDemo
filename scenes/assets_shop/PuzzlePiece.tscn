@@ -1,0 +1,149 @@
+[gd_scene load_steps=12 format=3 uid="uid://cjcu3kdl81bx1"]
+
+[ext_resource type="Script" path="res://scripts/PuzzlePiece.gd" id="1_n0g5x"]
+[ext_resource type="Texture2D" uid="uid://rm3u1n4vyvp8" path="res://assets/ui/lunas_pc2_menu/pc2_puzzle_pieces_sprites/hook_hole_piece.png" id="1_y1vsu"]
+[ext_resource type="Texture2D" uid="uid://13fldny6awdb" path="res://assets/ui/lunas_pc2_menu/pc2_puzzle_pieces_sprites/hole_piece.png" id="2_0wg5v"]
+[ext_resource type="Texture2D" uid="uid://77op2i2oympw" path="res://assets/icons/code_piece_icons/for_1_icon.png" id="3_2jnmr"]
+[ext_resource type="FontFile" uid="uid://1o3ao46od32h" path="res://assets/fonts/fonts_files/VCR_OSD_MONO_1.001.ttf" id="4_cnmva"]
+[ext_resource type="Texture2D" uid="uid://crebkl2bmr3rx" path="res://assets/icons/type_icons/fire_icon.png" id="4_tldvk"]
+[ext_resource type="PackedScene" uid="uid://dsmebw5m4bnwu" path="res://scenes/assets_shop/PuzzleSlot.tscn" id="6_ixa3t"]
+[ext_resource type="PackedScene" uid="uid://b23b1cjdoltf2" path="res://components/DragAndDropObjectComponent.tscn" id="8_pogpr"]
+[ext_resource type="PackedScene" uid="uid://bilrbxukhlphg" path="res://components/GlowComponent.tscn" id="9_xve3k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rjyym"]
+resource_local_to_scene = true
+size = Vector3(3.8, 3.8, 0.15)
+
+[sub_resource type="FontVariation" id="FontVariation_g1ry4"]
+base_font = ExtResource("4_cnmva")
+
+[node name="PuzzlePiece" type="Area3D" groups=["pc2_puzzle_piece"]]
+script = ExtResource("1_n0g5x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.55, 0)
+shape = SubResource("BoxShape3D_rjyym")
+
+[node name="SxPiece" type="Node3D" parent="." groups=["sx_piece"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.84, 0, 0)
+visible = false
+
+[node name="PuzzlePieceBGSprite" type="Sprite3D" parent="SxPiece"]
+sorting_offset = 4.0
+texture_filter = 2
+texture = ExtResource("2_0wg5v")
+
+[node name="ObjectSprite" type="Sprite3D" parent="SxPiece"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.457094, 0)
+visible = false
+sorting_offset = 6.0
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("3_2jnmr")
+
+[node name="Label3D" type="Label3D" parent="SxPiece"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.904539, 0)
+sorting_offset = 5.0
+texture_filter = 2
+modulate = Color(0, 0, 0, 1)
+text = "(enemy.type == fire)"
+font = SubResource("FontVariation_g1ry4")
+font_size = 75
+outline_size = 0
+autowrap_mode = 3
+width = 700.0
+
+[node name="TypeSprite" type="Sprite3D" parent="SxPiece"]
+transform = Transform3D(0.539652, -0.262251, 0, 0.262251, 0.539652, 0, 0, 0, 0.6, -0.628729, 0, 0)
+visible = false
+sorting_offset = 5.0
+modulate = Color(1, 0, 0, 0.839216)
+texture = ExtResource("4_tldvk")
+
+[node name="PuzzleSlot" parent="SxPiece" instance=ExtResource("6_ixa3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.84275, 0)
+
+[node name="CentralPiece" type="Node3D" parent="." groups=["c_piece"]]
+
+[node name="PuzzlePieceBGSprite" type="Sprite3D" parent="CentralPiece"]
+sorting_offset = 4.0
+texture_filter = 2
+texture = ExtResource("1_y1vsu")
+
+[node name="ObjectSprite" type="Sprite3D" parent="CentralPiece"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.457094, 0)
+sorting_offset = 6.0
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("3_2jnmr")
+
+[node name="Label3D" type="Label3D" parent="CentralPiece"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.904539, 0)
+sorting_offset = 5.0
+texture_filter = 2
+modulate = Color(0, 0, 0, 1)
+text = "(enemy.type == fire)"
+font = SubResource("FontVariation_g1ry4")
+font_size = 75
+outline_size = 0
+autowrap_mode = 3
+width = 700.0
+
+[node name="TypeSprite" type="Sprite3D" parent="CentralPiece"]
+transform = Transform3D(0.539652, -0.262251, 0, 0.262251, 0.539652, 0, 0, 0, 0.6, -0.628729, 0, 0)
+visible = false
+sorting_offset = 5.0
+modulate = Color(1, 0, 0, 0.839216)
+texture = ExtResource("4_tldvk")
+
+[node name="PuzzleSlot" parent="CentralPiece" instance=ExtResource("6_ixa3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.84275, 0)
+
+[node name="DxPiece" type="Node3D" parent="." groups=["dx_piece"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.84, 0, 0)
+visible = false
+
+[node name="PuzzlePieceBGSprite" type="Sprite3D" parent="DxPiece"]
+sorting_offset = 4.0
+texture_filter = 2
+texture = ExtResource("2_0wg5v")
+
+[node name="ObjectSprite" type="Sprite3D" parent="DxPiece"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.457094, 0)
+visible = false
+sorting_offset = 6.0
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("3_2jnmr")
+
+[node name="Label3D" type="Label3D" parent="DxPiece"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.904539, 0)
+sorting_offset = 5.0
+texture_filter = 2
+modulate = Color(0, 0, 0, 1)
+text = "(enemy.type == fire)"
+font = SubResource("FontVariation_g1ry4")
+font_size = 75
+outline_size = 0
+autowrap_mode = 3
+width = 700.0
+
+[node name="TypeSprite" type="Sprite3D" parent="DxPiece"]
+transform = Transform3D(0.539652, -0.262251, 0, 0.262251, 0.539652, 0, 0, 0, 0.6, -0.628729, 0, 0)
+visible = false
+sorting_offset = 5.0
+modulate = Color(1, 0, 0, 0.839216)
+texture = ExtResource("4_tldvk")
+
+[node name="PuzzleSlot" parent="DxPiece" instance=ExtResource("6_ixa3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.84275, 0)
+
+[node name="DragAndDropObjectComponent" parent="." instance=ExtResource("8_pogpr")]
+press_animation = "darken"
+drag_animation = "enlarge_and_glow"
+blocked_axis = "x"
+animation_affects_children = true
+
+[node name="GlowComponent" parent="." instance=ExtResource("9_xve3k")]
+transform = Transform3D(1, -2.98023e-08, 7.72118e-10, 1.49012e-08, 1, 4.41422e-09, -3.28241e-09, -2.84794e-09, 1, 0.0124664, -0.20652, -0.196152)
+modulate = Color(1, 1, 1, 1)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -1,0 +1,9 @@
+id;watermelon
+english_name;Watermelon
+italian_name;Anguria
+english_description;It deals high Water damage to the enemy.
+italian_description;Infligge grossi danni di tipo Acqua al nemico.
+time;20
+english_method;thow
+italian_method;lancia
+type;water

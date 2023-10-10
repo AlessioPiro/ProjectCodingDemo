@@ -1,0 +1,12 @@
+id|if_grass
+english_name|If (Grass)
+italian_name|If (Erba)
+price|70
+rarity|1
+english_description|This piece selects a method based on whether the enemy is of the Grass type or not.
+italian_description|Questo pezzo seleziona un metodo in base a se il nemico sia di tipo Erba o meno.
+category|if
+piece_texts|[if (enemy.type == grass),else]
+num_connections|2
+types|[grass]
+num_iterations|0

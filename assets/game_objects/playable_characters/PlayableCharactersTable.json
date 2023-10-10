@@ -1,0 +1,14 @@
+{
+  "test_player": {
+    "english_name": "MC",
+    "italian_name": "PP",
+    "english_description": "I'm here only for testing purpose",
+    "italian_description": "Sono qui solo per il testing",
+    "type": "normal",
+    "hp": 80,
+    "atk": 75,
+    "def": 90,
+    "luk": 50,
+    "agi": 50
+  }
+}

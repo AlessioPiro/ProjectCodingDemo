@@ -1,0 +1,9 @@
+id;red_lion
+english_name;Red Lion
+italian_name;Red Lion
+english_description;Red Lion gives you fangs! It greatly increases your Attack power.
+italian_description;Red Lion ti mette le zanne! Incrementa di molto il tuo potere di Attacco.
+time;50
+english_method;savor
+italian_method;assapora
+type;support

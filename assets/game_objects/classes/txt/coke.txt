@@ -1,0 +1,9 @@
+id;coke
+english_name;Coke
+italian_name;Coca
+english_description;NOW WITHOUT SUGAR! This coke moderately increases your Attack power.
+italian_description;SENZA ZUCCHERO! Questa bevanda aumenta moderatamente il tuo potere di Attacco.
+time;30
+english_method;gulp
+italian_method;sorseggia
+type;support

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmwcn2xlil8fd"]
+
+[ext_resource type="PackedScene" uid="uid://366vgb3axuvs" path="res://assets/game_objects/battle_moves/BattleMove.tscn" id="1_e76i6"]
+[ext_resource type="PackedScene" uid="uid://d4mph4qtuqrtn" path="res://components/BattleEffect.tscn" id="2_d5ytu"]
+[ext_resource type="PackedScene" uid="uid://de7xlya8vh3gw" path="res://components/BattleEffectsActivatorComponent.tscn" id="3_u7f4b"]
+
+[node name="CokeMove" instance=ExtResource("1_e76i6")]
+class_id = "coke"
+
+[node name="BattleEffect" parent="." index="0" instance=ExtResource("2_d5ytu")]
+effect_type = "support"
+target = "self"
+buff_debuff_level = 2
+
+[node name="BattleEffectsActivatorComponent" parent="." index="1" instance=ExtResource("3_u7f4b")]

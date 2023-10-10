@@ -1,0 +1,11 @@
+id;vegan_dinner
+english_name;Vegan Dinner
+italian_name;Cena Vegana
+price;230
+rarity;3
+english_locked_description;A selection of products perfect for a vegan dinner.
+italian_locked_description;Una raccolta di prodotti perfetti per una cena vegana.
+english_unlocked_description;Un pacchetto all'insegna della dieta vegana che contiene Pomodoro, Zucca e una bottiglia d'acqua.
+italian_unlocked_description;A vegan-friendly package that includes Tomato, Pumpkin, and a water bottle.
+classes;[tomato,pumpkin]
+is_locked;true

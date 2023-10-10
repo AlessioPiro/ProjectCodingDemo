@@ -1,0 +1,12 @@
+id|if_normal
+english_name|If (Normal)
+italian_name|If (Normale)
+price|70
+rarity|1
+english_description|This piece selects a method based on whether the enemy is of the Normal type or not.
+italian_description|Questo pezzo seleziona un metodo in base a se il nemico sia di tipo Normale o meno.
+category|if
+piece_texts|[if (enemy.type == normal),else]
+num_connections|2
+types|[normal]
+num_iterations|0

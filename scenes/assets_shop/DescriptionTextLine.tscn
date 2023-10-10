@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn7yk66edg26d"]
+
+[ext_resource type="Texture2D" uid="uid://ciup3t2wthmu1" path="res://assets/icons/text_icons/squared_bullet_point.png" id="1_jwpm2"]
+[ext_resource type="Script" path="res://scripts/DescriptionTextLine.gd" id="1_k6syo"]
+[ext_resource type="FontFile" uid="uid://c2s0knweyp6g" path="res://assets/fonts/fonts_files/FugazOne-Regular.ttf" id="2_1jge4"]
+
+[sub_resource type="FontVariation" id="FontVariation_06pjg"]
+base_font = ExtResource("2_1jge4")
+spacing_top = -10
+spacing_bottom = -10
+
+[node name="DescriptionLine" type="HBoxContainer"]
+clip_contents = true
+size_flags_vertical = 6
+script = ExtResource("1_k6syo")
+
+[node name="BulletPoint" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_jwpm2")
+stretch_mode = 2
+
+[node name="Container" type="Container" parent="."]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_fonts/normal_font = SubResource("FontVariation_06pjg")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "IF THE ENEMY IS OF THE GRASS TYPE, USE 'FIRECRACKER' 4 TIMES;"
+fit_content = true
+scroll_active = false

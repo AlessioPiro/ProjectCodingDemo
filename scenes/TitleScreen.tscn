@@ -1,0 +1,172 @@
+[gd_scene load_steps=6 format=3 uid="uid://jk3e6vg1blyf"]
+
+[ext_resource type="Script" path="res://scripts/TitleScreen.gd" id="1_gvlhf"]
+[ext_resource type="Texture2D" uid="uid://chw8ojv2jphoo" path="res://assets/icons/coins_icon.png" id="4_mhr0b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_getud"]
+font_size = 60
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hrj03"]
+font_size = 60
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gtlei"]
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="TitleScreen" type="Control" node_paths=PackedStringArray("hp_label", "atk_label", "def_label", "luk_label", "continue_button", "coins_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gvlhf")
+hp_label = NodePath("VBoxContainer2/StatsContainer/HPLabel")
+atk_label = NodePath("VBoxContainer2/StatsContainer/ATKLabel")
+def_label = NodePath("VBoxContainer2/StatsContainer/DEFLabel")
+luk_label = NodePath("VBoxContainer2/StatsContainer/LUKLabel")
+continue_button = NodePath("VBoxContainer2/HBoxContainer/ContinueGameButton")
+coins_label = NodePath("CoinsBar/HBoxContainer/CoinsLabel")
+metadata/_edit_use_anchors_ = true
+
+[node name="CoinsBar" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 160.0
+grow_horizontal = 2
+
+[node name="Background" type="Control" parent="CoinsBar"]
+anchors_preset = 0
+offset_left = 1.0
+offset_top = -263.0
+offset_right = 41.0
+offset_bottom = -223.0
+rotation = 0.0698132
+scale = Vector2(1, 2.07737)
+
+[node name="ColorRect2" type="ColorRect" parent="CoinsBar/Background"]
+layout_mode = 0
+offset_left = -1606.32
+offset_top = -8.1788
+offset_right = 2268.68
+offset_bottom = 160.821
+scale = Vector2(1.1, 1.1)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="CoinsBar/Background"]
+layout_mode = 0
+offset_left = -1588.0
+offset_right = 2638.0
+offset_bottom = 169.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CoinsBar"]
+layout_mode = 2
+offset_left = 399.0
+offset_right = 681.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="CoinsIcon" type="TextureRect" parent="CoinsBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("4_mhr0b")
+stretch_mode = 2
+
+[node name="Container" type="Container" parent="CoinsBar/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="CoinsBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+label_settings = SubResource("LabelSettings_getud")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 167.0
+offset_right = 870.0
+offset_bottom = 1207.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+text = "LEVEL 1"
+label_settings = SubResource("LabelSettings_hrj03")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+alignment = 1
+
+[node name="NewGameButton" type="Button" parent="VBoxContainer2/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+text = "Nuova Partita"
+
+[node name="Container" type="Container" parent="VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+
+[node name="ContinueGameButton" type="Button" parent="VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 40
+text = "Continua"
+
+[node name="StatsContainer" type="HBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="HPLabel" type="Label" parent="VBoxContainer2/StatsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "HP: 0"
+label_settings = SubResource("LabelSettings_gtlei")
+
+[node name="Container" type="Container" parent="VBoxContainer2/StatsContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+
+[node name="ATKLabel" type="Label" parent="VBoxContainer2/StatsContainer"]
+layout_mode = 2
+text = "ATK: 0"
+label_settings = SubResource("LabelSettings_gtlei")
+
+[node name="Container2" type="Container" parent="VBoxContainer2/StatsContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+
+[node name="DEFLabel" type="Label" parent="VBoxContainer2/StatsContainer"]
+layout_mode = 2
+text = "DEF: 0"
+label_settings = SubResource("LabelSettings_gtlei")
+
+[node name="Container3" type="Container" parent="VBoxContainer2/StatsContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+
+[node name="LUKLabel" type="Label" parent="VBoxContainer2/StatsContainer"]
+layout_mode = 2
+text = "LUK: 0"
+label_settings = SubResource("LabelSettings_gtlei")
+
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]

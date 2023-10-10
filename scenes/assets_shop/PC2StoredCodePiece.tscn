@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://cclx2dxop2d7h"]
+
+[ext_resource type="Script" path="res://scripts/PC2StoredCodePiece.gd" id="1_difl6"]
+[ext_resource type="Texture2D" uid="uid://35vqhee8f7ar" path="res://assets/icons/code_piece_icons/code_piece_icon.png" id="1_uocyy"]
+[ext_resource type="Texture2D" uid="uid://mw32elrujout" path="res://assets/icons/code_piece_icons/else_if_icon.png" id="2_1fyoe"]
+[ext_resource type="Texture2D" uid="uid://ctxokt70i5tpa" path="res://assets/icons/code_piece_icons/code_piece_background.png" id="3_aub12"]
+[ext_resource type="PackedScene" uid="uid://bilrbxukhlphg" path="res://components/GlowComponent.tscn" id="4_h6bg6"]
+[ext_resource type="PackedScene" uid="uid://b23b1cjdoltf2" path="res://components/DragAndDropObjectComponent.tscn" id="5_68fik"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oae3b"]
+size = Vector3(2.27455, 2.16418, 0.164681)
+
+[node name="PC2StoredCodePiece" type="Area3D" groups=["pc2_stored_code_piece"]]
+script = ExtResource("1_difl6")
+
+[node name="CodePieceFront" type="Sprite3D" parent="."]
+sorting_offset = 10.0
+modulate = Color(0.839216, 0.305882, 0.462745, 1)
+texture = ExtResource("1_uocyy")
+
+[node name="CodePieceIcon" type="Sprite3D" parent="."]
+sorting_offset = 9.0
+texture = ExtResource("2_1fyoe")
+
+[node name="CodePieceBackground" type="Sprite3D" parent="."]
+sorting_offset = 8.0
+modulate = Color(0.913725, 0.478431, 0.635294, 1)
+texture = ExtResource("3_aub12")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0143957, -0.0479864, 0)
+shape = SubResource("BoxShape3D_oae3b")
+
+[node name="GlowComponent" parent="." instance=ExtResource("4_h6bg6")]
+transform = Transform3D(1, -2.98023e-08, 7.72118e-10, 1.49012e-08, 1, 4.41422e-09, -3.28241e-09, -2.84794e-09, 1, 0, -0.713946, 0)
+modulate = Color(1, 1, 1, 1)
+
+[node name="DragAndDropObjectComponent" parent="." instance=ExtResource("5_68fik")]
+press_animation = "darken"
+drag_animation = "enlarge_and_glow"
+blocked_axis = "x"

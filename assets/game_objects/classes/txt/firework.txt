@@ -1,0 +1,9 @@
+id;firework
+english_name;Firework
+italian_name;Fuoco d'Artificio
+english_description;It deals moderate Fire damage to the enemy.
+italian_description;Infligge danni moderati di tipo Fuoco al nemico.
+time;10
+english_method;ignite
+italian_method;accendi
+type;fire

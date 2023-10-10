@@ -1,0 +1,11 @@
+id;
+english_name;
+italian_name;
+price;
+rarity;
+english_locked_description;
+italian_locked_description;
+english_unlocked_description;
+italian_unlocked_description;
+classes;
+is_locked;

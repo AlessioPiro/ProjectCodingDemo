@@ -1,0 +1,11 @@
+id;summer_fruit
+english_name;The Summer Fruit
+italian_name;Il Frutto dell'Estate
+price;225
+rarity;3
+english_locked_description;It's not summer without this refreshing fruit.
+italian_locked_description;Non è estate senza questo freschissimo frutto
+english_unlocked_description;Oh yes, a melon! But should we spit out the seeds?
+italian_unlocked_description;Oh sì, un melone! Ma i semi bisognerebbe sputarli?
+classes;[watermelon,seed]
+is_locked;true

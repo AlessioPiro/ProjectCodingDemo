@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjoew16n8ysyo"]
+
+[ext_resource type="PackedScene" uid="uid://dfn6l3gd6n3af" path="res://assets/models/door/door.glb" id="1_dwiwo"]
+[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="2_pniht"]
+[ext_resource type="Texture2D" uid="uid://c3so7bo2a7vyk" path="res://assets/models/door/door_door_texture.png" id="3_m31na"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jxkry"]
+render_priority = 0
+shader = ExtResource("2_pniht")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_m31na")
+
+[node name="door" instance=ExtResource("1_dwiwo")]
+
+[node name="Porta Interna" parent="." index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_jxkry")

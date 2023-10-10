@@ -1,0 +1,11 @@
+id;heavy_ball
+english_name;Heavy Ball
+italian_name;Una Palla Pesante
+price;170
+rarity;3
+english_locked_description;According to legend, if you pull it backwards, people will stand up and do a somersault in the air.
+italian_locked_description;Secondo la leggenda, se la tiri all'indietro le persone si alzeranno in piedi e faranno una piroetta in aria.
+english_unlocked_description;Wow, this package will strike you! Did you get it? Because it contains a Bowling Ball and... sorry.
+italian_unlocked_description;Butta giù i tuoi avversari come birilli con una bella Palla da Bowling!
+classes;[bowling_ball]
+is_locked;true

@@ -1,0 +1,11 @@
+id;skinned_knee
+english_name;Skinned Knee
+italian_name;Ginocchio Sbucciato
+price;55
+rarity;1
+english_locked_description;Ouch, it hurts!
+italian_locked_description;Aia, fa male!
+english_unlocked_description;Ouch, a classic. After a few Tears, a Band-aid is all it takes to get back to playing.
+italian_unlocked_description;Aia, un classico. Dopo qualche Lacrima basta un Cerotto e si torna a giocare
+classes;[band_aid,tear]
+is_locked;true

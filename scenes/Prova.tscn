@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwglwlq3s7eay"]
+
+[ext_resource type="PackedScene" uid="uid://b23b1cjdoltf2" path="res://components/DragAndDropObjectComponent.tscn" id="1_d5koc"]
+
+[sub_resource type="Gradient" id="Gradient_3sgde"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t1yg1"]
+gradient = SubResource("Gradient_3sgde")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ssfsr"]
+size = Vector3(0.666586, 0.676918, 0.0137365)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0740211, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Area3D"]
+texture = SubResource("GradientTexture2D_t1yg1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_ssfsr")
+
+[node name="DragAndDropObjectComponent" parent="Area3D" instance=ExtResource("1_d5koc")]
+
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.177614, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Area3D2"]
+texture = SubResource("GradientTexture2D_t1yg1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+shape = SubResource("BoxShape3D_ssfsr")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.40297)
+projection = 1
+size = 3.0

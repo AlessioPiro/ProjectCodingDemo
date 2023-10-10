@@ -1,0 +1,9 @@
+id;tomato
+english_name;Tomato
+italian_name;Pomodoro
+english_description;It deals moderate Grass damage to the enemy.
+italian_description;Infligge danni moderati di tipo Erba al nemico.
+time;10
+english_method;hurl()
+italian_method;lancia()
+type;grass

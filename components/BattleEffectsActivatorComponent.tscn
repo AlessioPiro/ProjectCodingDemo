@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://de7xlya8vh3gw"]
+
+[ext_resource type="Script" path="res://scripts/BattleEffectsActivatorComponent.gd" id="1_h47vp"]
+
+[node name="BattleEffectsActivatorComponent" type="Node2D"]
+script = ExtResource("1_h47vp")

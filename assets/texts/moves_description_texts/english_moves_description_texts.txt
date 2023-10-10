@@ -1,0 +1,7 @@
+first_phrase|by invoking this method
+if_phrase|if the enemy is of the {type} type
+else_phrase|else
+then_phrase|use "{class_title}" {times}
+then_nothing_phrase|nothing happens
+singular_time|time
+multiple_times|times

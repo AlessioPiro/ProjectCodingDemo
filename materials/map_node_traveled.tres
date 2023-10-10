@@ -1,0 +1,25 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dsethw8nk2e4h"]
+
+[ext_resource type="Shader" path="res://materials/outline_shader.gdshader" id="1_p6uk8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y0q2w"]
+render_priority = 0
+shader = ExtResource("1_p6uk8")
+shader_parameter/border_width = null
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/pattern = null
+shader_parameter/line_number = null
+shader_parameter/line_sharpness = null
+shader_parameter/pulse = null
+shader_parameter/pulse_speed = null
+shader_parameter/line_movement = null
+shader_parameter/line_movement_speed = null
+shader_parameter/wave = null
+
+[resource]
+next_pass = SubResource("ShaderMaterial_y0q2w")
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(1, 1, 0.0235294, 1)
+roughness = 0.0
+emission = Color(1, 1, 1, 1)

@@ -1,0 +1,142 @@
+{
+  "drunk_negative": {
+	"english_name": "The Drunk",
+	"italian_name": "L'Ubriaco",
+	"english_question": "There is a man staggering in front of you. You notice that 150 coins have fallen from his pocket. What do you do?",
+	"italian_question": "C'è un uomo che cammina barcollante dinanzi a te. Noti che sono caduti 150 monete dalla sua tasca. Cosa fai?",
+	"english_answer_1": "Pick them up",
+	"italian_answer_1": "Raccoglile",
+	"english_answer_2": "Warn him",
+	"italian_answer_2": "Avvisalo",
+	"english_consequence_1": "You collect the coins as you see the man turn the corner with difficulty. Was it the right choice?",
+	"italian_consequence_1": "Raccogli le monete mentre vedi l'uomo girare l'angolo con difficoltà. Sarà stata la scelta giusta?",
+	"english_consequence_2": "You warn the man who, after a couple of seconds of confusion, picks up the coins and runs away. Strange.",
+	"italian_consequence_2": "Avvisi l'uomo che, dopo un paio di secondi di smarrimento, raccoglie le monete e scappa via. Strano.",
+	"effects_1": [
+	  "money+(150)"
+	],
+	"effects_2": [
+	  "empty"
+	]
+  },
+  "drunk_positive": {
+	"english_name": "The Drunk",
+	"italian_name": "L'Ubriaco",
+	"english_question": "There is a man staggering in front of you. You notice that 150 coins have fallen from his pocket. What do you do?",
+	"italian_question": "C'è un uomo che cammina barcollante dinanzi a te. Noti che sono caduti 150 monete dalla sua tasca. Cosa fai?",
+	"english_answer_1": "Pick them up",
+	"italian_answer_1": "Raccoglile",
+	"english_answer_2": "Warn him",
+	"italian_answer_2": "Avvisalo",
+	"english_consequence_1": "\"HANDS OFF, THIEF!\" The man lunges at you and grazes your cheek. You manage to escape.",
+	"italian_consequence_1": "\"GIÙ LE MANI LADRO!\" L'uomo si scaglia contro di te e ti ferisce alla guancia. Riesci a fuggire.",
+	"english_consequence_2": "You warn the man who, after a couple of seconds of confusion, picks up the coins and runs away. Strange.",
+	"italian_consequence_2": "Avvisi l'uomo che, dopo un paio di secondi di smarrimento, raccoglie le monete e scappa via. Strano.",
+	"effects_1": [
+	  "health-(50)"
+	],
+	"effects_2": [
+	  "empty"
+	]
+  },
+  "fire_if_quiz": {
+	"english_name": "The Quiz Man",
+	"italian_name": "L'Uomo Quiz",
+	"english_question": "A TV crew approaches you. \"Hey you! I need to make a choice, which piece of code should I use?\"",
+	"italian_question": "Una troupe televisiva si avvicina a te. \"Hey tu! Devo prendere una scelta, quale pezzo di codice dovrei usare?\"",
+	"english_answer_1": "If",
+	"italian_answer_1": "If",
+	"english_answer_2": "For",
+	"italian_answer_2": "For",
+	"english_consequence_1": "\"MAN, YOU'RE ON FIRE! Now I've decided, this is for you!\"",
+	"italian_consequence_1": "\"Risposta BOLLENTE! Ora ho deciso, questo è per te!\"",
+	"english_consequence_2": "...I chose to pretend not to hear.\" The crew moves away.",
+	"italian_consequence_2": "\"... Ho scelto di far finta di non sentire.\" La troupe si allontata.",
+	"effects_1": [
+	  "code_piece+(if_fire)"
+	],
+	"effects_2": [
+	  "empty"
+	]
+  },
+  "old_woman": {
+	"english_name": "The Candy Elder",
+	"italian_name": "L'Anziana delle Caramelle",
+	"english_question": "You feel a tug on your pants from behind. \"Would you like a candy?\" asks an elderly lady, offering you a mint.",
+	"italian_question": "Ti senti tirare il pantalone da dietro. \"Vuoi una caramella?\" Chiede un'anziana signora porgendoti una mentina.",
+	"english_answer_1": "Yes",
+	"italian_answer_1": "Sì",
+	"english_answer_2": "No",
+	"italian_answer_2": "No",
+	"english_consequence_1": "The mint refreshes you and gives you new energy. It almost seems magical...",
+	"italian_consequence_1": "La mentina ti rinfresca e ti dona nuove energie. Sembra quasi magica...",
+	"english_consequence_2": "The elderly woman smiles bitterly. \"You don't trust me either, do you?\" She whispers as she walks away.",
+	"italian_consequence_2": "L'anziana sorride amaramente. \"Neanche tu ti fidi di me, vero?\" Dice sotto voce mentre si allontana.",
+	"effects_1": [
+	  "health+(100)"
+	],
+	"effects_2": [
+	  "empty"
+	]
+  },
+  "old_woman_thief": {
+	"english_name": "The Candy Elder",
+	"italian_name": "L'Anziana delle Caramelle",
+	"english_question": "You feel a tug on your pants from behind. \"Would you like a candy?\" asks an elderly lady, offering you a mint.",
+	"italian_question": "Ti senti tirare il pantalone da dietro. \"Vuoi una caramella?\" Chiede un'anziana signora porgendoti una capsula.",
+	"english_answer_1": "Yes",
+	"italian_answer_1": "Sì",
+	"english_answer_2": "No",
+	"italian_answer_2": "No",
+	"english_consequence_1": "As soon as you place the capsule on your tongue, you collapse. When you wake up, you feel much lighter...",
+	"italian_consequence_1": "Non appena poggi la capsula sulla lingua collassi. Quando ti risvegli, ti senti molto più leggero...",
+	"english_consequence_2": "\"You don't know what you're missing,\" says the elderly woman menacingly before walking away.",
+	"italian_consequence_2": "\"Non sai cosa ti perdi\" dice l'anziana con una voce minacciosa prima di allontanarsi.",
+	"effects_1": [
+	  "money-(all)"
+	],
+	"effects_2": [
+	  "empty"
+	]
+  },
+  "man_and_zombies": {
+	"english_name": "Man and Zombies",
+	"italian_name": "L'Uomo e gli Zombie",
+	"english_question": "You hear screams. You turn around and see a man with an elegant gait accompanied by a horde of zombies.",
+	"italian_question": "Senti delle urla. Ti giri e vedi un uomo dal passo elegante accompagnato da una schiera di zombie.",
+	"english_answer_1": "Attack him",
+	"italian_answer_1": "Attaccalo",
+	"english_answer_2": "Observe him",
+	"italian_answer_2": "Osservalo",
+	"english_consequence_1": "As soon as you try to approach menacingly, a burly man knocks you down. It was just a show...",
+	"italian_consequence_1": "Non appena provi ad avvicinarti con fare minaccioso un omone ti stende. Era solo uno spettacolo...",
+	"english_consequence_2": "Confetti is shot into the sky. Fortunately, it's just an event dedicated to Mike Jackphone.",
+	"italian_consequence_2": "Dei coriandoli vengono sparati in cielo. Fortunatamente è solo un evento dedicato a Mike Jackphone.",
+	"effects_1": [
+	  "health-(100)"
+	],
+	"effects_2": [
+	  "empty"
+	]
+  },
+  "two_doors_left": {
+	"english_name": "The Two Doors",
+	"italian_name": "Le Due Porte",
+	"english_question": "You find yourself in front of two doors. \"When Stanley came to a set of two doors, he entered the door on his left.\" Where do you go?",
+	"italian_question": "Ti ritrovi davanti a due porte. \"Quando Stanley si ritrovò davanti a due porte, entrò in quella alla sua sinistra.\" Dove vai?",
+	"english_answer_1": "Left",
+	"italian_answer_1": "Sinistra",
+	"english_answer_2": "Right",
+	"italian_answer_2": "Destra",
+	"english_consequence_1": "You decide to trust the voice. You find yourself in front of a treasure. How lucky!",
+	"italian_consequence_1": "Decidi di fidarti della voce. Ti ritrovi davanti ad un tesoro. Che fortuna!",
+	"english_consequence_2": "You decide not to trust the voice. As you proceed into a dark room, you stumble into a rather deep hole.",
+	"italian_consequence_2": "Decidi di non fidarti della voce. Mentre procedi in una stanza buia inciampi in un buco piuttosto profondo.",
+	"effects_1": [
+	  "money+(100)"
+	],
+	"effects_2": [
+	  "health-(40)"
+	]
+  }
+}

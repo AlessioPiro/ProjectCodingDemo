@@ -1,0 +1,984 @@
+[gd_resource type="Resource" script_class="MapData" load_steps=103 format=3]
+
+[ext_resource type="Script" path="res://resources/MapNodeData.gd" id="1_mbhw7"]
+[ext_resource type="Script" path="res://resources/MapData.gd" id="2_6wcaw"]
+
+[sub_resource type="Resource" id="Resource_clc35"]
+script = ExtResource("1_mbhw7")
+id = Vector2(0, 0)
+state = "unreachable"
+type = "lunas"
+next_nodes = [0]
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_xodmf"]
+script = ExtResource("1_mbhw7")
+id = Vector2(1, 0)
+state = "unreachable"
+type = "battle"
+next_nodes = [1]
+type_related_variables = {
+"enemy_id": "water_slime",
+"enemy_level": 1
+}
+
+[sub_resource type="Resource" id="Resource_4njvp"]
+script = ExtResource("1_mbhw7")
+id = Vector2(2, 0)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_umml4"]
+script = ExtResource("1_mbhw7")
+id = Vector2(3, 0)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_s10d5"]
+script = ExtResource("1_mbhw7")
+id = Vector2(4, 0)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_83lj8"]
+script = ExtResource("1_mbhw7")
+id = Vector2(5, 0)
+state = "unreachable"
+type = "battle"
+next_nodes = [1]
+type_related_variables = {
+"enemy_id": "water_slime",
+"enemy_level": 3
+}
+
+[sub_resource type="Resource" id="Resource_45kwe"]
+script = ExtResource("1_mbhw7")
+id = Vector2(6, 0)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_nq0du"]
+script = ExtResource("1_mbhw7")
+id = Vector2(7, 0)
+state = "unreachable"
+type = "unknown"
+next_nodes = [1]
+type_related_variables = {
+"unknown_event_id": "fire_if_quiz"
+}
+
+[sub_resource type="Resource" id="Resource_vcenn"]
+script = ExtResource("1_mbhw7")
+id = Vector2(8, 0)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_o5x5e"]
+script = ExtResource("1_mbhw7")
+id = Vector2(9, 0)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_111va"]
+script = ExtResource("1_mbhw7")
+id = Vector2(10, 0)
+state = "unreachable"
+type = "unknown"
+next_nodes = [1]
+type_related_variables = {
+"unknown_event_id": "old_woman_thief"
+}
+
+[sub_resource type="Resource" id="Resource_fkgia"]
+script = ExtResource("1_mbhw7")
+id = Vector2(11, 0)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_mp7ts"]
+script = ExtResource("1_mbhw7")
+id = Vector2(12, 0)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_c2b3e"]
+script = ExtResource("1_mbhw7")
+id = Vector2(13, 0)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_qklkv"]
+script = ExtResource("1_mbhw7")
+id = Vector2(14, 0)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_7he8s"]
+script = ExtResource("1_mbhw7")
+id = Vector2(15, 0)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_rv8kc"]
+script = ExtResource("1_mbhw7")
+id = Vector2(16, 0)
+state = "unreachable"
+type = "unknown"
+next_nodes = [1]
+type_related_variables = {
+"unknown_event_id": "fire_if_quiz"
+}
+
+[sub_resource type="Resource" id="Resource_dqto6"]
+script = ExtResource("1_mbhw7")
+id = Vector2(17, 0)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_ft81l"]
+script = ExtResource("1_mbhw7")
+id = Vector2(18, 0)
+state = "unreachable"
+type = "lunas"
+next_nodes = [2]
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_6xxsn"]
+script = ExtResource("1_mbhw7")
+id = Vector2(19, 0)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_g1gml"]
+script = ExtResource("1_mbhw7")
+id = Vector2(0, 1)
+state = "traveled"
+type = "lunas"
+next_nodes = [1]
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_4ousl"]
+script = ExtResource("1_mbhw7")
+id = Vector2(1, 1)
+state = "traveled"
+type = "battle"
+next_nodes = [1]
+type_related_variables = {
+"enemy_id": "fire_slime",
+"enemy_level": 1
+}
+
+[sub_resource type="Resource" id="Resource_gv4rp"]
+script = ExtResource("1_mbhw7")
+id = Vector2(2, 1)
+state = "traveled"
+type = "lunas"
+next_nodes = [1]
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_lf7nf"]
+script = ExtResource("1_mbhw7")
+id = Vector2(3, 1)
+state = "traveled"
+type = "battle"
+next_nodes = [1, 2]
+type_related_variables = {
+"enemy_id": "grass_slime",
+"enemy_level": 2
+}
+
+[sub_resource type="Resource" id="Resource_3h7w2"]
+script = ExtResource("1_mbhw7")
+id = Vector2(4, 1)
+state = "unreachable"
+type = "battle"
+next_nodes = [0]
+type_related_variables = {
+"enemy_id": "fire_slime",
+"enemy_level": 2
+}
+
+[sub_resource type="Resource" id="Resource_enkb5"]
+script = ExtResource("1_mbhw7")
+id = Vector2(5, 1)
+state = "traveled"
+type = "unknown"
+next_nodes = [1, 2]
+type_related_variables = {
+"unknown_event_id": "drunk_negative"
+}
+
+[sub_resource type="Resource" id="Resource_n5p8n"]
+script = ExtResource("1_mbhw7")
+id = Vector2(6, 1)
+state = "unreachable"
+type = "lunas"
+next_nodes = [0]
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_toiyd"]
+script = ExtResource("1_mbhw7")
+id = Vector2(7, 1)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_pw4m0"]
+script = ExtResource("1_mbhw7")
+id = Vector2(8, 1)
+state = "unreachable"
+type = "lunas"
+next_nodes = [2, 1]
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_yi2fe"]
+script = ExtResource("1_mbhw7")
+id = Vector2(9, 1)
+state = "unreachable"
+type = "battle"
+next_nodes = [0]
+type_related_variables = {
+"enemy_id": "water_slime",
+"enemy_level": 4
+}
+
+[sub_resource type="Resource" id="Resource_y3k6s"]
+script = ExtResource("1_mbhw7")
+id = Vector2(10, 1)
+state = "unreachable"
+type = "unknown"
+next_nodes = [1]
+type_related_variables = {
+"unknown_event_id": "drunk_positive"
+}
+
+[sub_resource type="Resource" id="Resource_au4ch"]
+script = ExtResource("1_mbhw7")
+id = Vector2(11, 1)
+state = "unreachable"
+type = "unknown"
+next_nodes = [2]
+type_related_variables = {
+"unknown_event_id": "two_doors_left"
+}
+
+[sub_resource type="Resource" id="Resource_h5adt"]
+script = ExtResource("1_mbhw7")
+id = Vector2(12, 1)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_044fi"]
+script = ExtResource("1_mbhw7")
+id = Vector2(13, 1)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_vccqy"]
+script = ExtResource("1_mbhw7")
+id = Vector2(14, 1)
+state = "unreachable"
+type = "battle"
+next_nodes = [2, 1]
+type_related_variables = {
+"enemy_id": "water_slime",
+"enemy_level": 5
+}
+
+[sub_resource type="Resource" id="Resource_qwxx7"]
+script = ExtResource("1_mbhw7")
+id = Vector2(15, 1)
+state = "unreachable"
+type = "unknown"
+next_nodes = [0]
+type_related_variables = {
+"unknown_event_id": "man_and_zombies"
+}
+
+[sub_resource type="Resource" id="Resource_lp34l"]
+script = ExtResource("1_mbhw7")
+id = Vector2(16, 1)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_l17t5"]
+script = ExtResource("1_mbhw7")
+id = Vector2(17, 1)
+state = "unreachable"
+type = "unknown"
+next_nodes = [0]
+type_related_variables = {
+"unknown_event_id": "old_woman_thief"
+}
+
+[sub_resource type="Resource" id="Resource_we6ok"]
+script = ExtResource("1_mbhw7")
+id = Vector2(18, 1)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_k402g"]
+script = ExtResource("1_mbhw7")
+id = Vector2(19, 1)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_2bu0b"]
+script = ExtResource("1_mbhw7")
+id = Vector2(0, 2)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_cahkh"]
+script = ExtResource("1_mbhw7")
+id = Vector2(1, 2)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_g0fix"]
+script = ExtResource("1_mbhw7")
+id = Vector2(2, 2)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_0eipd"]
+script = ExtResource("1_mbhw7")
+id = Vector2(3, 2)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_bh6np"]
+script = ExtResource("1_mbhw7")
+id = Vector2(4, 2)
+state = "traveled"
+type = "treasure"
+next_nodes = [1]
+type_related_variables = {
+"coins_number": 92
+}
+
+[sub_resource type="Resource" id="Resource_cvqte"]
+script = ExtResource("1_mbhw7")
+id = Vector2(5, 2)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_fobdy"]
+script = ExtResource("1_mbhw7")
+id = Vector2(6, 2)
+state = "traveled"
+type = "battle"
+next_nodes = [2]
+type_related_variables = {
+"enemy_id": "grass_slime",
+"enemy_level": 2
+}
+
+[sub_resource type="Resource" id="Resource_83j6n"]
+script = ExtResource("1_mbhw7")
+id = Vector2(7, 2)
+state = "current"
+type = "battle"
+next_nodes = [2, 3]
+type_related_variables = {
+"enemy_id": "grass_slime",
+"enemy_level": 3
+}
+
+[sub_resource type="Resource" id="Resource_jjnq0"]
+script = ExtResource("1_mbhw7")
+id = Vector2(8, 2)
+state = "reachable"
+type = "battle"
+next_nodes = [2]
+type_related_variables = {
+"enemy_id": "fire_slime",
+"enemy_level": 5
+}
+
+[sub_resource type="Resource" id="Resource_kyoah"]
+script = ExtResource("1_mbhw7")
+id = Vector2(9, 2)
+state = "unreachable"
+type = "lunas"
+next_nodes = [3, 1]
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_cdcdy"]
+script = ExtResource("1_mbhw7")
+id = Vector2(10, 2)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_eilhg"]
+script = ExtResource("1_mbhw7")
+id = Vector2(11, 2)
+state = "unreachable"
+type = "battle"
+next_nodes = [2]
+type_related_variables = {
+"enemy_id": "fire_slime",
+"enemy_level": 4
+}
+
+[sub_resource type="Resource" id="Resource_gidmv"]
+script = ExtResource("1_mbhw7")
+id = Vector2(12, 2)
+state = "unreachable"
+type = "treasure"
+next_nodes = [3, 2]
+type_related_variables = {
+"coins_number": 83
+}
+
+[sub_resource type="Resource" id="Resource_u4vwb"]
+script = ExtResource("1_mbhw7")
+id = Vector2(13, 2)
+state = "unreachable"
+type = "unknown"
+next_nodes = [1]
+type_related_variables = {
+"unknown_event_id": "old_woman"
+}
+
+[sub_resource type="Resource" id="Resource_lfkhg"]
+script = ExtResource("1_mbhw7")
+id = Vector2(14, 2)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_n73si"]
+script = ExtResource("1_mbhw7")
+id = Vector2(15, 2)
+state = "unreachable"
+type = "treasure"
+next_nodes = [3]
+type_related_variables = {
+"coins_number": 117
+}
+
+[sub_resource type="Resource" id="Resource_rmktn"]
+script = ExtResource("1_mbhw7")
+id = Vector2(16, 2)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_h3etp"]
+script = ExtResource("1_mbhw7")
+id = Vector2(17, 2)
+state = "unreachable"
+type = "lunas"
+next_nodes = [3]
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_2jf65"]
+script = ExtResource("1_mbhw7")
+id = Vector2(18, 2)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_bo7ci"]
+script = ExtResource("1_mbhw7")
+id = Vector2(19, 2)
+state = "unreachable"
+type = "boss"
+next_nodes = []
+type_related_variables = {
+"enemy_id": "grass_slime",
+"enemy_level": 6
+}
+
+[sub_resource type="Resource" id="Resource_f3nau"]
+script = ExtResource("1_mbhw7")
+id = Vector2(0, 3)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_cxayj"]
+script = ExtResource("1_mbhw7")
+id = Vector2(1, 3)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_y5uco"]
+script = ExtResource("1_mbhw7")
+id = Vector2(2, 3)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_bq5xs"]
+script = ExtResource("1_mbhw7")
+id = Vector2(3, 3)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_mlnbc"]
+script = ExtResource("1_mbhw7")
+id = Vector2(4, 3)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_b3c0n"]
+script = ExtResource("1_mbhw7")
+id = Vector2(5, 3)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_5gybo"]
+script = ExtResource("1_mbhw7")
+id = Vector2(6, 3)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_8fyrw"]
+script = ExtResource("1_mbhw7")
+id = Vector2(7, 3)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_pf5vr"]
+script = ExtResource("1_mbhw7")
+id = Vector2(8, 3)
+state = "reachable"
+type = "treasure"
+next_nodes = [2]
+type_related_variables = {
+"coins_number": 54
+}
+
+[sub_resource type="Resource" id="Resource_s88io"]
+script = ExtResource("1_mbhw7")
+id = Vector2(9, 3)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_8wg2s"]
+script = ExtResource("1_mbhw7")
+id = Vector2(10, 3)
+state = "unreachable"
+type = "lunas"
+next_nodes = [2]
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_0smfr"]
+script = ExtResource("1_mbhw7")
+id = Vector2(11, 3)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_srh2l"]
+script = ExtResource("1_mbhw7")
+id = Vector2(12, 3)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_n6un5"]
+script = ExtResource("1_mbhw7")
+id = Vector2(13, 3)
+state = "unreachable"
+type = "lunas"
+next_nodes = [3, 4]
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_ihmus"]
+script = ExtResource("1_mbhw7")
+id = Vector2(14, 3)
+state = "unreachable"
+type = "battle"
+next_nodes = [2]
+type_related_variables = {
+"enemy_id": "grass_slime",
+"enemy_level": 4
+}
+
+[sub_resource type="Resource" id="Resource_8x5l8"]
+script = ExtResource("1_mbhw7")
+id = Vector2(15, 3)
+state = "unreachable"
+type = "lunas"
+next_nodes = [4]
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_kfnsr"]
+script = ExtResource("1_mbhw7")
+id = Vector2(16, 3)
+state = "unreachable"
+type = "treasure"
+next_nodes = [4, 2]
+type_related_variables = {
+"coins_number": 103
+}
+
+[sub_resource type="Resource" id="Resource_1h6kt"]
+script = ExtResource("1_mbhw7")
+id = Vector2(17, 3)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_40l5m"]
+script = ExtResource("1_mbhw7")
+id = Vector2(18, 3)
+state = "unreachable"
+type = "lunas"
+next_nodes = [2]
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_d3aqk"]
+script = ExtResource("1_mbhw7")
+id = Vector2(19, 3)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_lh4ot"]
+script = ExtResource("1_mbhw7")
+id = Vector2(0, 4)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_qpuli"]
+script = ExtResource("1_mbhw7")
+id = Vector2(1, 4)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_wgjc7"]
+script = ExtResource("1_mbhw7")
+id = Vector2(2, 4)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_oec4a"]
+script = ExtResource("1_mbhw7")
+id = Vector2(3, 4)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_kdsqt"]
+script = ExtResource("1_mbhw7")
+id = Vector2(4, 4)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_w0mno"]
+script = ExtResource("1_mbhw7")
+id = Vector2(5, 4)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_k1wjo"]
+script = ExtResource("1_mbhw7")
+id = Vector2(6, 4)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_bfc15"]
+script = ExtResource("1_mbhw7")
+id = Vector2(7, 4)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_04l16"]
+script = ExtResource("1_mbhw7")
+id = Vector2(8, 4)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_q3dpq"]
+script = ExtResource("1_mbhw7")
+id = Vector2(9, 4)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_vpgur"]
+script = ExtResource("1_mbhw7")
+id = Vector2(10, 4)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_xgilv"]
+script = ExtResource("1_mbhw7")
+id = Vector2(11, 4)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_ns1r2"]
+script = ExtResource("1_mbhw7")
+id = Vector2(12, 4)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_7hqj1"]
+script = ExtResource("1_mbhw7")
+id = Vector2(13, 4)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_0x63g"]
+script = ExtResource("1_mbhw7")
+id = Vector2(14, 4)
+state = "unreachable"
+type = "unknown"
+next_nodes = [3]
+type_related_variables = {
+"unknown_event_id": "man_and_zombies"
+}
+
+[sub_resource type="Resource" id="Resource_w3ef4"]
+script = ExtResource("1_mbhw7")
+id = Vector2(15, 4)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_77gkm"]
+script = ExtResource("1_mbhw7")
+id = Vector2(16, 4)
+state = "unreachable"
+type = "battle"
+next_nodes = [4]
+type_related_variables = {
+"enemy_id": "fire_slime",
+"enemy_level": 5
+}
+
+[sub_resource type="Resource" id="Resource_qarek"]
+script = ExtResource("1_mbhw7")
+id = Vector2(17, 4)
+state = "unreachable"
+type = "battle"
+next_nodes = [4]
+type_related_variables = {
+"enemy_id": "water_slime",
+"enemy_level": 5
+}
+
+[sub_resource type="Resource" id="Resource_1t3dy"]
+script = ExtResource("1_mbhw7")
+id = Vector2(18, 4)
+state = "unreachable"
+type = "lunas"
+next_nodes = [2]
+type_related_variables = {}
+
+[sub_resource type="Resource" id="Resource_fg6c8"]
+script = ExtResource("1_mbhw7")
+id = Vector2(19, 4)
+state = "disabled"
+type = ""
+next_nodes = []
+type_related_variables = {}
+
+[resource]
+script = ExtResource("2_6wcaw")
+map_nodes = {
+"(0, 0)": SubResource("Resource_clc35"),
+"(0, 1)": SubResource("Resource_g1gml"),
+"(0, 2)": SubResource("Resource_2bu0b"),
+"(0, 3)": SubResource("Resource_f3nau"),
+"(0, 4)": SubResource("Resource_lh4ot"),
+"(1, 0)": SubResource("Resource_xodmf"),
+"(1, 1)": SubResource("Resource_4ousl"),
+"(1, 2)": SubResource("Resource_cahkh"),
+"(1, 3)": SubResource("Resource_cxayj"),
+"(1, 4)": SubResource("Resource_qpuli"),
+"(10, 0)": SubResource("Resource_111va"),
+"(10, 1)": SubResource("Resource_y3k6s"),
+"(10, 2)": SubResource("Resource_cdcdy"),
+"(10, 3)": SubResource("Resource_8wg2s"),
+"(10, 4)": SubResource("Resource_vpgur"),
+"(11, 0)": SubResource("Resource_fkgia"),
+"(11, 1)": SubResource("Resource_au4ch"),
+"(11, 2)": SubResource("Resource_eilhg"),
+"(11, 3)": SubResource("Resource_0smfr"),
+"(11, 4)": SubResource("Resource_xgilv"),
+"(12, 0)": SubResource("Resource_mp7ts"),
+"(12, 1)": SubResource("Resource_h5adt"),
+"(12, 2)": SubResource("Resource_gidmv"),
+"(12, 3)": SubResource("Resource_srh2l"),
+"(12, 4)": SubResource("Resource_ns1r2"),
+"(13, 0)": SubResource("Resource_c2b3e"),
+"(13, 1)": SubResource("Resource_044fi"),
+"(13, 2)": SubResource("Resource_u4vwb"),
+"(13, 3)": SubResource("Resource_n6un5"),
+"(13, 4)": SubResource("Resource_7hqj1"),
+"(14, 0)": SubResource("Resource_qklkv"),
+"(14, 1)": SubResource("Resource_vccqy"),
+"(14, 2)": SubResource("Resource_lfkhg"),
+"(14, 3)": SubResource("Resource_ihmus"),
+"(14, 4)": SubResource("Resource_0x63g"),
+"(15, 0)": SubResource("Resource_7he8s"),
+"(15, 1)": SubResource("Resource_qwxx7"),
+"(15, 2)": SubResource("Resource_n73si"),
+"(15, 3)": SubResource("Resource_8x5l8"),
+"(15, 4)": SubResource("Resource_w3ef4"),
+"(16, 0)": SubResource("Resource_rv8kc"),
+"(16, 1)": SubResource("Resource_lp34l"),
+"(16, 2)": SubResource("Resource_rmktn"),
+"(16, 3)": SubResource("Resource_kfnsr"),
+"(16, 4)": SubResource("Resource_77gkm"),
+"(17, 0)": SubResource("Resource_dqto6"),
+"(17, 1)": SubResource("Resource_l17t5"),
+"(17, 2)": SubResource("Resource_h3etp"),
+"(17, 3)": SubResource("Resource_1h6kt"),
+"(17, 4)": SubResource("Resource_qarek"),
+"(18, 0)": SubResource("Resource_ft81l"),
+"(18, 1)": SubResource("Resource_we6ok"),
+"(18, 2)": SubResource("Resource_2jf65"),
+"(18, 3)": SubResource("Resource_40l5m"),
+"(18, 4)": SubResource("Resource_1t3dy"),
+"(19, 0)": SubResource("Resource_6xxsn"),
+"(19, 1)": SubResource("Resource_k402g"),
+"(19, 2)": SubResource("Resource_bo7ci"),
+"(19, 3)": SubResource("Resource_d3aqk"),
+"(19, 4)": SubResource("Resource_fg6c8"),
+"(2, 0)": SubResource("Resource_4njvp"),
+"(2, 1)": SubResource("Resource_gv4rp"),
+"(2, 2)": SubResource("Resource_g0fix"),
+"(2, 3)": SubResource("Resource_y5uco"),
+"(2, 4)": SubResource("Resource_wgjc7"),
+"(3, 0)": SubResource("Resource_umml4"),
+"(3, 1)": SubResource("Resource_lf7nf"),
+"(3, 2)": SubResource("Resource_0eipd"),
+"(3, 3)": SubResource("Resource_bq5xs"),
+"(3, 4)": SubResource("Resource_oec4a"),
+"(4, 0)": SubResource("Resource_s10d5"),
+"(4, 1)": SubResource("Resource_3h7w2"),
+"(4, 2)": SubResource("Resource_bh6np"),
+"(4, 3)": SubResource("Resource_mlnbc"),
+"(4, 4)": SubResource("Resource_kdsqt"),
+"(5, 0)": SubResource("Resource_83lj8"),
+"(5, 1)": SubResource("Resource_enkb5"),
+"(5, 2)": SubResource("Resource_cvqte"),
+"(5, 3)": SubResource("Resource_b3c0n"),
+"(5, 4)": SubResource("Resource_w0mno"),
+"(6, 0)": SubResource("Resource_45kwe"),
+"(6, 1)": SubResource("Resource_n5p8n"),
+"(6, 2)": SubResource("Resource_fobdy"),
+"(6, 3)": SubResource("Resource_5gybo"),
+"(6, 4)": SubResource("Resource_k1wjo"),
+"(7, 0)": SubResource("Resource_nq0du"),
+"(7, 1)": SubResource("Resource_toiyd"),
+"(7, 2)": SubResource("Resource_83j6n"),
+"(7, 3)": SubResource("Resource_8fyrw"),
+"(7, 4)": SubResource("Resource_bfc15"),
+"(8, 0)": SubResource("Resource_vcenn"),
+"(8, 1)": SubResource("Resource_pw4m0"),
+"(8, 2)": SubResource("Resource_jjnq0"),
+"(8, 3)": SubResource("Resource_pf5vr"),
+"(8, 4)": SubResource("Resource_04l16"),
+"(9, 0)": SubResource("Resource_o5x5e"),
+"(9, 1)": SubResource("Resource_yi2fe"),
+"(9, 2)": SubResource("Resource_kyoah"),
+"(9, 3)": SubResource("Resource_s88io"),
+"(9, 4)": SubResource("Resource_q3dpq")
+}

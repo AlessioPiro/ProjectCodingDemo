@@ -1,0 +1,56 @@
+[gd_scene load_steps=12 format=3 uid="uid://duw4jap0hjxew"]
+
+[ext_resource type="PackedScene" uid="uid://366vgb3axuvs" path="res://assets/game_objects/battle_moves/BattleMove.tscn" id="1_awdfk"]
+[ext_resource type="PackedScene" uid="uid://d2n8nt7103d3u" path="res://components/BattleObjectsSpawnerComponent.tscn" id="2_oaagp"]
+[ext_resource type="PackedScene" uid="uid://dfjje3y25cuhx" path="res://assets/game_objects/battle_objects/Bullet.tscn" id="3_2fqeo"]
+[ext_resource type="PackedScene" uid="uid://cidhe1nfix23k" path="res://components/ColliderComponent.tscn" id="4_0g7q1"]
+[ext_resource type="Shader" path="res://outline_shader.gdshader" id="5_ku72p"]
+[ext_resource type="PackedScene" uid="uid://de7xlya8vh3gw" path="res://components/BattleEffectsActivatorComponent.tscn" id="6_bhvry"]
+[ext_resource type="PackedScene" uid="uid://d4mph4qtuqrtn" path="res://components/BattleEffect.tscn" id="7_yfc1g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_websj"]
+size = Vector3(0.417843, 0.417844, 0.417843)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pddpo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ks53f"]
+render_priority = 0
+shader = ExtResource("5_ku72p")
+shader_parameter/border_width = 0.113
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/pattern = null
+shader_parameter/line_number = null
+shader_parameter/line_sharpness = null
+shader_parameter/pulse = null
+shader_parameter/pulse_speed = null
+shader_parameter/line_movement = null
+shader_parameter/line_movement_speed = null
+shader_parameter/wave = null
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_scm15"]
+next_pass = SubResource("ShaderMaterial_ks53f")
+shading_mode = 0
+
+[node name="FootballMove" instance=ExtResource("1_awdfk")]
+class_id = "football"
+
+[node name="BattleObjectsSpawnerComponent" parent="." index="0" instance=ExtResource("2_oaagp")]
+
+[node name="Bullet" parent="BattleObjectsSpawnerComponent" index="0" instance=ExtResource("3_2fqeo")]
+
+[node name="ColliderComponent" parent="BattleObjectsSpawnerComponent/Bullet" index="0" instance=ExtResource("4_0g7q1")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BattleObjectsSpawnerComponent/Bullet/ColliderComponent" index="0"]
+shape = SubResource("BoxShape3D_websj")
+
+[node name="Model" type="MeshInstance3D" parent="BattleObjectsSpawnerComponent/Bullet" index="1"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+mesh = SubResource("BoxMesh_pddpo")
+surface_material_override/0 = SubResource("StandardMaterial3D_scm15")
+
+[node name="BattleEffectsActivatorComponent" parent="BattleObjectsSpawnerComponent/Bullet" index="2" instance=ExtResource("6_bhvry")]
+activation_mode = "on_collision"
+
+[node name="BattleEffect" parent="BattleObjectsSpawnerComponent/Bullet/BattleEffectsActivatorComponent" index="0" instance=ExtResource("7_yfc1g")]
+target = "stricken"
+damage_power = 70

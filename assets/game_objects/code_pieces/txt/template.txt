@@ -1,0 +1,12 @@
+id|
+english_name|
+italian_name|
+price|
+rarity|
+english_description|
+italian_description|
+category|
+piece_texts|
+num_connections|
+types|
+num_iterations|0

@@ -1,0 +1,140 @@
+[gd_scene load_steps=19 format=3 uid="uid://djo1u1d85lh7l"]
+
+[ext_resource type="PackedScene" uid="uid://bjjm3qtf1yaa" path="res://assets/models/vending_machine_1/vending_machine.glb" id="1_fowux"]
+[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="2_t2548"]
+[ext_resource type="Texture2D" uid="uid://ddtw5knbshyru" path="res://assets/models/vending_machine_1/vending_machine_vending_machine_texture.png" id="3_yrlbb"]
+[ext_resource type="Texture2D" uid="uid://8vd6y4fqsfke" path="res://assets/models/vending_machine_1/vending_machine_code_button_texture.png" id="4_vokws"]
+[ext_resource type="Texture2D" uid="uid://bdkr5p6q0if6d" path="res://assets/models/vending_machine_1/vending_machine_rest_button_texture.png" id="5_jed8h"]
+[ext_resource type="Texture2D" uid="uid://o4hvvw6jveue" path="res://assets/models/vending_machine_1/vending_machine_buy_button_texture.png" id="6_6f0w4"]
+[ext_resource type="Texture2D" uid="uid://874chbyfrjf6" path="res://assets/models/vending_machine_1/vending_machine_glass_texture.png" id="7_j6nag"]
+[ext_resource type="Texture2D" uid="uid://ddc0jdk02b0k7" path="res://assets/models/vending_machine_1/vending_machine_code_icon.png" id="7_tjqco"]
+[ext_resource type="Texture2D" uid="uid://cmkdbr8u83dp5" path="res://assets/models/vending_machine_1/vending_machine_Money.png" id="9_reqbq"]
+[ext_resource type="Texture2D" uid="uid://drlic7xbj87r6" path="res://assets/models/vending_machine_1/vending_machine_rest_icon.png" id="10_5tucs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ech14"]
+render_priority = 0
+shader = ExtResource("2_t2548")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = false
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_yrlbb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hqjh7"]
+render_priority = 0
+shader = ExtResource("2_t2548")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("4_vokws")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ag1em"]
+render_priority = 0
+shader = ExtResource("2_t2548")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = true
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("5_jed8h")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tmodh"]
+render_priority = 0
+shader = ExtResource("2_t2548")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = false
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("6_6f0w4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nupk3"]
+transparency = 1
+albedo_texture = ExtResource("7_tjqco")
+metallic_specular = 0.0
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ljhc"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.0235294)
+albedo_texture = ExtResource("7_j6nag")
+metallic_specular = 0.0
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yuqao"]
+transparency = 1
+albedo_texture = ExtResource("9_reqbq")
+metallic_specular = 0.0
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j4kut"]
+transparency = 1
+albedo_texture = ExtResource("10_5tucs")
+metallic_specular = 0.0
+roughness = 0.0
+
+[node name="vending_machine" instance=ExtResource("1_fowux")]
+
+[node name="Vending Machine" parent="." index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.24738, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_ech14")
+surface_material_override/3 = SubResource("ShaderMaterial_hqjh7")
+surface_material_override/4 = SubResource("ShaderMaterial_ag1em")
+
+[node name="Buy Button" parent="Vending Machine" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_tmodh")
+
+[node name="code_icon" parent="Vending Machine" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nupk3")
+
+[node name="Glass" parent="Vending Machine" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7ljhc")
+
+[node name="Money" parent="Vending Machine" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yuqao")
+
+[node name="rest_icon" parent="Vending Machine" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_j4kut")

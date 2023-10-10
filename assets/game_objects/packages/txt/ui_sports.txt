@@ -1,0 +1,11 @@
+id;ui_sports
+english_name;Ui Sports
+italian_name;Ui Sports
+price;240
+rarity;3
+english_locked_description;Two sports included in that famous Ui console game!
+italian_locked_description;Due sport compresi in quel famoso gioco per la console Ui!
+english_unlocked_description;I love Ui Sports! The Bowling Balls aren't as heavy as in real life, I can play against my friends' avatars, and I finally understood the rules of Baseball!
+italian_unlocked_description;Amo Ui Sports! Le Palle da Bowling non sono pesanti come nella realtà, posso giocare contro gli avatar dei miei amici e finalmente ho capito le regole del Baseball!
+classes;[bowling_ball,baseball]
+is_locked;true

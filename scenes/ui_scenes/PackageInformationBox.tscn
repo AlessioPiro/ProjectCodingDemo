@@ -1,0 +1,344 @@
+[gd_scene load_steps=21 format=3 uid="uid://daxc3xm4v2hqv"]
+
+[ext_resource type="Texture2D" uid="uid://dlhd86g5jqjr0" path="res://assets/ui/lunas_pc1_information_box/XButton.png" id="1_5djls"]
+[ext_resource type="Texture2D" uid="uid://bfy2dcc8g7hcx" path="res://assets/ui/lunas_pc1_information_box/PackageInformationWindow.png" id="1_tfms8"]
+[ext_resource type="Script" path="res://scripts/PackageInformationBox.gd" id="1_yhxdg"]
+[ext_resource type="FontFile" uid="uid://1o3ao46od32h" path="res://assets/fonts/fonts_files/VCR_OSD_MONO_1.001.ttf" id="2_hxabr"]
+[ext_resource type="Texture2D" uid="uid://dljw3ajyxo7ex" path="res://assets/icons/package_icons/30_s_best_friends_icon.png" id="2_xu3ku"]
+[ext_resource type="Texture2D" uid="uid://xjjo1jp8jh4g" path="res://assets/ui/lunas_pc1_information_box/IconWindow.png" id="3_s0ucp"]
+[ext_resource type="PackedScene" uid="uid://c8ibovm3lret0" path="res://scenes/ui_scenes/PackageInformationBoxClassInformationBox.tscn" id="3_vhpnc"]
+[ext_resource type="PackedScene" uid="uid://cygdgfg1hlxrj" path="res://components/ButtonComponent.tscn" id="3_ysohr"]
+[ext_resource type="Texture2D" uid="uid://qiojjuveyovw" path="res://assets/ui/lunas_pc1_information_box/Button2.png" id="5_56dct"]
+[ext_resource type="Shader" path="res://addons/scrolling_texture_shader/scrolling_texture_shader.gdshader" id="9_k5f1p"]
+[ext_resource type="Texture2D" uid="uid://cwifna0xmxvij" path="res://assets/ui/lunas_pc1_information_box/halftones_texture.png" id="10_40ec8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1nukb"]
+size = Vector3(0.486935, 0.486132, 0.00416373)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_10ki6"]
+size = Vector3(1.98264, 0.790352, 0.05654)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ary4"]
+size = Vector3(40.1319, 40.0912, 0.0397481)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjjf6"]
+render_priority = 2
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.835294, 0.301961, 0.458824, 0.917647)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yiuii"]
+render_priority = 1
+next_pass = SubResource("StandardMaterial3D_jjjf6")
+shader = ExtResource("9_k5f1p")
+shader_parameter/speed_and_direction = Vector2(0.1, 0.1)
+shader_parameter/scale = Vector2(3, 3)
+shader_parameter/flip = false
+shader_parameter/alpha_multiplier = 1.0
+shader_parameter/albedo = ExtResource("10_40ec8")
+
+[sub_resource type="QuadMesh" id="QuadMesh_1giqu"]
+size = Vector2(40, 40)
+
+[sub_resource type="Animation" id="Animation_hvnxf"]
+resource_name = "pop_in"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PackageInformationWindow:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.8, 0.8, 0.8), Vector3(1.1, 1.1, 1.1), Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("IconWindow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.8, 0.8, 0.8), Vector3(1.1, 1.1, 1.1), Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("IconWindow:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("IconWindow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.67306, 4.36066, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:background_transparency")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_djjjc"]
+resource_name = "pop_out"
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PackageInformationWindow:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.1, 1.1, 1.1), Vector3(0.2, 0.2, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("IconWindow:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.1, 1.1, 1.1), Vector3(0.2, 0.2, 0.2)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"set_end_position"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("IconWindow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.67306, 4.36066, 0), Vector3(0.5, -1.5, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:background_transparency")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_og4js"]
+_data = {
+"pop_in": SubResource("Animation_hvnxf"),
+"pop_out": SubResource("Animation_djjjc")
+}
+
+[node name="PackageInformationBox" type="Node3D"]
+script = ExtResource("1_yhxdg")
+
+[node name="PackageInformationWindow" type="Node3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, -2.79385, 0)
+
+[node name="XButton" type="Area3D" parent="PackageInformationWindow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.22112, 5.27793, 0)
+
+[node name="Sprite" type="Sprite3D" parent="PackageInformationWindow/XButton"]
+sorting_offset = 6.0
+texture_filter = 2
+render_priority = 4
+texture = ExtResource("1_5djls")
+
+[node name="ButtonComponent" parent="PackageInformationWindow/XButton" instance=ExtResource("3_ysohr")]
+action = "pop_out_window"
+press_animation = "darken"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PackageInformationWindow/XButton"]
+shape = SubResource("BoxShape3D_1nukb")
+
+[node name="WindowTitle" type="Label3D" parent="PackageInformationWindow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.80838, 5.29093, 0)
+sorting_offset = 6.0
+render_priority = 5
+outline_render_priority = 4
+text = "Nome.jar"
+font = ExtResource("2_hxabr")
+font_size = 100
+outline_size = 0
+horizontal_alignment = 0
+
+[node name="PackageName" type="Label3D" parent="PackageInformationWindow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3794, 0)
+sorting_offset = 6.0
+render_priority = 5
+outline_render_priority = 4
+text = "Nome"
+font = ExtResource("2_hxabr")
+font_size = 150
+outline_size = 20
+
+[node name="PackageDescription" type="Label3D" parent="PackageInformationWindow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.29073, 0)
+sorting_offset = 6.0
+render_priority = 5
+outline_render_priority = 4
+modulate = Color(0, 0, 0, 1)
+text = "Wow, this package will strike you! Did you get it? Because it contains a Bowling Ball and... sorry."
+font = ExtResource("2_hxabr")
+font_size = 80
+outline_size = 0
+autowrap_mode = 3
+width = 1700.0
+
+[node name="ClassesWindows" type="Node3D" parent="PackageInformationWindow"]
+
+[node name="OneClass" type="Node3D" parent="PackageInformationWindow/ClassesWindows"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9822, 0)
+visible = false
+
+[node name="ClassWindow" parent="PackageInformationWindow/ClassesWindows/OneClass" instance=ExtResource("3_vhpnc")]
+
+[node name="TwoClasses" type="Node3D" parent="PackageInformationWindow/ClassesWindows"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9822, 0)
+visible = false
+
+[node name="ClassWindow3" parent="PackageInformationWindow/ClassesWindows/TwoClasses" instance=ExtResource("3_vhpnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84714, 0, 0)
+
+[node name="ClassWindow4" parent="PackageInformationWindow/ClassesWindows/TwoClasses" instance=ExtResource("3_vhpnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85593, 0, 0)
+
+[node name="ThreeClasses" type="Node3D" parent="PackageInformationWindow/ClassesWindows"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9822, 0)
+visible = false
+
+[node name="ClassWindow4" parent="PackageInformationWindow/ClassesWindows/ThreeClasses" instance=ExtResource("3_vhpnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97301, 0, 0)
+
+[node name="ClassWindow5" parent="PackageInformationWindow/ClassesWindows/ThreeClasses" instance=ExtResource("3_vhpnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0263872, 0, 0)
+
+[node name="ClassWindow6" parent="PackageInformationWindow/ClassesWindows/ThreeClasses" instance=ExtResource("3_vhpnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.04338, 0, 0)
+
+[node name="Buttons" type="Node3D" parent="PackageInformationWindow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.90736, 0)
+
+[node name="TrashButton" type="Area3D" parent="PackageInformationWindow/Buttons"]
+
+[node name="Sprite" type="Sprite3D" parent="PackageInformationWindow/Buttons/TrashButton"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+sorting_offset = 6.0
+render_priority = 4
+texture = ExtResource("5_56dct")
+
+[node name="Label3D" type="Label3D" parent="PackageInformationWindow/Buttons/TrashButton"]
+sorting_offset = 7.0
+render_priority = 5
+outline_render_priority = 4
+text = "DELETE"
+font = ExtResource("2_hxabr")
+font_size = 80
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PackageInformationWindow/Buttons/TrashButton"]
+shape = SubResource("BoxShape3D_10ki6")
+
+[node name="ButtonComponent" parent="PackageInformationWindow/Buttons/TrashButton" instance=ExtResource("3_ysohr")]
+action = "remove_player_object"
+press_animation = "darken"
+
+[node name="Background" type="Sprite3D" parent="PackageInformationWindow"]
+sorting_offset = 3.0
+render_priority = 4
+texture = ExtResource("1_tfms8")
+
+[node name="IconWindow" type="Node3D" parent="."]
+transform = Transform3D(0.783387, 0.162189, 0, -0.162189, 0.783387, 0, 0, 0, 0.8, 2.67306, 4.36066, 0)
+visible = false
+
+[node name="PackageIcon" type="Sprite3D" parent="IconWindow"]
+transform = Transform3D(1.73, 0, 0, 0, 1.73, 0, 0, 0, 1.73, 0.66029, 0.0283279, 0)
+sorting_offset = 2.0
+modulate = Color(0.803922, 0.270588, 0.427451, 1)
+render_priority = 4
+texture = ExtResource("2_xu3ku")
+
+[node name="Window" type="Sprite3D" parent="IconWindow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0494201, 0.0962877, 0)
+render_priority = 4
+texture = ExtResource("3_s0ucp")
+
+[node name="WindowTitle" type="Label3D" parent="IconWindow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70705, 2.36181, 0)
+sorting_offset = 2.0
+render_priority = 5
+outline_render_priority = 4
+text = "Paint.exe"
+font = ExtResource("2_hxabr")
+font_size = 90
+outline_size = 0
+horizontal_alignment = 0
+
+[node name="Screen" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.689934)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Screen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0961395)
+shape = SubResource("BoxShape3D_3ary4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Screen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.113898)
+material_override = SubResource("ShaderMaterial_yiuii")
+mesh = SubResource("QuadMesh_1giqu")
+
+[node name="ButtonComponent" parent="Screen" instance=ExtResource("3_ysohr")]
+action = "pop_out_window"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_og4js")
+}

@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgoohcyf0olab"]
+
+[ext_resource type="PackedScene" uid="uid://bq6g451mlo3so" path="res://assets/models/entrance/entrance.glb" id="1_6wh05"]
+[ext_resource type="Shader" path="res://addons/flexible_toon_shader/flexible_toon.gdshader" id="2_i3pk8"]
+[ext_resource type="Texture2D" uid="uid://c7bqibmrb1wy6" path="res://assets/models/entrance/entrance_entrance_texture.png" id="3_pcwi2"]
+[ext_resource type="Texture2D" uid="uid://vd7uo1ekhama" path="res://assets/models/entrance/entrance_glass_texture.png" id="4_f7ccv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0pdro"]
+render_priority = 0
+shader = ExtResource("2_i3pk8")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/clamp_diffuse_to_max = false
+shader_parameter/cuts = 1
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+shader_parameter/use_attenuation = true
+shader_parameter/use_specular = true
+shader_parameter/specular_strength = 1.0
+shader_parameter/specular_shininess = 16.0
+shader_parameter/use_rim = false
+shader_parameter/rim_width = 8.0
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/use_ramp = false
+shader_parameter/use_borders = false
+shader_parameter/border_width = 0.01
+shader_parameter/albedo_texture = ExtResource("3_pcwi2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6fpv0"]
+transparency = 1
+blend_mode = 1
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(1, 0.960784, 1, 0.192157)
+albedo_texture = ExtResource("4_f7ccv")
+metallic_specular = 0.0
+roughness = 0.0
+
+[node name="entrance" instance=ExtResource("1_6wh05")]
+
+[node name="Entrance" parent="." index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_0pdro")
+
+[node name="Vetrata" parent="Entrance" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6fpv0")

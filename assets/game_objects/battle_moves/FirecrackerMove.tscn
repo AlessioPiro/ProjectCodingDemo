@@ -1,0 +1,58 @@
+[gd_scene load_steps=12 format=3 uid="uid://d2l27dcdxhbxp"]
+
+[ext_resource type="PackedScene" uid="uid://366vgb3axuvs" path="res://assets/game_objects/battle_moves/BattleMove.tscn" id="1_ooe4g"]
+[ext_resource type="PackedScene" uid="uid://d2n8nt7103d3u" path="res://components/BattleObjectsSpawnerComponent.tscn" id="2_4f4o4"]
+[ext_resource type="PackedScene" uid="uid://dfjje3y25cuhx" path="res://assets/game_objects/battle_objects/Bullet.tscn" id="3_hiwmx"]
+[ext_resource type="Shader" path="res://outline_shader.gdshader" id="4_pu2gs"]
+[ext_resource type="PackedScene" uid="uid://de7xlya8vh3gw" path="res://components/BattleEffectsActivatorComponent.tscn" id="5_i8gr5"]
+[ext_resource type="PackedScene" uid="uid://d4mph4qtuqrtn" path="res://components/BattleEffect.tscn" id="6_mo42v"]
+[ext_resource type="PackedScene" uid="uid://cidhe1nfix23k" path="res://components/ColliderComponent.tscn" id="7_7tpxi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dfdue"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eyeuq"]
+render_priority = 0
+shader = ExtResource("4_pu2gs")
+shader_parameter/border_width = 0.113
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/pattern = null
+shader_parameter/line_number = null
+shader_parameter/line_sharpness = null
+shader_parameter/pulse = null
+shader_parameter/pulse_speed = null
+shader_parameter/line_movement = null
+shader_parameter/line_movement_speed = null
+shader_parameter/wave = null
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8ujs"]
+next_pass = SubResource("ShaderMaterial_eyeuq")
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6uiux"]
+size = Vector3(0.417843, 0.417844, 0.417843)
+
+[node name="FirecrackerMove" instance=ExtResource("1_ooe4g")]
+class_id = "firecracker"
+
+[node name="BattleObjectsSpawnerComponent" parent="." index="0" instance=ExtResource("2_4f4o4")]
+
+[node name="Bullet" parent="BattleObjectsSpawnerComponent" index="0" instance=ExtResource("3_hiwmx")]
+
+[node name="Model" type="MeshInstance3D" parent="BattleObjectsSpawnerComponent/Bullet" index="0"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+mesh = SubResource("BoxMesh_dfdue")
+surface_material_override/0 = SubResource("StandardMaterial3D_l8ujs")
+
+[node name="BattleEffectsActivatorComponent" parent="BattleObjectsSpawnerComponent/Bullet" index="1" instance=ExtResource("5_i8gr5")]
+activation_mode = "on_collision"
+
+[node name="BattleEffect" parent="BattleObjectsSpawnerComponent/Bullet/BattleEffectsActivatorComponent" index="0" instance=ExtResource("6_mo42v")]
+target = "stricken"
+damage_power = 50
+damage_type = "fire"
+
+[node name="ColliderComponent" parent="BattleObjectsSpawnerComponent/Bullet" index="2" instance=ExtResource("7_7tpxi")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BattleObjectsSpawnerComponent/Bullet/ColliderComponent" index="0"]
+shape = SubResource("BoxShape3D_6uiux")

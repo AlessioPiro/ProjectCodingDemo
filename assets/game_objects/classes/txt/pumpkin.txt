@@ -1,0 +1,9 @@
+id;pumpkin
+english_name;Pumpkin
+italian_name;Zucca
+english_description;It deals high Grass damage to the enemy.
+italian_description;Infligge grandi danni di tipo Erba al nemico.
+time;20
+english_method;throw
+italian_method;lancia
+type;grass

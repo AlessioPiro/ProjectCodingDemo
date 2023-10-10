@@ -1,0 +1,9 @@
+id;firecracker
+english_name;Firecracker
+italian_name;Petardo
+english_description;It deals low Fire damage to the enemy.
+italian_description;Infligge pochi danni di tipo Fuoco al nemico.
+time;5
+english_method;light
+italian_method;accendi
+type;fire
