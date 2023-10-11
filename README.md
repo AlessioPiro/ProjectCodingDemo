@@ -4,8 +4,9 @@ Guida per testare ProjectCoding:
 2. Scaricare questa repository
 3. Aprire Godot
 4. Nel Project Manager premere il pulsante "Import"
-5. Cliccare sul progetto "ProjectCoding"
-6. Cliccare il pulsante "Play" situato in alto a sinistra, contrassegnato dal classico simbolo a forma di triangolo
+5. Nella finestra appena aperta, selezionare la cartella della repository precedentemente scaricata
+6. Cliccare sul progetto "ProjectCoding" apparso ora nella lista dei progetti del Project Manager
+7. Cliccare il pulsante "Play" situato in alto a sinistra, contrassegnato dal classico simbolo a forma di triangolo
 
 Dopo questi passaggi, la demo verrà avviata.
 
