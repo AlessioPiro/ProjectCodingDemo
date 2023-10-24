@@ -1,0 +1,331 @@
+[gd_scene load_steps=19 format=3 uid="uid://dy8lsume7iki0"]
+
+[ext_resource type="PackedScene" uid="uid://cqt6j4w7pcmj1" path="res://assets/game_objects/enemy_battle_moves/EnemyBattleMove.tscn" id="1_jvodk"]
+[ext_resource type="Shader" path="res://outline_shader.gdshader" id="2_3rmy8"]
+[ext_resource type="Script" path="res://scripts/ColliderComponent.gd" id="3_r85f2"]
+[ext_resource type="PackedScene" uid="uid://de7xlya8vh3gw" path="res://components/BattleEffectsActivatorComponent.tscn" id="4_rr4g5"]
+[ext_resource type="PackedScene" uid="uid://d4mph4qtuqrtn" path="res://components/BattleEffect.tscn" id="5_tx0s8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g6lhu"]
+size = Vector3(2.7, 0.4, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ugf0v"]
+size = Vector3(0.5, 2.7, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jqcha"]
+size = Vector3(0.5, 3, 0.5)
+
+[sub_resource type="Animation" id="Animation_3tgps"]
+resource_name = "start_move"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Column1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1, 0.5, 0), Vector3(-1, 1.45, 2), Vector3(-1, 1.5, 2), Vector3(-1, 1.5, 20)]
+}
+tracks/1/type = "scale_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Column1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.1, 0.1, 0.1, 0.3, 1, 0.5, 3, 0.5, 0.4, 1, 0.5, 2.7, 0.5)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Column1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColliderComponent/CollisionShape3D:shape")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("BoxShape3D_jqcha")]
+}
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColliderComponent/CollisionShape3D")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0.4, 1, -1, 1.5, 2, 3, 1, -1, 1.5, 20)
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColliderComponent/CollisionShape3D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Column2:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.7, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.5, 0), Vector3(0, 0.5, 17)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Column2:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.7, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.01, 0.01, 0.01), Vector3(2.7, 0.5, 0.5), Vector3(2.6, 0.5, 0.5)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Column2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.7, 0.9, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ColliderComponent2/CollisionShape3D:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1, 1.1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ColliderComponent2/CollisionShape3D:shape")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("BoxShape3D_g6lhu")]
+}
+tracks/11/type = "position_3d"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ColliderComponent2/CollisionShape3D")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = PackedFloat32Array(0.7, 1, 0, 0.5, 0, 3, 1, 0, 0.5, 17)
+tracks/12/type = "position_3d"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Column3")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = PackedFloat32Array(1.4, 1, 1, 0, 0, 1.7, 1, 1, 1.5, 2.438, 1.8, 1, 1, 1.45, 3.25, 3, 1, 1, 1.45, 13)
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Column3:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/14/type = "scale_3d"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Column3")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = PackedFloat32Array(1.4, 1, 0.1, 0.1, 0.1, 1.7, 1, 0.5, 3, 0.5, 1.8, 1, 0.5, 2.7, 0.5)
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("ColliderComponent3/CollisionShape3D:disabled")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(1.7, 1.8, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("ColliderComponent3/CollisionShape3D:shape")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(1.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("BoxShape3D_ugf0v")]
+}
+tracks/17/type = "position_3d"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("ColliderComponent3/CollisionShape3D")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = PackedFloat32Array(1.8, 1, 1, 1.45, 3.25, 3, 1, 1, 1.45, 13)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_38slq"]
+_data = {
+"start_move": SubResource("Animation_3tgps")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_ug6pf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o7w6h"]
+render_priority = 0
+shader = ExtResource("2_3rmy8")
+shader_parameter/border_width = 0.117
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/pattern = false
+shader_parameter/line_number = 6.0
+shader_parameter/line_sharpness = 1.955
+shader_parameter/pulse = false
+shader_parameter/pulse_speed = 0.0
+shader_parameter/line_movement = false
+shader_parameter/line_movement_speed = 6.0
+shader_parameter/wave = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_db8wt"]
+next_pass = SubResource("ShaderMaterial_o7w6h")
+shading_mode = 0
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ar42n"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rdpmx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_281nk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60sd2"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rb40u"]
+size = Vector3(4.0765, 0.0378449, 4.69958)
+
+[node name="WaterColumnsMove" instance=ExtResource("1_jvodk")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_38slq")
+}
+
+[node name="Column1" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1, 0.5, 0)
+visible = false
+mesh = SubResource("BoxMesh_ug6pf")
+surface_material_override/0 = SubResource("StandardMaterial3D_db8wt")
+
+[node name="ColliderComponent" type="Area3D" parent="." index="2"]
+script = ExtResource("3_r85f2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ColliderComponent" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 2)
+shape = SubResource("BoxShape3D_jqcha")
+disabled = true
+
+[node name="Column2" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0.5, 0)
+visible = false
+mesh = SubResource("BoxMesh_ar42n")
+surface_material_override/0 = SubResource("StandardMaterial3D_db8wt")
+
+[node name="ColliderComponent2" type="Area3D" parent="." index="4"]
+script = ExtResource("3_r85f2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ColliderComponent2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_g6lhu")
+disabled = true
+
+[node name="Column3" type="MeshInstance3D" parent="." index="5"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_rdpmx")
+surface_material_override/0 = SubResource("StandardMaterial3D_db8wt")
+
+[node name="ColliderComponent3" type="Area3D" parent="." index="6"]
+script = ExtResource("3_r85f2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ColliderComponent3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.45, 3.25)
+shape = SubResource("BoxShape3D_ugf0v")
+disabled = true
+
+[node name="BattleEffectsActivatorComponent" parent="." index="7" instance=ExtResource("4_rr4g5")]
+activation_mode = "on_collision_no_delete"
+
+[node name="BattleEffect" parent="BattleEffectsActivatorComponent" index="0" instance=ExtResource("5_tx0s8")]
+target = "stricken"
+damage_power = 70
+damage_type = "water"
+
+[node name="Grid" type="Node3D" parent="." index="8"]
+visible = false
+
+[node name="Grid - Floor" type="GridMap" parent="Grid" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.02, 0.5)
+cell_size = Vector3(1, 1, 1)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Grid - Character" type="GridMap" parent="Grid" index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.5, 0, 3.512)
+cell_size = Vector3(1, 1, 1)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Grid - Enemy" type="GridMap" parent="Grid" index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.5, 0, -3.56377)
+cell_size = Vector3(1, 1, 1)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Floor" type="Area3D" parent="Grid" index="3"]
+transform = Transform3D(1.71886, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0.0672364, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Grid/Floor" index="0"]
+transform = Transform3D(4.06442, 0, 0, 0, 0.0379599, 0, 0, 0, 4.68717, 0, 0, 0)
+mesh = SubResource("BoxMesh_281nk")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_60sd2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Grid/Floor" index="1"]
+shape = SubResource("BoxShape3D_rb40u")

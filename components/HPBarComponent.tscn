@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://bk000o71ruh3n"]
+
+[ext_resource type="Script" path="res://scripts/HPBarComponent.gd" id="1_m2051"]
+[ext_resource type="Texture2D" uid="uid://crebkl2bmr3rx" path="res://assets/icons/type_icons/fire_icon.png" id="2_nxdcu"]
+[ext_resource type="FontFile" uid="uid://c2s0knweyp6g" path="res://assets/fonts/fonts_files/FugazOne-Regular.ttf" id="3_pa6rk"]
+[ext_resource type="Texture2D" uid="uid://docjpy3ualowx" path="res://assets/ui/battle_ui/enemy_hp_bar.png" id="4_ebqls"]
+[ext_resource type="Texture2D" uid="uid://by3rgb0g8ta25" path="res://assets/ui/battle_ui/enemy_hp_bar_over.png" id="5_t2usk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_86oeg"]
+font = ExtResource("3_pa6rk")
+font_size = 50
+font_color = Color(1, 0, 0, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[node name="HPBarComponent" type="Sprite3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 2, 0)
+billboard = 1
+script = ExtResource("1_m2051")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="TypeShadowTexture" type="TextureRect" parent="SubViewport"]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = -206.0
+offset_right = 306.0
+offset_bottom = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_nxdcu")
+
+[node name="TypeTexture" type="TextureRect" parent="SubViewport"]
+modulate = Color(1, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -206.0
+offset_right = 296.0
+offset_bottom = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_nxdcu")
+
+[node name="HPBar" type="TextureProgressBar" parent="SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+texture_under = ExtResource("4_ebqls")
+texture_over = ExtResource("5_t2usk")
+texture_progress = ExtResource("4_ebqls")
+tint_under = Color(0.105882, 0.105882, 0.105882, 1)
+tint_over = Color(0, 0, 0, 1)
+tint_progress = Color(1, 0, 0, 1)
+
+[node name="NameLabel" type="Label" parent="SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -76.0
+offset_right = 65.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.305433
+size_flags_horizontal = 0
+text = "NAME"
+label_settings = SubResource("LabelSettings_86oeg")

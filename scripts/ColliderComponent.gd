@@ -6,6 +6,8 @@ var parent_instance_id
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	parent_instance_id = get_parent().get_instance_id()
+	if !is_connected("area_entered", _on_area_entered):
+		self.area_entered.connect(_on_area_entered)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

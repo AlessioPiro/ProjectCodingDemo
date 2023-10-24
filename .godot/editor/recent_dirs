@@ -1,3 +1,4 @@
+res://assets/game_objects/enemy_battle_moves
 res://components
 res://scripts
 res://assets/game_objects/battle_moves
@@ -19,4 +20,3 @@ res://assets/game_objects/enemies
 res://addons/2d_perspective_shader
 res://scenes/assets_shop
 res://assets/ui/lunas_pc1_menu
-res://

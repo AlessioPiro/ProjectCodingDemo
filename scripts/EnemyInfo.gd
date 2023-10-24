@@ -34,7 +34,7 @@ func get_id() -> String:
 	return id
 
 func get_enemy_name() -> String:
-	return name
+	return enemy_name
 
 func get_description() -> String:
 	return description

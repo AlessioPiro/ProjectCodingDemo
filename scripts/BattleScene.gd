@@ -60,6 +60,7 @@ func load_nodes_paths() -> Dictionary:
 	
 	return nodes_paths
 
+
 #Funzione che si occupa di aggiungere all'albero i nodi definiti a tempo di compilazione e caricati dal loader in Global
 func add_loaded_nodes_to_tree(loaded_nodes : Dictionary):
 	#Aggiungiamo il modello dell'arena all'albero
@@ -75,9 +76,6 @@ func add_loaded_nodes_to_tree(loaded_nodes : Dictionary):
 	#Aggiungiamo il nemico all'albero
 	if loaded_nodes.has("enemy") and loaded_nodes.get("enemy") != null:
 		enemy = loaded_nodes.get("enemy").instantiate()
-		if enemy.has_node("StatsComponent"):
-			var stats_component = enemy.get_node("StatsComponent")
-			stats_component.call_deferred("set_enemy_level", enemy_level)
 		add_child(enemy)
 		call_deferred("_set_position_deferred", enemy, enemy_position)
 		call_deferred("_set_enemy_type_deferred", enemy)

@@ -1,6 +1,7 @@
 extends Node2D
+class_name BattleEffectsActivatorComponent
 
-@export_enum("on_ready", "on_collision") var activation_mode = "on_ready"
+@export_enum("on_ready", "on_collision", "on_collision_no_delete") var activation_mode = "on_ready"
 #@export_enum("only_stricken") var damage_mode = "only_stricken"
 
 @export_group("Activation On Collision Settings")
@@ -60,11 +61,22 @@ func on_collision(area : Area3D):
 						
 			"force":
 				pass
+		#######################################################
+		if area.is_in_group("invisible_wall"):
+			get_parent().queue_free()
+		#######################################################
 	
-	#######################################################
-	if area.is_in_group("invisible_wall"):
-		get_parent().queue_free()
-	#######################################################
+	elif activation_mode == "on_collision_no_delete":
+		match choosing_targets_mode:
+			"same_as_target":
+				if !opponents_groups.is_empty():
+					for group in opponents_groups:
+						if area.get_parent().is_in_group(group):
+							activate_battle_effects([area.get_parent().get_instance_id()])
+							return
+						
+			"force":
+				pass
 	
 
 func _initialize():

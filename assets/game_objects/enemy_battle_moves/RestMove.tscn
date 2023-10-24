@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccpx4jcm5kgie"]
+
+[ext_resource type="PackedScene" uid="uid://cqt6j4w7pcmj1" path="res://assets/game_objects/enemy_battle_moves/EnemyBattleMove.tscn" id="1_ide0y"]
+
+[sub_resource type="Animation" id="Animation_dlmal"]
+resource_name = "start_move"
+length = 3.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oesbo"]
+_data = {
+"start_move": SubResource("Animation_dlmal")
+}
+
+[node name="RestMove" instance=ExtResource("1_ide0y")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_oesbo")
+}

@@ -1,12 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://csnyp18vlgl8i"]
+[gd_scene load_steps=11 format=3 uid="uid://csnyp18vlgl8i"]
 
 [ext_resource type="Texture2D" uid="uid://cipkk6havu7ki" path="res://assets/sprites/Player/player_placeholder.png" id="1_ti2bc"]
 [ext_resource type="PackedScene" uid="uid://cidhe1nfix23k" path="res://components/ColliderComponent.tscn" id="2_5kgje"]
 [ext_resource type="PackedScene" uid="uid://dq3vwbgt3waci" path="res://components/HealthComponent.tscn" id="3_yb1ce"]
 [ext_resource type="PackedScene" uid="uid://dhsthvtch5tjm" path="res://components/StatsComponent.tscn" id="4_ucgoc"]
+[ext_resource type="PackedScene" uid="uid://bk000o71ruh3n" path="res://components/HPBarComponent.tscn" id="5_k4gwl"]
+[ext_resource type="Script" path="res://scripts/MovesetManagerComponent.gd" id="6_nl187"]
+[ext_resource type="PackedScene" uid="uid://80gtecfjt2xa" path="res://assets/game_objects/enemy_battle_moves/GrassColumns1.tscn" id="7_mwdn2"]
+[ext_resource type="PackedScene" uid="uid://ccpx4jcm5kgie" path="res://assets/game_objects/enemy_battle_moves/RestMove.tscn" id="8_med7d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cn0p4"]
 size = Vector3(0.571086, 0.827808, 0.0390553)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jvp80"]
+viewport_path = NodePath("HPBarComponent/SubViewport")
 
 [node name="GrassSlime" type="Node3D" groups=["enemy"]]
 
@@ -26,3 +33,13 @@ initialization_mode = "init_by_stats_component"
 
 [node name="StatsComponent" parent="." instance=ExtResource("4_ucgoc")]
 element_id = "grass_slime"
+
+[node name="HPBarComponent" parent="." instance=ExtResource("5_k4gwl")]
+texture = SubResource("ViewportTexture_jvp80")
+
+[node name="MovesetManagerComponent" type="Node3D" parent="."]
+script = ExtResource("6_nl187")
+
+[node name="GrassColumnsMove" parent="MovesetManagerComponent" instance=ExtResource("7_mwdn2")]
+
+[node name="RestMove" parent="MovesetManagerComponent" instance=ExtResource("8_med7d")]

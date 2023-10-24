@@ -3,7 +3,7 @@ english_name;30's Best Friends
 italian_name;Amici dei Trentenni
 price;240
 rarity;3
-english_locked_description;A study has shown that these items are consumed by a thirty-year-old at least 5 times a day (Source: trust me.)
+english_locked_description;A study has shown that these items are consumed by a thirty-year-old at least 5 times a day (Source: trust me).
 italian_locked_description;Ho letto su "Lezzo.it" che questi oggetti sono usati in media 5 volte al giorno dai trentenni.
 english_unlocked_description;My brother always says: "Two things can't be missing in my house: Coffee and a Painkiller." He's old...
 italian_unlocked_description;Quel vecchietto di mio fratello dice sempre: "Due cose non possono mancare in casa mia: il Caffè e un Antidolorifico".

@@ -1,14 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://pjc44if1rg0n"]
+[gd_scene load_steps=11 format=3 uid="uid://pjc44if1rg0n"]
 
 [ext_resource type="Texture2D" uid="uid://cipkk6havu7ki" path="res://assets/sprites/Player/player_placeholder.png" id="1_ybae3"]
 [ext_resource type="PackedScene" uid="uid://cidhe1nfix23k" path="res://components/ColliderComponent.tscn" id="2_5kgje"]
 [ext_resource type="PackedScene" uid="uid://dq3vwbgt3waci" path="res://components/HealthComponent.tscn" id="3_yb1ce"]
 [ext_resource type="PackedScene" uid="uid://dhsthvtch5tjm" path="res://components/StatsComponent.tscn" id="4_ucgoc"]
+[ext_resource type="PackedScene" uid="uid://bk000o71ruh3n" path="res://components/HPBarComponent.tscn" id="5_ikjaw"]
+[ext_resource type="Script" path="res://scripts/MovesetManagerComponent.gd" id="6_8npap"]
+[ext_resource type="PackedScene" uid="uid://ccpx4jcm5kgie" path="res://assets/game_objects/enemy_battle_moves/RestMove.tscn" id="7_k73mr"]
+[ext_resource type="PackedScene" uid="uid://dy8lsume7iki0" path="res://assets/game_objects/enemy_battle_moves/WaterColumns1.tscn" id="8_psb75"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ado68"]
 size = Vector3(0.571086, 0.827808, 0.0390553)
 
-[node name="FireSlime" type="Node3D" groups=["enemy"]]
+[sub_resource type="ViewportTexture" id="ViewportTexture_7hpt5"]
+viewport_path = NodePath("HPBarComponent/SubViewport")
+
+[node name="WaterSlime" type="Node3D" groups=["enemy"]]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, 0, 0.420109, 0)
@@ -26,3 +33,13 @@ initialization_mode = "init_by_stats_component"
 
 [node name="StatsComponent" parent="." instance=ExtResource("4_ucgoc")]
 element_id = "water_slime"
+
+[node name="HPBarComponent" parent="." instance=ExtResource("5_ikjaw")]
+texture = SubResource("ViewportTexture_7hpt5")
+
+[node name="MovesetManagerComponent" type="Node3D" parent="."]
+script = ExtResource("6_8npap")
+
+[node name="RestMove" parent="MovesetManagerComponent" instance=ExtResource("7_k73mr")]
+
+[node name="WaterColumnsMove" parent="MovesetManagerComponent" instance=ExtResource("8_psb75")]

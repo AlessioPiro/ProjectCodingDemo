@@ -1,4 +1,4 @@
-[gd_scene load_steps=211 format=3 uid="uid://oyvvovry56q3"]
+[gd_scene load_steps=213 format=3 uid="uid://oyvvovry56q3"]
 
 [ext_resource type="Script" path="res://scripts/LunasScene.gd" id="1_dyq1f"]
 [ext_resource type="PackedScene" uid="uid://psu14l3gq81o" path="res://assets/models/luna_s/luna_s.tscn" id="1_fagyy"]
@@ -90,7 +90,9 @@
 [ext_resource type="Texture2D" uid="uid://bt1mr8ii16oao" path="res://assets/ui/lunas_pc2_menu/return_to_pc1_button.png" id="84_7ejiv"]
 [ext_resource type="Texture2D" uid="uid://cndmggfpeht1l" path="res://assets/visual_effects/rectangular_glow.png" id="84_djgk2"]
 [ext_resource type="Texture2D" uid="uid://k8rcjhgglhgg" path="res://assets/ui/lunas_pc2_menu/pc2_button_sprite.png" id="84_lhtdy"]
+[ext_resource type="Texture2D" uid="uid://o4nf4t4jgxcs" path="res://assets/ui/lunas_pc2_menu/time_icon.png" id="85_cu76h"]
 [ext_resource type="PackedScene" uid="uid://2aqf5fsg5q5n" path="res://scenes/assets_shop/ObjectSlot.tscn" id="85_v8uqw"]
+[ext_resource type="Texture2D" uid="uid://d0i3xbctev0u4" path="res://assets/ui/lunas_pc2_menu/puzzle_piece_icon.png" id="86_c247g"]
 [ext_resource type="PackedScene" uid="uid://dsmebw5m4bnwu" path="res://scenes/assets_shop/PuzzleSlot.tscn" id="87_syv2n"]
 
 [sub_resource type="Animation" id="Animation_4yhux"]
@@ -3208,6 +3210,14 @@ alignment = 1
 
 [node name="TimeAndPiecesWindows" type="Node3D" parent="PC2Menu"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 5.194, 0.943363)
+
+[node name="TimeSprite" type="Sprite3D" parent="PC2Menu/TimeAndPiecesWindows"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.350605, 0, 0)
+texture = ExtResource("85_cu76h")
+
+[node name="PuzzlePieceIconSprite" type="Sprite3D" parent="PC2Menu/TimeAndPiecesWindows"]
+transform = Transform3D(0.188954, -0.0655458, -4.8282e-10, 0.0655458, 0.188954, 2.8651e-09, -4.82822e-10, -2.8651e-09, 0.2, -0.355072, -0.516408, 0)
+texture = ExtResource("86_c247g")
 
 [node name="TimeBackground" type="Sprite3D" parent="PC2Menu/TimeAndPiecesWindows"]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 0, 0, 0)

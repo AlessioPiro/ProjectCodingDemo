@@ -1,12 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://rsbxs4xtgy3h"]
+[gd_scene load_steps=11 format=3 uid="uid://rsbxs4xtgy3h"]
 
 [ext_resource type="Texture2D" uid="uid://b7wd02gwif01t" path="res://assets/sprites/enemies/enemy_placeholder.png" id="1_iw6h3"]
 [ext_resource type="PackedScene" uid="uid://cidhe1nfix23k" path="res://components/ColliderComponent.tscn" id="2_5kgje"]
 [ext_resource type="PackedScene" uid="uid://dq3vwbgt3waci" path="res://components/HealthComponent.tscn" id="3_yb1ce"]
 [ext_resource type="PackedScene" uid="uid://dhsthvtch5tjm" path="res://components/StatsComponent.tscn" id="4_ucgoc"]
+[ext_resource type="PackedScene" uid="uid://bk000o71ruh3n" path="res://components/HPBarComponent.tscn" id="5_58tjn"]
+[ext_resource type="Script" path="res://scripts/MovesetManagerComponent.gd" id="6_ndwkg"]
+[ext_resource type="PackedScene" uid="uid://bh0erckhtfdok" path="res://assets/game_objects/enemy_battle_moves/FireColumns1.tscn" id="8_6606f"]
+[ext_resource type="PackedScene" uid="uid://ccpx4jcm5kgie" path="res://assets/game_objects/enemy_battle_moves/RestMove.tscn" id="8_u3iyw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wbtrj"]
 size = Vector3(0.571086, 0.827808, 0.0390553)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tq8i7"]
+viewport_path = NodePath("HPBarComponent/SubViewport")
 
 [node name="FireSlime" type="Node3D" groups=["enemy"]]
 
@@ -25,3 +32,13 @@ initialization_mode = "init_by_stats_component"
 
 [node name="StatsComponent" parent="." instance=ExtResource("4_ucgoc")]
 element_id = "fire_slime"
+
+[node name="HPBarComponent" parent="." instance=ExtResource("5_58tjn")]
+texture = SubResource("ViewportTexture_tq8i7")
+
+[node name="MovesetManagerComponent" type="Node3D" parent="."]
+script = ExtResource("6_ndwkg")
+
+[node name="RestMove" parent="MovesetManagerComponent" instance=ExtResource("8_u3iyw")]
+
+[node name="FireColumnsRightMove" parent="MovesetManagerComponent" instance=ExtResource("8_6606f")]

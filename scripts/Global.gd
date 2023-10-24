@@ -8,10 +8,15 @@ var max_tap_time = 3 #Tempo massimo di pressione per la validità del tap
 var language = "english"
 var max_buff_debuff_level = 10
 
+
+#Dizionari contenenti colori standard
+var types_colors = {"fire" : Color("#ff0000"), "water" : Color("#0c71c3"), "grass" : Color("#00ea12"), "normal" : Color("#00c191"), "healing" : Color("#ffdd00") ,"support": Color("#ffdd00")}
+
 #Percorsi di cartelle ricorrenti
 const MAP_SKIN_FOLDER = "res://assets/game_objects/map_skins/"
 const BATTLE_MOVES_FOLDER = "res://assets/game_objects/battle_moves/"
 const SAVE_FOLDER = "res://temporary/"
+const TYPES_ICONS_FOLDER = "res://assets/icons/type_icons/"
 
 
 #Variabili per il caricamento degli oggetti di gioco

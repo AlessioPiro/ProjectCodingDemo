@@ -16,6 +16,7 @@ extends Node2D
 @export_enum("character", "enemy") var element_category = "enemy"
 @export var element_id : String
 
+var element = null
 
 var base_stats = {"hp" : 0, "atk" : 0, "def" : 0, "luk" : 0} #Statistiche di base
 var final_stats = {} #Statistiche calcolate a seconda del livello dell'elemento
@@ -47,9 +48,6 @@ func _connect_signals():
 	battle_element_signal_manager.buff_request.connect(on_buff)
 	battle_element_signal_manager.debuff_request.connect(on_debuff)
 
-#Chiamato dalla battaglia per settare il livello se questo component è figlio di un nodo "enemy"
-func set_enemy_level(input_level : int):
-	level = input_level
 
 func _init_component():
 	var st_calc = StatsCalculator.new()
@@ -66,13 +64,13 @@ func _init_component():
 			final_stats = st_calc.calculate_all_stats_from_stats_dictionary(base_stats, level)
 		
 		"by_id":
-			var element
 			match element_category:
 				"character":
 					element = Global.playable_characters_infos[element_id]
 					level = Global.player_level
 				"enemy":
 					element = Global.enemies_infos[element_id]
+					level = get_tree().root.get_node("/root/BattleScene").enemy_level
 			base_stats["hp"] = element.get_hp()
 			base_stats["atk"] = element.get_atk()
 			base_stats["def"] = element.get_def()
@@ -85,10 +83,20 @@ func _init_health_component():
 	if health_component != null:
 		health_component.init_by_stats_component(final_stats["hp"])
 
+
 func _init_hp_bar_component():
-	var hp_bar_component = get_parent().get_node_or_null("HpBarComponent")
+	var hp_bar_component = get_parent().get_node_or_null("HPBarComponent")
 	if hp_bar_component != null:
-		hp_bar_component.init_by_stats_component(final_stats["hp"])
+		var element_name = " "
+		var element_type = "normal"
+		if element != null:
+			if element.has_method("get_enemy_name"):
+				element_name = element.get_enemy_name()
+			
+			if element.has_method("get_type"):
+				element_type = element.get_type()
+			
+		hp_bar_component.init_by_stats_component(element_name, element_type, element_category, final_stats["hp"])
 
 
 #RISPOSTE AI SIGNAL
